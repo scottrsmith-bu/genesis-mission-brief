@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBP Resiliency Program 2.0</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .slide-header {
+            border-bottom: 4px solid #2a5298;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .slide-number {
+            color: #2a5298;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            color: #1e3c72;
+            font-size: 36px;
+            margin: 10px 0 15px 0;
+            font-weight: 700;
+        }
+        
+        h2 {
+            color: #2a5298;
+            font-size: 24px;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+        
+        h3 {
+            color: #1e3c72;
+            font-size: 20px;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .journey-visual {
+            background: linear-gradient(to right, #e8f5e9, #fff9c4, #ffccbc, #ef9a9a);
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .journey-stages {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .stage {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .stage-label {
+            font-weight: 700;
+            font-size: 16px;
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+        
+        .stage-desc {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .arrow {
+            font-size: 30px;
+            color: #2a5298;
+            font-weight: bold;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .critical-box {
+            background: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .success-box {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .info-box {
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .program-card {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .program-title {
+            color: #2a5298;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .program-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .path-card {
+            border-radius: 8px;
+            padding: 25px;
+            min-height: 400px;
+        }
+        
+        .path-crisis {
+            background: linear-gradient(135deg, #ef5350 0%, #e57373 100%);
+            color: white;
+        }
+        
+        .path-resilience {
+            background: linear-gradient(135deg, #66bb6a 0%, #81c784 100%);
+            color: white;
+        }
+        
+        .path-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid rgba(255,255,255,0.3);
+        }
+        
+        .outcome-item {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .outcome-item:before {
+            content: '•';
+            position: absolute;
+            left: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .roi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .roi-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .roi-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .roi-value {
+            font-size: 36px;
+            font-weight: 900;
+            margin: 15px 0;
+        }
+        
+        .roi-desc {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 30px 0;
+            margin: 30px 0;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #2a5298;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .timeline-content {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            width: 45%;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: auto;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #2a5298;
+            border: 4px solid white;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .phase-title {
+            color: #2a5298;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .phase-subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .stat-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .stat-number {
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+        
+        .quote {
+            border-left: 5px solid #2a5298;
+            padding: 20px 25px;
+            margin: 25px 0;
+            background: #f8f9fa;
+            font-style: italic;
+            color: #555;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .quote-author {
+            font-weight: 700;
+            color: #2a5298;
+            margin-top: 10px;
+            font-style: normal;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .cta-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 18px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        
+        .key-message {
+            background: #fff3cd;
+            border: 3px solid #ffc107;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            font-weight: 600;
+            color: #856404;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .metric-box {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #dee2e6;
+        }
+        
+        .metric-value {
+            font-size: 42px;
+            font-weight: 900;
+            color: #2a5298;
+            margin: 10px 0;
+        }
+        
+        .metric-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .nav-button {
+            background: #2a5298;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        
+        .nav-button:hover {
+            background: #1e3c72;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline:before {
+                left: 20px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 50px);
+                margin-left: 50px !important;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .stat-number {
+                font-size: 42px;
+            }
+        }
+        
+        .enhancement-diagram {
+            background: white;
+            border: 3px solid #2a5298;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .layer {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .layer-prevention {
+            background: linear-gradient(to right, #d4edda, #c3e6cb);
+            border-left: 5px solid #28a745;
+        }
+        
+        .layer-crisis {
+            background: linear-gradient(to right, #f8d7da, #f5c6cb);
+            border-left: 5px solid #dc3545;
+        }
+        
+        .layer-title {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        
+        <!-- SLIDE 1 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">Slide 1 of 10</div>
+                <h1>The Workforce Journey</h1>
+                <p class="subtitle">What Science Tells Us About High-Performing Officers in High-Stress Environments</p>
+            </div>
+            
+            <div class="journey-visual">
+                <div class="journey-stages">
+                    <div class="stage">
+                        <div class="stage-label">START</div>
+                        <div class="stage-desc">High commitment<br>Mission-driven<br>Peak capability</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="stage">
+                        <div class="stage-label">EROSION ZONE<br>(Years 3-10)</div>
+                        <div class="stage-desc">Purpose tank running dry<br>Cumulative trauma<br>Physical/emotional toll</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="stage">
+                        <div class="stage-label">CRITICAL THRESHOLD<br>(Years 10-15)</div>
+                        <div class="stage-desc">"Severely broken"<br>Lost motivation<br>Burnout crisis</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="stage">
+                        <div class="stage-label">CRISIS<br>(Years 15+)</div>
+                        <div class="stage-desc">Breakdown<br>Medical leave<br>Separations<br>Tragedy</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="critical-box">
+                <strong>⚠️ 2028 RETIREMENT CLIFF:</strong> Removes experienced officers BEFORE they cross threshold, accelerating pressure on remaining workforce
+            </div>
+            
+            <div class="quote">
+                "By the time we seek help culturally, it is way past the time we needed help. We are severely broken by the time we actually say, I think I need help."
+                <div class="quote-author">— Noelani Aveina, Director of Resiliency Program, CBP</div>
+            </div>
+            
+            <div class="key-message">
+                <strong>Key Message:</strong> This isn't speculation. This is the documented reality of what your officers experience over time in high-stress environments. The question is: where do we intervene on this journey?
+            </div>
+        </div>
+        
+        <!-- SLIDE 2 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">Slide 2 of 10</div>
+                <h1>CBP's Current Reality</h1>
+                <p class="subtitle">The 2028 Inflection Point</p>
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="metric-value">40%</div>
+                    <div class="metric-label">Retirement-Eligible<br>by 2028</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">$50K</div>
+                    <div class="metric-label">Max Overtime<br>Per Officer</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">#432</div>
+                    <div class="metric-label">FEVS Ranking<br>out of 459</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">↑</div>
+                    <div class="metric-label">Suicide Rate<br>Increasing</div>
+                </div>
+            </div>
+            
+            <h2>The Three Compounding Crises</h2>
+            
+            <div class="critical-box">
+                <h3>Crisis #1: The Retention Pipeline Problem</h3>
+                <p>• Can't recruit a replacement for a 15-year Border Patrol agent<br>
+                • Training replacement takes 3-5 years minimum<br>
+                • Current efforts (bonuses, benefits) show <1% retention impact<br>
+                • By the time someone's considering leaving, traditional tools are too late</p>
+            </div>
+            
+            <div class="critical-box">
+                <h3>Crisis #2: The Knowledge Transfer Gap</h3>
+                <p>• Decades of post-9/11 border security evolution walks out the door<br>
+                • Mentorship programs "don't always work the greatest"<br>
+                • Institutional knowledge loss accelerates operational risk<br>
+                • Newer officers lack experienced mentors to navigate the resilience journey</p>
+            </div>
+            
+            <div class="critical-box">
+                <h3>Crisis #3: The Leadership Development Vacuum</h3>
+                <p>• "Old school mentality: If you can't do it, you shouldn't have signed up"<br>
+                • Command-and-control leadership drives voluntary separations<br>
+                • Exit surveys cite poor leadership communication and work-life balance<br>
+                • Talented agents can't advance, contributing to departures</p>
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ COMPOUNDING EFFECT:</strong><br>
+                Retention Failures → Operational Pressure → Burnout → More Retention Failures<br>
+                <strong>The cycle accelerates without intervention</strong>
+            </div>
+            
+            <div class="key-message">
+                <strong>Key Message:</strong> 2028 isn't just about numbers leaving. It's about removing your most resilient officers at exactly the moment the pressure intensifies on those who remain. The compounding effect creates a retention death spiral unless we intervene upstream.
+            </div>
+        </div>
+        
+        <!-- SLIDE 3 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">Slide 3 of 10</div>
+                <h1>What CBP Has Built</h1>
+                <p class="subtitle">Essential Safety Nets — All Downstream Interventions</p>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-title">🔹 Employee Assistance Program (EAP)</div>
+                    <div class="program-desc">Crisis counseling for officers in severe distress. Cultural stigma prevents utilization until "severely broken."</div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-title">🔹 Critical Incident Response Teams</div>
+                    <div class="program-desc">React to traumatic events (shootings, deaths). Essential post-incident support, but reactive by design.</div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-title">🔹 Peer Support Networks</div>
+                    <div class="program-desc">Fellow officers providing support. Volunteers overwhelmed by demand, limited capacity.</div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-title">🔹 Chaplains</div>
+                    <div class="program-desc">Spiritual and emotional support during crisis. Engaged during acute needs, not continuous development.</div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-title">🔹 Operational Psychologists</div>
+                    <div class="program-desc">Psychological support for operations. Limited contract scope, bandwidth constraints on preventative work.</div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <h3>Strategic Assessment</h3>
+                <p><strong>What CBP Has Built:</strong> Comprehensive crisis intervention infrastructure<br>
+                <strong>What's Working:</strong> Officers in severe crisis have places to turn<br>
+                <strong>What's Missing:</strong> Continuous support BEFORE officers reach crisis threshold</p>
+            </div>
+            
+            <div class="quote">
+                "It's always been like there's something missing... we have this piece or the behavioral science but we don't have any platform for data or metrics... or we can't really service this many people."
+                <div class="quote-author">— Noelani Aveina</div>
+            </div>
+            
+            <div class="critical-box">
+                <strong>The Behavioral Science Reality:</strong>
+                <ul>
+                    <li>Reactive interventions address symptoms, not causes</li>
+                    <li>By the time officers access these programs, psychological resources are depleted</li>
+                    <li>Prevention is exponentially more effective (and cost-effective) than crisis intervention</li>
+                    <li>WSIB Research: $1.25-$2.14 return per dollar invested in prevention vs. crisis treatment</li>
+                </ul>
+            </div>
+            
+            <div class="key-message">
+                <strong>Key Message:</strong> You've built comprehensive crisis intervention. What's missing is the continuous development layer that prevents officers from reaching crisis. This isn't about replacing your safety net—it's about reducing how many officers fall into it.
+            </div>
+        </div>
+        
+        <!-- SLIDE 4 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">Slide 4 of 10</div>
+                <h1>The Missing Layer</h1>
+                <p class="subtitle">Upstream Prevention Before Crisis</p>
+            </div>
+            
+            <h2>The Strategic Gap Defined</h2>
+            
+            <div class="critical-box">
+                <strong>No mechanism for continuous support between crises</strong>
+                <p>Officers navigate erosion phase (Years 3-15) completely alone. Only touchpoint is annual fitness evaluation or post-incident debrief.</p>
+            </div>
+            
+            <div class="critical-box">
+                <strong>No scalable solution for 27,000 OFO personnel</strong>
+                <p>One social scientist can't serve entire organization. Peer support volunteers overwhelmed. OP psychs focused on crisis cases.</p>
+            </div>
+            
+            <div class="critical-box">
+                <strong>No data analytics to identify at-risk officers</strong>
+                <p>No early warning system. "We don't know they're struggling until they're broken." Can't demonstrate ROI for DHS Evidence Act.</p>
+            </div>
+            
+            <h2>What Elite Performers Actually Do</h2>
+            
+            <div class="success-box">
+                <h3>🏆 Special Operations Forces</h3>
+                <p>Embedded resilience training throughout career • Continuous mental performance coaching • Family support integrated into unit culture</p>
+            </div>
+            
+            <div class="success-box">
+                <h3>🏆 Professional Athletes</h3>
+                <p>LeBron James spends $1M+/year on optimization • Every elite athlete has performance coaches • Mental training is standard, not stigmatized</p>
+            </div>
+            
+            <div class="success-box">
+                <h3>🏆 Elite Pilots (Air Force)</h3>
+                <p>BetterUp partnership: 6% retention improvement • Continuous development, not crisis intervention • $255M in bonuses failed; coaching succeeded</p>
+            </div>
+            
+            <div class="stat-highlight">
+                <div class="stat-number">6%</div>
+                <div class="stat-label">Air Force Retention Improvement with BetterUp<br>Where $255M+ in Annual Bonuses Failed</div>
+            </div>
+            
+            <div class="cta-box">
+                <div class="cta-title">Flipping the Stigma</div>
+                <div class="cta-text">
+                    ❌ OLD NARRATIVE: "If you can't handle it, you shouldn't have signed up"<br><br>
+                    ✅ ELITE PERFORMANCE NARRATIVE: "CBP has elite performers who need support to stay elite"<br><br>
+                    <strong>Coachability is an attribute of elite performance, not weakness</strong>
+                </div>
+            </div>
+            
+            <div class="key-message">
+                <strong>Key Message:</strong> This isn't about fixing broken officers. It's about preventing your elite performers from becoming broken in the first place. Every high-stress, high-performance field provides continuous support—except law enforcement. CBP has the opportunity to change that before 2028.
+            </div>
+        </div>
+        
+        <!-- SLIDE 5 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">Slide 5 of 10</div>
+                <h1>Resiliency Program 2.0</h1>
+                <p class="subtitle">The Preventative Layer That Enhances Your Existing Programs</p>
+            </div>
+            
+            <div class="enhancement-diagram">
+                <h2 style="text-align: center; color: #2a5298; margin-bottom: 30px;">The Complete Resilience System</h2>
+                
+                <div class="layer layer-prevention">
+                    <div class="layer-title">🔹 BETTERUP LAYER (Preventative — Years 3-15)</div>
+                    <ul>
+                        <li><strong>Leadership Development:</strong> GS-13 to GS-15 supervisors shift to performance-based management</li>
+                        <li><strong>Resilience Building:</strong> 5 core mindsets (cognitive agility, emotional regulation, optimism, agency, self-efficacy)</li>
+                        <li><strong>Family Support:</strong> "Recruit the officer, retain the family" — Ready for spouses</li>
+                        <li><strong>Career Coaching:</strong> Resume building, interview skills, advancement preparation</li>
+                        <li><strong>AI + Human Coach:</strong> 24/7 access without stigma, real-time guidance</li>
+                        <li><strong>Data Analytics:</strong> Early warning system identifies at-risk officers before crisis</li>
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; padding: 20px;">
+                    <strong style="font-size: 20px; color: #2a5298;">⬇️ Officers who DO need crisis support ⬇️</strong>
+                    <p style="margin-top: 10px; color: #666;">(Fewer officers reach this point + They recover faster because baseline resilience maintained)</p>
+                </div>
+                
+                <div class="layer layer-crisis">
+                    <div class="layer-title">🔹 CBP SAFETY NET (Crisis Intervention — Still Essential)</div>
+                    <ul>
+                        <li><strong>EAP:</strong> Crisis counseling for severe distress</li>
+                        <li><strong>CIRTs:</strong> Critical incident response teams</li>
+                        <li><strong>Peer Support:</strong> Fellow officer support networks</li>
+                        <li><strong>Chaplains:</strong> Spiritual and emotional crisis support</li>
+                        <li><strong>Operational Psychologists:</strong> Clinical expertise for acute cases</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="success-box">
+                <h3>How BetterUp Enhances Each Program</h3>
+                <p><strong>EAP:</strong> Officers get support BEFORE needing EAP, recover faster when they do need it<br>
+                <strong>CIRTs:</strong> Officers process critical incidents with existing resilience baseline<br>
+                <strong>Peer Support:</strong> Volunteers less overwhelmed as officers have other resources<br>
+                <strong>Chaplains:</strong> Family strain addressed earlier through leadership & coaching<br>
+                <strong>OP Psychs:</strong> Focus on acute cases, not preventable crises</p>
+            </div>
+            
+            <div class="quote">
+                "The technology and utilizing AI in just the right way to augment what we're getting from the human side, and then the science-based in addition to that, it just makes sense. Merging the science and the AI and also the human piece - so important."
+                <div class="quote-author">— Noelani Aveina</div>
+            </div>
+            
+            <div class="key-message">
+                <strong>Key Message:</strong> We're not replacing your resiliency programs. We're building Resiliency Program 2.0 — adding the preventative layer that makes your existing crisis investments more effective. Your safety net remains essential—we're just making sure fewer officers fall into it.
+            </div>
+        </div>
+        
+        <!-- SLIDE 6 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">Slide 6 of 10</div>
+                <h1>Across CBP's Three Directorates</h1>
+                <p class="subtitle">Customized Application for OFO, USBP, and AMO</p>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card" style="border-top: 5px solid #667eea;">
+                    <div class="program-title" style="color: #667eea;">OFFICE OF FIELD OPERATIONS</div>
+                    <div class="program-desc">
+                        <strong>27,000+ Personnel</strong><br><br>
+                        <strong>Challenges:</strong> High-volume processing stress, toxic leadership, FEVS #432/459, public scrutiny<br><br>
+                        <strong>Focus:</strong> Port managers & supervisors leadership development, officer resilience & family support, career advancement coaching<br><br>
+                        <strong>Outcomes:</strong> 3-5% retention improvement, FEVS score improvement, reduced public incidents
+                    </div>
+                </div>
+                
+                <div class="program-card" style="border-top: 5px solid #f093fb;">
+                    <div class="program-title" style="color: #f093fb;">U.S. BORDER PATROL</div>
+                    <div class="program-desc">
+                        <strong>~20,000 Agents</strong><br><br>
+                        <strong>Challenges:</strong> Geographic dispersion, 2028 hits hardest here, "old school mentality" culture, knowledge loss<br><br>
+                        <strong>Focus:</strong> Sector chiefs knowledge transfer, station supervisors leadership shift, agents career progression & family support<br><br>
+                        <strong>Outcomes:</strong> Knowledge preservation before 2028, station-level retention, culture transformation
+                    </div>
+                </div>
+                
+                <div class="program-card" style="border-top: 5px solid #4facfe;">
+                    <div class="program-title" style="color: #4facfe;">AIR & MARINE OPERATIONS</div>
+                    <div class="program-desc">
+                        <strong>~1,800 Personnel</strong><br><br>
+                        <strong>Challenges:</strong> Highly specialized skills, long training pipelines, small but critical workforce<br><br>
+                        <strong>Focus:</strong> Pilot retention (Air Force model), mission readiness, family support critical for retention<br><br>
+                        <strong>Outcomes:</strong> 3-5% retention improvement, reduced training pipeline losses, mission readiness maintained
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-highlight">
+                <div class="stat-number">67,000</div>
+                <div class="stat-label">Total CBP Workforce — One Integrated Platform<br>Customized to Each Directorate's Reality</div>
+            </div>
+            
+            <div class="success-box">
+                <h3>Air Force Precedent (Direct Applicability to AMO)</h3>
+                <p><strong>Results with BetterUp (2021-2025):</strong><br>
+                • +6% Retention Improvement (where $255M bonuses failed)<br>
+                • +16% More Resilient<br>
+                • +14% Mission Readiness<br>
+                • +14% Committed to military career<br><br>
+                <strong>Success Factors:</strong> Continuous development, family support, AI coaching, leadership development at all levels</p>
+            </div>
+            
+            <div class="key-message">
+                <strong>Key Message:</strong> We don't offer one-size-fits-all. Just as we customized for Air Force (pilots), WSIB (police), and NASA (engineers), we design Resiliency Program 2.0 for each directorate's unique reality — creating integrated infrastructure CBP needs before 2028.
+            </div>
+        </div>
+        
+        <!-- SLIDE 7 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">Slide 7 of 10</div>
+                <h1>The ROI Framework</h1>
+                <p class="subtitle">Three Value Pathways — Prevention Economics vs. Crisis Intervention</p>
+            </div>
+            
+            <div class="roi-grid">
+                <div class="roi-card">
+                    <div class="roi-title">Pathway 1: Retention Value</div>
+                    <div class="roi-value">$75M-$150M</div>
+                    <div class="roi-desc">
+                        <strong>Conservative:</strong> 3% retention improvement = 100 officers/year retained<br>
+                        <strong>Moderate:</strong> 5% improvement = 167 officers/year<br>
+                        Replacement cost: $150K-$200K per officer<br>
+                        <strong>Air Force precedent:</strong> 6% improvement achieved
+                    </div>
+                </div>
+                
+                <div class="roi-card">
+                    <div class="roi-title">Pathway 2: Workers Comp Reduction</div>
+                    <div class="roi-value">$10M-$40M</div>
+                    <div class="roi-desc">
+                        <strong>Conservative:</strong> 10% reduction in mental health claims<br>
+                        Average claim: $50K-$150K<br>
+                        <strong>WSIB evidence:</strong> $1.25-$2.14 return per dollar on prevention<br>
+                        Mental health claims 4x longer recovery than physical
+                    </div>
+                </div>
+                
+                <div class="roi-card">
+                    <div class="roi-title">Pathway 3: Discipline Prevention</div>
+                    <div class="roi-value">$15M-$30M</div>
+                    <div class="roi-desc">
+                        <strong>Conservative:</strong> 20% reduction in preventable cases<br>
+                        Average cost: $50K-$100K per case<br>
+                        Stress-related violations, leadership failures, performance issues<br>
+                        <strong>Plus:</strong> FEVS improvement, community relations
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-highlight" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <div class="stat-number">6-10x</div>
+                <div class="stat-label">Conservative ROI Multiple<br>$100M-$190M Total 5-Year Value<br>Against $12M-$18M Investment</div>
+            </div>
+            
+            <div class="info-box">
+                <h3>This EXCLUDES Unmeasured Benefits:</h3>
+                <ul>
+                    <li>Overtime cost reduction from improved retention</li>
+                    <li>Improved operational effectiveness (mission outcomes)</li>
+                    <li>FEVS score improvement impact on recruitment/retention</li>
+                    <li>Institutional knowledge preservation (2028 readiness)</li>
+                    <li><strong>Suicide prevention (immeasurable human value)</strong></li>
+                    <li>Community relations improvement</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <h3>⚠️ THE PREVENTION MATH:</h3>
+                <p style="font-size: 18px; margin-top: 10px;">
+                    <strong>Crisis Intervention Cost per Officer:</strong> $325K-$450K<br>
+                    (Workers comp + discipline + replacement + productivity loss)<br><br>
+                    <strong>Prevention Investment per Officer:</strong> $3K-$5K annually<br><br>
+                    <strong>Net Value:</strong> $275K-$305K saved per officer retained<br><br>
+                    <strong>Preventing ONE crisis pays for 50-100 officers' preventative support</strong>
+                </p>
+            </div>
+            
+            <div class="key-message">
+                <strong>Key Message:</strong> This isn't "warm and fuzzies." This is hard economics: prevention is 5-10x cheaper than crisis intervention. The question isn't "Can we afford this?" The question is "Can we afford NOT to act before 2028?" The math says acting now saves $100M+ over 5 years.
+            </div>
+        </div>
+        
+        <!-- SLIDE 8 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">Slide 8 of 10</div>
+                <h1>Implementation Roadmap</h1>
+                <p class="subtitle">Phased Approach to 2028 Readiness</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="phase-title">Phase 1: Pilot & Proof</div>
+                        <div class="phase-subtitle">Months 1-6 (Q1-Q2 2025)</div>
+                        <p><strong>Population:</strong> 1,000-1,500 personnel (single site)<br>
+                        <strong>Focus:</strong> Validate approach, baseline assessment, early wins<br>
+                        <strong>Success Criteria:</strong> 70%+ enrollment, 8-12% competency growth, retention trends improving<br>
+                        <strong>Decision Gate:</strong> Go/No-Go for Phase 2</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="phase-title">Phase 2: Scale & Refine</div>
+                        <div class="phase-subtitle">Months 7-18 (Q3 2025 - Q2 2026)</div>
+                        <p><strong>Population:</strong> 7,400-11,300 personnel (multi-site across all directorates)<br>
+                        <strong>Focus:</strong> Knowledge transfer, leadership development, family support<br>
+                        <strong>Success Criteria:</strong> 2-4% retention improvement, statistical validation<br>
+                        <strong>Decision Gate:</strong> Go/No-Go for Phase 3</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="phase-title">Phase 3: Enterprise Deployment</div>
+                        <div class="phase-subtitle">Months 19-36 (Q3 2026 - Q4 2027)</div>
+                        <p><strong>Population:</strong> Full 67,000 workforce<br>
+                        <strong>Priority Tier 1:</strong> 2028-eligible + all supervisors (20K)<br>
+                        <strong>Priority Tier 2:</strong> Frontline agents/officers (35K)<br>
+                        <strong>Priority Tier 3:</strong> Support personnel + new hires (12K)<br>
+                        <strong>Outcome:</strong> 2028 readiness achieved</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="phase-title">2028+ Sustainment</div>
+                        <div class="phase-subtitle">Ongoing Operations</div>
+                        <p><strong>Model:</strong> Continuous coaching, new hire onboarding, knowledge repository expansion<br>
+                        <strong>Governance:</strong> Quarterly performance reviews, annual ROI validation<br>
+                        <strong>Evolution:</strong> Best practice refinement, technology enhancements</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="success-box">
+                <h3>Risk Mitigation Strategies</h3>
+                <p><strong>Cultural Resistance:</strong> "Elite performers need support" messaging, leadership champions, voluntary enrollment initially<br>
+                <strong>Budget Constraints:</strong> Phased approach, pilot proves ROI first, conservative financial model<br>
+                <strong>Procurement Complexity:</strong> Partner with prime contractor if needed, leverage existing DHS vehicles</p>
+            </div>
+            
+            <div class="key-message">
+                <strong>Key Message:</strong> This isn't a big-bang implementation. It's disciplined, evidence-based rollout where each phase proves value before the next investment. We pilot with 1,000-2,000, validate retention impact and ROI, then scale strategically. By 2028, CBP has comprehensive resilience—not scrambling to build it during crisis.
+            </div>
+        </div>
+        
+        <!-- SLIDE 9 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">Slide 9 of 10</div>
+                <h1>Partnership Model</h1>
+                <p class="subtitle">Strategic Partnership — Not Vendor Relationship</p>
+            </div>
+            
+            <h2>Co-Creation Approach</h2>
+            
+            <div class="info-box">
+                <h3>Phase 1: Discovery & Customization</h3>
+                <p>• Deep dive into CBP operational reality (OFO, USBP, AMO differences)<br>
+                • Leadership competency mapping (align to CBP framework)<br>
+                • Cultural assessment (address "old school mentality" barriers)<br>
+                • Stakeholder workshops with Desiree, component leads, site leadership</p>
+            </div>
+            
+            <div class="info-box">
+                <h3>Phase 2: Collaborative Design</h3>
+                <p>• Program design sessions with resiliency teams<br>
+                • Integration with existing programs (EAP, CIRTs, peer support)<br>
+                • Consultant intelligence integration (Deep Water Point insights)<br>
+                • AI coaching scenario development (CBP doctrine-specific)</p>
+            </div>
+            
+            <div class="info-box">
+                <h3>Phase 3: Continuous Refinement</h3>
+                <p>• Quarterly business reviews (data-driven adjustments)<br>
+                • Real-time feedback loops (what's working, what needs iteration)<br>
+                • Cross-site learning communities (best practice sharing)<br>
+                • Strategic planning (2028 readiness, sustainment model)</p>
+            </div>
+            
+            <h2>Dedicated Support Team</h2>
+            
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-title">Strategic Layer</div>
+                    <div class="program-desc">Senior Behavioral Scientist • Federal Account Executive • Thought leadership & executive sponsorship</div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-title">Tactical Layer</div>
+                    <div class="program-desc">Account Manager • Delivery & Customer Success • Day-to-day execution & rapid response</div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-title">Analytics Layer</div>
+                    <div class="program-desc">People Insights Team • Real-time dashboards • ROI validation • Outcome studies</div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-title">Technical Layer</div>
+                    <div class="program-desc">Platform Integration • FedRAMP, HIPAA, 508 compliance • Salesforce, MS Teams integration</div>
+                </div>
+            </div>
+            
+            <div class="success-box">
+                <h3>Federal Expertise & Track Record</h3>
+                <p><strong>Air Force:</strong> 4+ years, pilot retention (6% improvement)<br>
+                <strong>WSIB Canada:</strong> 5-year study, 15,000 police officers<br>
+                <strong>NASA:</strong> Innovation & leadership (+33% team innovation)<br>
+                <strong>Navy:</strong> Multiple use cases (recruiting, SURFLANT, officers)<br>
+                <strong>FAA:</strong> Safety culture (+18% psychological safety)</p>
+            </div>
+            
+            <div class="quote">
+                "Anything he [Steve] says to me is pretty much golden, because he has just established that relationship. The technology and utilizing AI in just the right way to augment what we're getting from the human side, and then the science-based in addition to that, it just makes sense."
+                <div class="quote-author">— Noelani Aveina</div>
+            </div>
+            
+            <div class="key-message">
+                <strong>Key Message:</strong> We succeed when CBP succeeds. This isn't a vendor selling a product—it's a strategic partnership where we co-create Resiliency Program 2.0 based on your operational reality, your existing programs, and your 2028 timeline. We bring federal expertise, law enforcement precedent, and behavioral science rigor—but you define what success looks like.
+            </div>
+        </div>
+        
+        <!-- SLIDE 10 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">Slide 10 of 10</div>
+                <h1>The Strategic Choice</h1>
+                <p class="subtitle">Action vs. Inaction — Two Possible Futures for CBP</p>
+            </div>
+            
+            <div class="comparison-container">
+                <div class="path-card path-crisis">
+                    <div class="path-title">PATH 1: Continue Current Approach<br>(Crisis-Only Model)</div>
+                    
+                    <div class="outcome-item">Catastrophic knowledge loss — 40% workforce exits with institutional expertise</div>
+                    <div class="outcome-item">Operational capability degraded — 3-5 year replacement pipeline per officer</div>
+                    <div class="outcome-item">Retention death spiral — remaining workforce under extreme pressure</div>
+                    <div class="outcome-item">$1.2B+ financial impact — replacement costs, workers comp, overtime</div>
+                    <div class="outcome-item">Human tragedy continues — suicide rate, "severely broken" culture unchanged</div>
+                    <div class="outcome-item">Leadership failures persist — FEVS #432/459, toxic culture drives departures</div>
+                    <div class="outcome-item"><strong>2028 becomes an operational crisis</strong></div>
+                </div>
+                
+                <div class="path-card path-resilience">
+                    <div class="path-title">PATH 2: Strategic Investment<br>(Resiliency Program 2.0)</div>
+                    
+                    <div class="outcome-item">Knowledge preserved — 80%+ expertise captured before 2028 departures</div>
+                    <div class="outcome-item">Retention improvement — 200-400 officers retained annually, $75M-$150M value</div>
+                    <div class="outcome-item">Operational readiness maintained — smooth transition, mission effectiveness sustained</div>
+                    <div class="outcome-item">Leadership culture transformed — FEVS improves, performance-based management</div>
+                    <div class="outcome-item">6-10x ROI validated — $100M-$190M total 5-year value</div>
+                    <div class="outcome-item">Human lives saved — suicide rate declining, prevention working</div>
+                    <div class="outcome-item"><strong>2028 becomes a transition, not a crisis</strong></div>
+                </div>
+            </div>
+            
+            <div class="cta-box">
+                <div class="cta-title">The Question Reframed</div>
+                <div class="cta-text" style="font-size: 20px;">
+                    The question isn't "CAN WE AFFORD RESILIENCY PROGRAM 2.0?"<br><br>
+                    The question is "CAN WE AFFORD NOT TO ACT BEFORE 2028?"<br><br>
+                    • The 2028 retirement wave is coming regardless<br>
+                    • The only variable is whether CBP is strategically prepared or operationally disrupted<br>
+                    • Every month of delay = more institutional knowledge walks out without capture<br>
+                    • Acting now gives 2-3 years to prepare; waiting means crisis management<br><br>
+                    <strong>THIS IS A STRATEGIC INVESTMENT IN MISSION READINESS</strong>
+                </div>
+            </div>
+            
+            <h2>Next Steps: From Proposal to Partnership</h2>
+            
+            <div class="timeline" style="padding: 20px 0;">
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 10px 0;">
+                    <strong>STEP 1:</strong> Co-Creation Session with Desiree (Post-Thanksgiving 2024)<br>
+                    Validate strategic framing, refine priorities, identify pilot site
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 10px 0;">
+                    <strong>STEP 2:</strong> Detailed ROI Modeling Session (December 2024)<br>
+                    Customize financial assumptions, validate projections
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 10px 0;">
+                    <strong>STEP 3:</strong> Pilot Scope Definition (December 2024 - January 2025)<br>
+                    Select site, define population, establish baseline metrics
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 10px 0;">
+                    <strong>STEP 4:</strong> Stakeholder Engagement (January - February 2025)<br>
+                    Derek Knapp, component leadership, pilot site champions
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 10px 0;">
+                    <strong>STEP 5:</strong> Pilot Launch (Q1 2025 — within 90 days of approval)<br>
+                    Discovery, customization, measurement, Go/No-Go decision
+                </div>
+            </div>
+            
+            <div class="key-message" style="font-size: 18px;">
+                <strong>Key Message:</strong> The 2028 retirement wave is not hypothetical—it's 3 years away. CBP has a choice: strategically prepare now with a proven approach (Air Force +6%, WSIB $1.25-$2.14 ROI), or manage the crisis later when 40% of the workforce exits with decades of knowledge. The 6-10x ROI makes the financial case clear. Every month of delay means more knowledge lost, more officers cycling toward crisis, and less time to transform leadership culture. <strong>We're ready to start the co-creation session with Desiree to refine this approach and launch a pilot within 90 days. The path to 2028 readiness starts now—not after the wave hits.</strong>
+            </div>
+        </div>
+        
+        <!-- Footer/Contact -->
+        <div class="slide" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white;">
+            <h1 style="color: white; text-align: center; margin-bottom: 30px;">Contact Information</h1>
+            
+            <div style="text-align: center; font-size: 18px;">
+                <p><strong>Scott Robert Smith</strong><br>
+                Sr. Account Executive, Government<br>
+                scott.smith@betterup.co<br>
+                +1.919.349.5611</p>
+                
+                <p style="margin-top: 30px;"><strong>Eric Teasdale</strong><br>
+                RVP, Federal<br>
+                eric.teasdale@betterup.co</p>
+                
+                <p style="margin-top: 30px;"><strong>Dr. Carol Thornson</strong><br>
+                Sr. People Insights Consultant, Government<br>
+                carol.thornson@betterup.co</p>
+                
+                <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid rgba(255,255,255,0.3);">
+                    <p style="font-size: 16px; opacity: 0.9;">BetterUp for Government<br>
+                    Building Workforce Resilience for Mission-Critical Organizations</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="navigation">
+        <button class="nav-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑ Top</button>
+    </div>
+    
+</body>
+</html>
