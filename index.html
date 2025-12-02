@@ -400,13 +400,10 @@ backdrop-filter: blur(10px);
     }
 }
 
-/* retirement box sits lower and behind the hover cards */
-.crisis-overlay {
-    margin-top: -40px;  /* pulls box closer to timeline */
-    /* restore journey visuals */
+/* Journey path styling */
 .journey-path {
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 8%;
     right: 8%;
     height: 14px;
@@ -445,8 +442,10 @@ backdrop-filter: blur(10px);
     line-height: 1.4;
 }
 
+/* Retirement box sits lower and behind the hover cards */
+.crisis-overlay {
     position: absolute;
-    bottom: 20px;                   /* moves it DOWN */
+    bottom: 20px;
     left: 5%;
     right: 5%;
     background: rgba(220,38,38,0.28);
@@ -455,7 +454,7 @@ backdrop-filter: blur(10px);
     padding: 26px 32px;
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
-    z-index: 5;                     /* sits behind popups */
+    z-index: 5;
 }
         
         .overlay-title {
