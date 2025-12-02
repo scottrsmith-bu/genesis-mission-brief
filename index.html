@@ -247,6 +247,64 @@ backdrop-filter: blur(10px);
     overflow: visible;          /* allows tooltips to show */
 }
 
+/* base line under the stages */
+.journey-path {
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 50%;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #10b981, #fbbf24, #fb923c, #ef4444, #7f1d1d);
+    box-shadow: 0 0 24px rgba(0,0,0,0.5);
+}
+
+/* stage icon + label */
+.stage-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 10px auto;
+    background: rgba(15,23,42,0.9);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+.stage-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #e5e7eb;
+}
+
+/* clickable area */
+.journey-stage {
+    position: absolute;
+    top: 55%;                 /* tiny tweak so path sits just beneath icons */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.25s ease, filter 0.25s ease;
+    z-index: 20;
+}
+
+.journey-stage:hover {
+    transform: translate(-50%, -55%) scale(1.04);
+    filter: brightness(1.15);
+}
+
+/* show popup on hover */
+.journey-stage:hover .stage-detail {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(-6px);
+}
+
 /* make sure the stages + tooltips sit above the retirement box */
 .journey-stage {
     z-index: 20;
@@ -282,6 +340,48 @@ backdrop-filter: blur(10px);
 
 /* retirement box sits lower and behind the hover cards */
 .crisis-overlay {
+    /* restore journey visuals */
+.journey-path {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    right: 8%;
+    height: 14px;
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        #10b981 0%,
+        #10b981 25%,
+        #fbbf24 25%,
+        #fbbf24 50%,
+        #fb923c 50%,
+        #fb923c 75%,
+        #b91c1c 75%,
+        #7f1d1d 100%
+    );
+    box-shadow: 0 0 20px rgba(15,118,110,0.5);
+}
+
+.stage-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 8px auto;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+.stage-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #e5e7eb;
+    line-height: 1.4;
+}
+
     position: absolute;
     bottom: 20px;                   /* moves it DOWN */
     left: 5%;
@@ -445,6 +545,27 @@ backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
         }
+        /* --- IMPROVED CONTRAST FOR SAFETY NET CARDS --- */
+.section-accent .interactive-card {
+    background: radial-gradient(circle at top left, #6366f1 0%, #1e293b 55%, #0f172a 100%);
+    border: 1px solid rgba(148,163,184,0.35);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+    backdrop-filter: blur(12px);
+}
+
+.section-accent .interactive-card .card-title {
+    color: #e5e7eb;  /* soft white */
+}
+
+.section-accent .interactive-card .card-desc {
+    color: #cbd5e1;  /* slate */
+}
+
+.section-accent .card-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+    opacity: 0.9;
+}
         
         .interactive-card::before {
             content: '';
