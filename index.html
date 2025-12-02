@@ -1700,8 +1700,15 @@ backdrop-filter: blur(10px);
                             </div>
                         </div>
                         
-                        <div style="margin-top: 40px; text-align: center;">
-                            <img src="opp-badge.png" alt="Ontario Provincial Police" style="width: 220px; opacity: 0.9;">
+                        <!-- First Responder Images -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+                            <img src="firefighter-action.png" alt="First Responder in Action" style="width: 100%; border-radius: 16px; border: 3px solid rgba(96,165,250,0.5); object-fit: cover; height: 220px;">
+                            <img src="firefighter-female.png" alt="First Responder" style="width: 100%; border-radius: 16px; border: 3px solid rgba(96,165,250,0.5); object-fit: cover; height: 220px;">
+                        </div>
+                        
+                        <div style="margin-top: 30px; text-align: center;">
+                            <img src="opp-badge.png" alt="Ontario Provincial Police" style="width: 180px; opacity: 0.9;">
+                            <p style="font-size: 14px; color: #60a5fa; margin-top: 10px; font-weight: 600;">15,000 OPP Officers Participating</p>
                         </div>
                     </div>
                 </div>
@@ -1861,41 +1868,44 @@ backdrop-filter: blur(10px);
 </div>
             
             <!-- VISUAL: ALL REACTIVE PROGRAMS -->
-<div class="current-state-panel fade-in">
-    <h3>Current State: All Programs Engage After Crisis Threshold</h3>
+<div class="current-state-panel fade-in" style="background: rgba(15,23,42,0.6); border: 2px solid rgba(148,163,184,0.3);">
+    <h3 style="color: #f87171; font-size: 26px; text-align: center; margin-bottom: 40px;">Current State: All Programs Engage After Crisis Threshold</h3>
 
-    <div class="current-state-grid">
-        <div>
-            <div class="column-title">EROSION ZONE<br>(Years 3–15)</div>
-            <ul>
+    <div class="current-state-grid" style="max-width: 1000px; margin: 0 auto;">
+        <div style="background: rgba(239,68,68,0.15); border: 2px solid rgba(239,68,68,0.4); border-radius: 16px; padding: 35px;">
+            <div class="column-title" style="color: #fca5a5; font-size: 18px; margin-bottom: 20px; text-align: center;">
+                EROSION ZONE<br>(Years 3–15)
+            </div>
+            <ul style="color: #fecaca; font-size: 15px; line-height: 1.8;">
                 <li>54% PTSD screening</li>
                 <li>3x mental illness risk</li>
                 <li>Purpose depleting</li>
                 <li>Cumulative burden</li>
             </ul>
-            <p style="margin-top: 15px; color: #f87171;">
-                <strong>✖ NO INTERVENTION</strong>
+            <p style="margin-top: 20px; color: #ef4444; text-align: center; font-size: 16px; font-weight: 700;">
+                ✖ NO INTERVENTION
             </p>
         </div>
 
-        <div class="arrow">→</div>
+        <div class="arrow" style="color: #f87171; font-size: 48px;">→</div>
 
-        <div>
-            <div class="column-title">CRISIS STAGE<br>(Officers “Severely Broken”)</div>
-            <ul>
+        <div style="background: rgba(245,158,11,0.15); border: 2px solid rgba(245,158,11,0.4); border-radius: 16px; padding: 35px;">
+            <div class="column-title" style="color: #fbbf24; font-size: 18px; margin-bottom: 20px; text-align: center;">
+                CRISIS STAGE<br>(Officers "Severely Broken")
+            </div>
+            <ul style="color: #fde68a; font-size: 15px; line-height: 1.8;">
                 <li>✓ EAP engaged</li>
                 <li>✓ CIRTs respond</li>
                 <li>✓ Peer support activated</li>
                 <li>✓ Chaplains involved</li>
                 <li>✓ OP Psychs assess</li>
             </ul>
-            <p style="margin-top: 15px; color: #facc15;">
-                <strong>⚠ ALL REACTIVE</strong>
+            <p style="margin-top: 20px; color: #fbbf24; text-align: center; font-size: 16px; font-weight: 700;">
+                ⚠ ALL REACTIVE
             </p>
         </div>
     </div>
 </div>
-
     </section>
     <!-- SECTION 5: THE MISSING LAYER -->
 <section class="section section-green" id="missing">
