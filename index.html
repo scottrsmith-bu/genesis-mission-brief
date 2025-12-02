@@ -357,12 +357,24 @@ backdrop-filter: blur(10px);
     border-radius: 16px;
     font-size: 13px;
     width: 280px;
-    opacity: 0;
-    pointer-events: none;
+    opacity: 1; /* CHANGED: visible by default */
+    pointer-events: auto; /* CHANGED: interactive by default */
     transition: all 0.3s;
     border: 2px solid rgba(255,255,255,0.2);
     box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    z-index: 30; /* on top of everything in this container */
+    animation: fadeInSequence 0.8s ease-out forwards;
+}
+
+/* Sequential reveal animation */
+@keyframes fadeInSequence {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
 }
 
 /* retirement box sits lower and behind the hover cards */
@@ -1340,7 +1352,7 @@ backdrop-filter: blur(10px);
                 <div class="journey-stage" style="left: 10%;">
                     <div class="stage-icon" style="background: rgba(16,185,129,0.3); border-color: #10b981;">🎯</div>
                     <div class="stage-label">START<br>Years 0-3</div>
-                    <div class="stage-detail">
+                    <div class="stage-detail" style="animation-delay: 0.3s;">
                         <strong style="color: #10b981; font-size: 16px;">High Commitment Phase</strong>
                         <div style="margin: 12px 0; line-height: 1.6;">
                             • Mission-driven motivation<br>
@@ -1358,7 +1370,7 @@ backdrop-filter: blur(10px);
                 <div class="journey-stage" style="left: 32%;">
                     <div class="stage-icon" style="background: rgba(251,191,36,0.3); border-color: #fbbf24; animation: pulse 2s ease-in-out infinite;">⚠️</div>
                     <div class="stage-label">EROSION<br>Years 3-10</div>
-                    <div class="stage-detail">
+                    <div class="stage-detail" style="animation-delay: 0.8s;">
                         <strong style="color: #fbbf24; font-size: 16px;">PEAK VULNERABILITY WINDOW</strong>
                         <div style="margin: 12px 0; line-height: 1.6;">
                             • Purpose "tank running dry"<br>
@@ -1378,7 +1390,7 @@ backdrop-filter: blur(10px);
                 <div class="journey-stage" style="left: 57%;">
                     <div class="stage-icon" style="background: rgba(251,146,60,0.3); border-color: #fb923c;">🔥</div>
                     <div class="stage-label">THRESHOLD<br>Years 10-15</div>
-                    <div class="stage-detail">
+                    <div class="stage-detail" style="animation-delay: 1.3s;">
                         <strong style="color: #fb923c; font-size: 16px;">Clinical Impairment Crossing</strong>
                         <div style="margin: 12px 0; line-height: 1.6;">
                             • From "struggling" to "broken"<br>
@@ -1398,7 +1410,7 @@ backdrop-filter: blur(10px);
                 <div class="journey-stage" style="left: 82%;">
                     <div class="stage-icon" style="background: rgba(239,68,68,0.3); border-color: #ef4444;">💔</div>
                     <div class="stage-label">CRISIS<br>Years 15+</div>
-                    <div class="stage-detail">
+                    <div class="stage-detail" style="animation-delay: 1.8s;">
                         <strong style="color: #ef4444; font-size: 16px;">Crisis Stage</strong>
                         <div style="margin: 12px 0; line-height: 1.6;">
                             • Breakdown, medical leave<br>
