@@ -28,6 +28,51 @@
     z-index: 50;
     pointer-events: none;
 }
+
+.current-state-panel {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin-top: 60px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.current-state-panel h3 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #f43f5e, #f97316);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.current-state-panel .column-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #facc15; /* bright yellow */
+    margin-bottom: 12px;
+}
+
+.current-state-panel p,
+.current-state-panel li {
+    color: #e2e8f0; /* soft white */
+    font-size: 15px;
+}
+
+.hero-logo {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    width: 140px;
+    height: auto;
+    z-index: 20;
+    opacity: 0.95;
+    pointer-events: none;
+}
         
         /* SCROLL PROGRESS BAR */
         .scroll-progress {
@@ -193,131 +238,62 @@ backdrop-filter: blur(10px);
         }
         /* JOURNEY VISUALIZATION */
         .journey-container {
-            position: relative;
-            min-height: 500px;
-            margin: 50px 0;
-            background: rgba(255,255,255,0.03);
-            border-radius: 20px;
-            padding: 60px 40px 180px;
-            overflow: visible;
-        }
-        
-        .journey-path {
-            position: absolute;
-            top: 50%;
-            left: 5%;
-            right: 5%;
-            height: 10px;
-            background: linear-gradient(to right, 
-                #10b981 0%, 
-                #10b981 20%, 
-                #fbbf24 20%, 
-                #fbbf24 45%, 
-                #fb923c 45%, 
-                #fb923c 70%, 
-                #ef4444 70%, 
-                #ef4444 90%,
-                #7c2d12 90%,
-                #7c2d12 100%);
-            border-radius: 5px;
-            transform: translateY(-50%);
-            box-shadow: 0 4px 20px rgba(96,165,250,0.3);
-        }
-        
-        .journey-stage {
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 100;
-        }
-        
-        .journey-stage:hover {
-            transform: translate(-50%, -50%) scale(1.15);
-        }
-        
-        .stage-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            margin: 0 auto 15px;
-            border: 4px solid rgba(255,255,255,0.4);
-            -webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-            transition: all 0.3s;
-        }
-        
-        .journey-stage:hover .stage-icon {
-            box-shadow: 0 12px 48px rgba(96,165,250,0.5);
-        }
-        
-        .stage-label {
-            font-size: 15px;
-            font-weight: 700;
-            white-space: nowrap;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        }
-        
-        .stage-detail {
-            position: absolute;
-            top: -180px;
-            left: 50%;
-            transform: translateX(-50%);
-                background: rgba(0,0,0,0.95);
+    position: relative;
+    min-height: 700px;          /* gives plenty of room */
+    margin: 50px 0;
+    background: rgba(255,255,255,0.03);
+    border-radius: 20px;
+    padding: 60px 40px 220px;   /* extra space for retirement box */
+    overflow: visible;          /* allows tooltips to show */
+}
+
+/* make sure the stages + tooltips sit above the retirement box */
+.journey-stage {
+    z-index: 20;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 20;
+}
+
+.stage-detail {
+    z-index: 30;
+    position: absolute;
+    top: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.95);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
-            padding: 20px 24px;
-            border-radius: 16px;
-            font-size: 13px;
-            width: 280px;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s;
-            border: 2px solid rgba(255,255,255,0.2);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-        }
-        
-        .journey-stage:hover .stage-detail {
-            opacity: 1;
-            top: -200px;
-        }
-        
-        .detail-stat {
-            font-size: 28px;
-            font-weight: 900;
-            color: #60a5fa;
-            margin: 8px 0;
-        }
-        
-        .detail-citation {
-            font-size: 11px;
-            color: #94a3b8;
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-style: italic;
-        }
-        
-        /* CRISIS OVERLAY */
-        .crisis-overlay {
-            position: absolute;
-            bottom: 60px;
-            left: 5%;
-            right: 5%;
-            background: rgba(220,38,38,0.2);
-            border: 3px dashed rgba(220,38,38,0.5);
-            border-radius: 12px;
-            padding: 20px;
-            -webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px);
-        }
+    padding: 20px 24px;
+    border-radius: 16px;
+    font-size: 13px;
+    width: 280px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    border: 2px solid rgba(255,255,255,0.2);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    z-index: 30; /* on top of everything in this container */
+}
+
+/* retirement box sits lower and behind the hover cards */
+.crisis-overlay {
+    position: absolute;
+    bottom: 20px;                   /* moves it DOWN */
+    left: 5%;
+    right: 5%;
+    background: rgba(220,38,38,0.28);
+    border: 3px dashed rgba(220,38,38,0.55);
+    border-radius: 14px;
+    padding: 26px 32px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    z-index: 5;                     /* sits behind popups */
+}
         
         .overlay-title {
             font-size: 18px;
@@ -633,6 +609,56 @@ backdrop-filter: blur(10px);
     margin: 15px 0;
 }
 
+.current-state-panel {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin-top: 60px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.current-state-panel h3 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #f472b6, #fb923c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+.current-state-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.column-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #facc15;
+    margin-bottom: 14px;
+}
+
+.current-state-panel ul {
+    color: #e2e8f0;
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-left: 0;
+}
+
+.current-state-panel .arrow {
+    font-size: 40px;
+    font-weight: 600;
+    color: #fb7185;
+}
         
         .metric-label {
             font-size: 16px;
@@ -980,6 +1006,8 @@ backdrop-filter: blur(10px);
     
     <!-- HERO SECTION -->
     <section class="hero">
+            <img src="betterup-logo.png" class="hero-logo" alt="BetterUp logo">
+    <div class="hero-content">
         <div class="hero-content">
             <h1>CBP Resiliency Program 2.0</h1>
             <p class="hero-subtitle">An Evidence-Based Strategy for Workforce Sustainability Before 2028</p>
@@ -1520,43 +1548,41 @@ backdrop-filter: blur(10px);
             </div>
             
             <!-- VISUAL: ALL REACTIVE PROGRAMS -->
-            <div style="background: rgba(239,68,68,0.1); border: 3px solid rgba(239,68,68,0.3); border-radius: 20px; padding: 40px; margin-top: 50px;" class="fade-in">
-                <h3 style="font-size: 24px; font-weight: 800; color: #fca5a5; margin-bottom: 30px; text-align: center;">
-                    Current State: All Programs Engage After Crisis Threshold
-                </h3>
-                
-                <div style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px; max-width: 800px; margin: 0 auto;">
-                    <div style="text-align: right;">
-                        <div style="font-size: 18px; font-weight: 700; color: #fbbf24; margin-bottom: 12px;">
-                            EROSION ZONE<br>(Years 3-15)
-                        </div>
-                        <div style="font-size: 14px; color: #fde68a; line-height: 1.6;">
-                            • 54% PTSD screening<br>
-                            • 3x mental illness risk<br>
-                            • Purpose depleting<br>
-                            • Cumulative burden<br><br>
-                            <strong style="color: #fef3c7;">❌ NO INTERVENTION</strong>
-                        </div>
-                    </div>
-                    
-                    <div style="font-size: 48px; color: #fca5a5;">→</div>
-                    
-                    <div style="text-align: left;">
-                        <div style="font-size: 18px; font-weight: 700; color: #ef4444; margin-bottom: 12px;">
-                            CRISIS STAGE<br>(Officers "Severely Broken")
-                        </div>
-                        <div style="font-size: 14px; color: #fecaca; line-height: 1.6;">
-                            ✓ EAP engaged<br>
-                            ✓ CIRTs respond<br>
-                            ✓ Peer support activated<br>
-                            ✓ Chaplains involved<br>
-                            ✓ OP Psychs assess<br><br>
-                            <strong style="color: #fef3c7;">⚠️ ALL REACTIVE</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="current-state-panel fade-in">
+    <h3>Current State: All Programs Engage After Crisis Threshold</h3>
+
+    <div class="current-state-grid">
+        <div>
+            <div class="column-title">EROSION ZONE<br>(Years 3–15)</div>
+            <ul>
+                <li>54% PTSD screening</li>
+                <li>3x mental illness risk</li>
+                <li>Purpose depleting</li>
+                <li>Cumulative burden</li>
+            </ul>
+            <p style="margin-top: 15px; color: #f87171;">
+                <strong>✖ NO INTERVENTION</strong>
+            </p>
         </div>
+
+        <div class="arrow">→</div>
+
+        <div>
+            <div class="column-title">CRISIS STAGE<br>(Officers “Severely Broken”)</div>
+            <ul>
+                <li>✓ EAP engaged</li>
+                <li>✓ CIRTs respond</li>
+                <li>✓ Peer support activated</li>
+                <li>✓ Chaplains involved</li>
+                <li>✓ OP Psychs assess</li>
+            </ul>
+            <p style="margin-top: 15px; color: #facc15;">
+                <strong>⚠ ALL REACTIVE</strong>
+            </p>
+        </div>
+    </div>
+</div>
+
     </section>
     <!-- SECTION 5: THE MISSING LAYER -->
     <section class="section section-green" id="missing">
