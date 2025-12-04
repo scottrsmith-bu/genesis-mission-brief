@@ -1489,24 +1489,9 @@ backdrop-filter: blur(10px);
             <div class="factor-visualization fade-in">
                 <div class="factor-title">The Behavioral Health Factor Model</div>
                
-                <div style="background: rgba(96,165,250,0.1); border: 2px solid rgba(96,165,250,0.3); border-radius: 16px; padding: 32px; margin-bottom: 40px; text-align: center;">
-                    <div style="font-size: 18px; color: #60a5fa; font-weight: 700; margin-bottom: 16px;">
-                        💡 How to Read This Model
-                    </div>
-                    <p style="font-size: 16px; color: #93c5fd; line-height: 1.8; margin-bottom: 12px;">
-                        Each box shows a behavioral health condition and its organizational impact.
-                        The <strong style="color: #fbbf24;">large percentage</strong> is the <strong>prevalence rate</strong>—how many officers are affected—along with comparisons to the general population and impacts on retention and workers compensation costs.
-                    </p>
-                    <p style="font-size: 15px; color: #cbd5e1; line-height: 1.7;">
-                        These conditions often occur together (comorbidity), so we apply a 35% overlap adjustment below to avoid
-                        counting the same officers multiple times. <strong style="color: #10b981;">The strategic insight: addressing the root
-                        cause (behavioral health crisis) prevents ALL THREE cost categories simultaneously.</strong>
-                    </p>
-                </div>
-               
                 <div class="factors-container">
-                    <div class="factor-box">
-                        <div class="factor-name">🧠 PTSD & Trauma</div>
+                    <div class="factor-box" style="background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.4);">
+                        <div class="factor-name" style="color: #fca5a5;">🧠 PTSD & Trauma</div>
                         <div class="factor-prevalence">18%</div>
                         <div class="factor-affected">of officers affected</div>
                         <div style="margin-top: 16px; font-size: 13px; color: #fecaca; line-height: 1.6;">
@@ -1517,8 +1502,8 @@ backdrop-filter: blur(10px);
                         </div>
                     </div>
                    
-                    <div class="factor-box">
-                        <div class="factor-name">😔 Depression & Burnout</div>
+                    <div class="factor-box" style="background: rgba(251,146,60,0.15); border-color: rgba(251,146,60,0.4);">
+                        <div class="factor-name" style="color: #fdba74;">😔 Depression & Burnout</div>
                         <div class="factor-prevalence">18%</div>
                         <div class="factor-affected">of officers affected</div>
                         <div style="margin-top: 16px; font-size: 13px; color: #fecaca; line-height: 1.6;">
@@ -1529,8 +1514,8 @@ backdrop-filter: blur(10px);
                         </div>
                     </div>
                    
-                    <div class="factor-box">
-                        <div class="factor-name">😰 Anxiety & Stress</div>
+                    <div class="factor-box" style="background: rgba(251,191,36,0.15); border-color: rgba(251,191,36,0.4);">
+                        <div class="factor-name" style="color: #fde047;">😰 Anxiety & Stress</div>
                         <div class="factor-prevalence">15%</div>
                         <div class="factor-affected">of officers affected</div>
                         <div style="margin-top: 16px; font-size: 13px; color: #fecaca; line-height: 1.6;">
@@ -1541,8 +1526,8 @@ backdrop-filter: blur(10px);
                         </div>
                     </div>
                    
-                    <div class="factor-box">
-                        <div class="factor-name">🍺 Substance Use Disorders</div>
+                    <div class="factor-box" style="background: rgba(168,85,247,0.15); border-color: rgba(168,85,247,0.4);">
+                        <div class="factor-name" style="color: #d8b4fe;">🍺 Substance Use Disorders</div>
                         <div class="factor-prevalence">25%</div>
                         <div class="factor-affected">of officers affected</div>
                         <div style="margin-top: 16px; font-size: 13px; color: #fecaca; line-height: 1.6;">
@@ -1552,40 +1537,6 @@ backdrop-filter: blur(10px);
                             • <a href="https://pubmed.ncbi.nlm.nih.gov/32439827/" target="_blank" style="color: #fecaca; text-decoration: underline;">Source: Syed et al. 2020</a>
                         </div>
                     </div>
-                </div>
-               
-                <!-- COMORBIDITY ADJUSTMENT VISUAL -->
-                <div class="comorbidity-visual">
-                    <h3 style="font-size: 24px; font-weight: 800; color: #fbbf24; margin-bottom: 20px;">
-                        Preventing Double-Counting: The Overlap Adjustment
-                    </h3>
-                    <p style="font-size: 15px; color: #fde68a; margin-bottom: 30px; line-height: 1.6;">
-                        These conditions often occur together—an officer with PTSD may also have depression.
-                        To avoid counting the same officers multiple times, we apply a <strong>35% overlap adjustment</strong>
-                        (called "comorbidity" in research).
-                    </p>
-                   
-                    <div class="overlap-diagram">
-                        <div class="overlap-circle" style="background: rgba(239,68,68,0.3); border-color: #ef4444; color: #fca5a5;">
-                            <div style="font-size: 14px; opacity: 0.8;">Raw Total</div>
-                            <div>76</div>
-                        </div>
-                        <div class="overlap-arrow">→</div>
-                        <div class="overlap-circle" style="background: rgba(245,158,11,0.3); border-color: #fbbf24; color: #fbbf24;">
-                            <div style="font-size: 14px; opacity: 0.8;">-35% Overlap</div>
-                            <div>-27</div>
-                        </div>
-                        <div class="overlap-arrow">→</div>
-                        <div class="overlap-circle" style="background: rgba(16,185,129,0.3); border-color: #10b981; color: #6ee7b7;">
-                            <div style="font-size: 14px; opacity: 0.8;">Unique</div>
-                            <div>49</div>
-                        </div>
-                    </div>
-                   
-                    <p style="font-size: 14px; color: #fde68a; margin-top: 20px; text-align: center;">
-                        <strong>Out of 100 officers or agents:</strong> If we counted independently, we'd have 76 affected.
-                        With 35% comorbidity adjustment, we have 49 <strong>unique</strong> officers affected.
-                    </p>
                 </div>
                
                 <!-- THE CASCADE VISUAL -->
