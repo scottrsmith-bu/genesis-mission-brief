@@ -928,21 +928,7 @@ backdrop-filter: blur(10px);
             transition: all 0.4s;
         }
        
-        .roi-pathway::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: shimmer 3s linear infinite;
-        }
-       
-        @keyframes shimmer {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
+        /* Removed shimmer animation */
        
         .roi-pathway:hover {
             transform: scale(1.05);
@@ -1034,17 +1020,7 @@ backdrop-filter: blur(10px);
             overflow: hidden;
         }
        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
-            border-radius: 50%;
-            top: -200px;
-            right: -200px;
-            animation: pulse 4s ease-in-out infinite;
-        }
+        /* Removed pulse animation */
        
         .cta-title {
             font-size: clamp(28px, 5vw, 42px);
@@ -1229,16 +1205,14 @@ backdrop-filter: blur(10px);
                 </div>
             </div>
            
+            <!-- Compact callout box -->
+            <div style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); border-radius: 16px; padding: 32px 40px; margin: 40px auto 0 auto; max-width: 900px; box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
+                <div style="font-size: 22px; font-weight: 700; margin-bottom: 16px; text-align: center;">This Isn't Theory</div>
+                <div style="font-size: 17px; line-height: 1.6; text-align: center;">
+                    <strong style="color: #fbbf24;">CBP officers and USBP Agents experience emotional exhaustion and burnout within months when job demands exceed resources—creating multiple intervention points before clinical deterioration occurs years later.</strong>
+                </div>
+            </div>
            
-        </div>
-    </section>
-
-    <div style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); border-radius: 16px; padding: 32px 40px; margin: 40px auto 0 auto; max-width: 900px; box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
-    <div style="font-size: 22px; font-weight: 700; margin-bottom: 16px; text-align: center;">This Isn't Theory</div>
-    <div style="font-size: 17px; line-height: 1.6; text-align: center;">
-        <strong style="color: #fbbf24;">CBP officers and USBP Agents experience emotional exhaustion and burnout within months when job demands exceed resources—creating multiple intervention points before clinical deterioration occurs years later.</strong>
-    </div>
-</div>
         </div>
     </section>
    
