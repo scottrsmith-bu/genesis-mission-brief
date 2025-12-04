@@ -361,11 +361,12 @@ backdrop-filter: blur(10px);
     background: rgba(0,0,0,0.95);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
-    padding: 20px 24px;
+    padding: 18px 20px;
     border-radius: 16px;
-    font-size: 13px;
-    width: 280px;
-    opacity: 0; /* Start invisible for animation */
+    font-size: 12px;
+    width: 290px;
+    max-width: 290px;
+    opacity: 0;
     pointer-events: auto;
     border: 2px solid rgba(255,255,255,0.2);
     box-shadow: 0 20px 60px rgba(0,0,0,0.5);
@@ -1421,85 +1422,83 @@ backdrop-filter: blur(10px);
     <img src="betterup-logo.png" class="section-logo" alt="BetterUp logo">
 
     <div class="content-wrapper">
-        <h2 class="section-title fade-in gradient-text">The Career Arc of a High-Stress Profession</h2>
-        <p class="section-subtitle fade-in">What science tells us about CBP personnel performance and risk across years of service</p>
+        <h2 class="section-title fade-in gradient-text">CBP Officer Performance Continuum: From Burnout to Crisis</h2>
+        <p class="section-subtitle fade-in">Research-validated timeline showing when and why CBP officers transition from high-performing to vulnerable</p>
             
             <div class="journey-container fade-in" style="margin-top: 60px;">
                 <div class="journey-path"></div>
                 
-                <!-- STAGE 1: STARTING POINT -->
+                <!-- STAGE 1: INITIAL PHASE -->
                 <div class="journey-stage" style="left: 10%;">
                     <div class="stage-icon" style="background: rgba(16,185,129,0.3); border-color: #10b981;">🎯</div>
-                    <div class="stage-label">START<br>Years 0-3</div>
+                    <div class="stage-label">INITIAL<br>Months 0-6</div>
                     <div class="stage-detail" style="animation-delay: 0.3s;">
                         <strong style="color: #10b981; font-size: 16px;">High Commitment Phase</strong>
                         <div style="margin: 12px 0; line-height: 1.6;">
                             • Mission-driven motivation<br>
                             • Academy ideals intact<br>
-                            • Strong sense of purpose<br>
-                            • Peak capability
+                            • Demands beginning to exceed resources<br>
+                            • Foundation being stressed
                         </div>
                         <div class="detail-stat">Baseline</div>
-                        <div style="font-size: 12px;">Mental health risk: OR 1.0</div>
-                        <div class="detail-citation">Source: Jetelina et al. 2020 (Dallas PD Study)</div>
+                        <div style="font-size: 12px;">No burnout yet, but pressure building</div>
+                        <div class="detail-citation">Source: Dr. Carol Thornson 2025; JD-R Model</div>
                     </div>
                 </div>
                 
-                <!-- STAGE 2: EROSION ZONE - CRITICAL -->
-                <div class="journey-stage" style="left: 32%;">
+                <!-- STAGE 2: BURNOUT ONSET - CRITICAL -->
+                <div class="journey-stage" style="left: 35%;">
                     <div class="stage-icon" style="background: rgba(251,191,36,0.3); border-color: #fbbf24; animation: pulse 2s ease-in-out infinite;">⚠️</div>
-                    <div class="stage-label">BURNOUT ONSET<br>Months 6-12</div>
-                    <div class="stage-detail" style="animation-delay: 0.8s;">
-                        <strong style="color: #fbbf24; font-size: 16px;">BURNOUT IN 6-12 MONTHS (NOT YEARS!)</strong>
-                        <div style="margin: 12px 0; line-height: 1.6;">
-                            • <strong>Job Demands-Resources Model: Burnout emerges in 6-12 months when demands exceed resources</strong><br>
-                            • CBP's 37% burnout rate vs. 19-30% general workforce<br>
-                            • Organizational stressors (overtime, understaffing, leadership) drive 70%+<br>
-                            • Officers need intervention NOW, not after years
+                    <div class="stage-label">BURNOUT<br>Months 6-18</div>
+                    <div class="stage-detail" style="animation-delay: 0.8s; width: 300px;">
+                        <strong style="color: #fbbf24; font-size: 15px;">Clinical Burnout Manifests</strong>
+                        <div style="margin: 12px 0; line-height: 1.5; font-size: 13px;">
+                            • Organizational stressors drive 70%+<br>
+                            • Chronic overtime (>55hrs = 65% higher suicide risk)<br>
+                            • CBP: 37% burnout vs. 19-30% general workforce<br>
+                            • Officers functional but struggling
                         </div>
-                        <div class="detail-stat" style="color: #fbbf24;">6-12 mo</div>
-                        <div style="font-size: 12px;">Burnout onset timeline (IO Psychology)</div>
                         <div class="detail-stat" style="color: #fbbf24;">37%</div>
-                        <div style="font-size: 12px;">CBP burnout rate vs. 19-30% general workforce</div>
-                        <div class="detail-citation">Source: Dr. Carol Thornson 2025; Job Demands-Resources Model</div>
+                        <div style="font-size: 12px;">CBP burnout rate</div>
+                        <div class="detail-citation">Dr. Carol Thornson 2025; JD-R Model</div>
                     </div>
                 </div>
                 
-                <!-- STAGE 3: CRITICAL THRESHOLD -->
-                <div class="journey-stage" style="left: 57%;">
+                <!-- STAGE 3: CLINICAL THRESHOLD -->
+                <div class="journey-stage" style="left: 62%;">
                     <div class="stage-icon" style="background: rgba(251,146,60,0.3); border-color: #fb923c;">🔥</div>
-                    <div class="stage-label">THRESHOLD<br>Years 10-15</div>
-                    <div class="stage-detail" style="animation-delay: 1.3s;">
-                        <strong style="color: #fb923c; font-size: 16px;">Clinical Impairment Crossing</strong>
-                        <div style="margin: 12px 0; line-height: 1.6;">
-                            • From "struggling" to "broken"<br>
-                            • Chronic symptoms emerge<br>
-                            • Lost motivation<br>
-                            • Burnout onset
+                    <div class="stage-label">CLINICAL<br>Years 2-5</div>
+                    <div class="stage-detail" style="animation-delay: 1.3s; width: 300px;">
+                        <strong style="color: #fb923c; font-size: 15px;">From Burnout to Clinical Impairment</strong>
+                        <div style="margin: 12px 0; line-height: 1.5; font-size: 13px;">
+                            • PTSD, depression, anxiety symptoms emerge<br>
+                            • From "burnt out" to "clinically impaired"<br>
+                            • Separation risk accelerates<br>
+                            • Help-seeking begins (often too late)
                         </div>
-                        <div class="detail-stat" style="color: #fb923c;">14-15%</div>
-                        <div style="font-size: 12px;">Clinical PTSD/depression prevalence</div>
-                        <div class="detail-stat" style="color: #fb923c;">~33%</div>
-                        <div style="font-size: 12px;">Cross from resilient to vulnerable</div>
-                        <div class="detail-citation">Source: Syed et al. 2020 meta-analysis (67 studies)</div>
+                        <div class="detail-stat" style="color: #fb923c;">54%</div>
+                        <div style="font-size: 12px;">PTSD screening positive (years 5-10)</div>
+                        <div class="detail-stat" style="color: #fb923c;">14-18%</div>
+                        <div style="font-size: 12px;">Clinical diagnosis prevalence</div>
+                        <div class="detail-citation">Lilly & Curry 2020; Syed et al. 2020</div>
                     </div>
                 </div>
                 
                 <!-- STAGE 4: CRISIS -->
-                <div class="journey-stage" style="left: 82%;">
+                <div class="journey-stage" style="left: 88%;">
                     <div class="stage-icon" style="background: rgba(239,68,68,0.3); border-color: #ef4444;">💔</div>
-                    <div class="stage-label">CRISIS<br>Years 15+</div>
-                    <div class="stage-detail" style="animation-delay: 1.8s;">
-                        <strong style="color: #ef4444; font-size: 16px;">Crisis Stage</strong>
-                        <div style="margin: 12px 0; line-height: 1.6;">
-                            • Breakdown, medical leave<br>
-                            • Separations accelerate<br>
-                            • Suicide risk peaks<br>
-                            • "Severely broken"
+                    <div class="stage-label">CRISIS<br>Years 5-10+</div>
+                    <div class="stage-detail" style="animation-delay: 1.8s; width: 290px;">
+                        <strong style="color: #ef4444; font-size: 15px;">"Severely Broken" Stage</strong>
+                        <div style="margin: 12px 0; line-height: 1.5; font-size: 13px;">
+                            • Medical leave, discipline cases<br>
+                            • Separations peak<br>
+                            • Suicide risk highest<br>
+                            • EAP/CIRTs engage (reactive)
                         </div>
                         <div class="detail-stat" style="color: #ef4444;">7.4x</div>
                         <div style="font-size: 12px;">Lifetime diagnosis odds</div>
-                        <div class="detail-citation">Source: Jetelina et al. 2020; Violanti & Marshall 1983</div>
+                        <div class="detail-citation">Jetelina et al. 2020; Violanti & Marshall 1983</div>
                     </div>
                 </div>
                 
