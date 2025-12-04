@@ -1743,56 +1743,22 @@ backdrop-filter: blur(10px);
         <p class="section-subtitle fade-in">Critical programs that protect officers and agents — primarily reactive and crisis-stage</p>
 
            
-            <div class="cards-grid fade-in">
-    <div class="interactive-card">
-        <div class="card-icon">🔹</div>
-        <div class="card-title">Employee Assistance Program</div>
-        <div class="card-desc">
-            24/7 counseling for officers or agents in acute distress.  
-            <strong>Highly valuable in crisis, but underutilized until problems are severe.</strong>
-        </div>
-    </div>
-   
-    <div class="interactive-card">
-        <div class="card-icon">🔹</div>
-        <div class="card-title">Critical Incident Response Teams</div>
-        <div class="card-desc">
-            Specialized teams deployed after shootings, deaths, or major events.  
-            <strong>Excellent post-incident support, but only activated once harm has occurred.</strong>
-        </div>
-    </div>
-   
-    <div class="interactive-card">
-        <div class="card-icon">🔹</div>
-        <div class="card-title">Peer Support Networks</div>
-        <div class="card-desc">
-            Trained peers offering confidential support.  
-            <strong>Relies on volunteers and cannot proactively cover a 67,000+ person workforce.</strong>
-        </div>
-    </div>
-   
-    <div class="interactive-card">
-        <div class="card-icon">🔹</div>
-        <div class="card-title">Chaplains</div>
-        <div class="card-desc">
-            Spiritual and emotional guidance during personal or moral crises.  
-            <strong>Focused on acute events, not ongoing performance and resilience development.</strong>
-        </div>
-    </div>
-   
-    <div class="interactive-card">
-        <div class="card-icon">🔹</div>
-        <div class="card-title">Operational Psychologists</div>
-        <div class="card-desc">
-            Clinical and operational consults for high-risk assignments and fitness-for-duty.  
-            <strong>Critical expertise, but scoped to evaluations and complex cases—not preventive coaching at scale.</strong>
-        </div>
-    </div>
-</div>
-
-</div> <!-- end cards-grid -->
-
-<div class="quote-block fade-in" style="max-width: 1200px; margin: 40px auto;">
+            <div style="background: rgba(96,165,250,0.1); border: 2px solid rgba(96,165,250,0.3); border-radius: 16px; padding: 40px; margin: 50px auto; max-width: 1000px;">
+                <p style="font-size: 17px; color: #cbd5e1; line-height: 1.8; margin-bottom: 20px;">
+                    CBP has built an excellent <strong style="color: #60a5fa;">crisis safety net</strong>: Employee Assistance Programs, Critical Incident Response Teams, Peer Support Networks, Chaplains, and Operational Psychologists. These programs are critical and must remain.
+                </p>
+                <p style="font-size: 17px; color: #cbd5e1; line-height: 1.8; margin-bottom: 20px;">
+                    <strong style="color: #fbbf24;">The gap:</strong> All these programs engage <em>after</em> officers cross the crisis threshold. There's no upstream prevention layer during the erosion zone (years 3-15) when officers are functional but struggling.
+                </p>
+                <div style="background: rgba(239,68,68,0.15); border-left: 4px solid #ef4444; padding: 20px 24px; border-radius: 0 12px 12px 0; margin-top: 24px;">
+                    <p style="font-size: 16px; font-style: italic; color: #fca5a5; line-height: 1.7;">
+                        "It often feels like something is missing—there are pieces of behavioral science and support, but no platform to bring them together at scale."
+                    </p>
+                    <p style="font-size: 14px; color: #ef4444; margin-top: 12px; font-weight: 600;">
+                        — Member of the CBP Resiliency team
+                    </p>
+                </div>
+            </div> fade-in" style="max-width: 1200px; margin: 40px auto;">
     "It often feels like something is missing—there are pieces of behavioral science and support, but no platform to bring them together at scale."
     <div class="quote-author">— Member of the CBP Resiliency team</div>
 </div>
@@ -2283,7 +2249,7 @@ backdrop-filter: blur(10px);
                 </div>
                
                 <div class="path-section path-resilience">
-                    <div class="path-title">PATH 2: Resiliency 2.0</div>
+                    <div class="path-title">PATH 2: Mission Readiness & Resilience Program</div>
                     <div class="outcome-item">Knowledge preserved — 80%+ expertise captured before 2028 departures</div>
                     <div class="outcome-item">Retention improvement — 200-400 officers / agents retained annually, $75M-$150M value realized</div>
                     <div class="outcome-item">Operational readiness maintained — smooth transition, mission effectiveness sustained</div>
@@ -2549,7 +2515,9 @@ backdrop-filter: blur(10px);
     <div class="nav-dots">
         <div class="nav-dot active" onclick="scrollToSection('hero')"></div>
         <div class="nav-dot" onclick="scrollToSection('bluf')"></div>
-        <div class="nav-dot" onclick="scrollToSection('ask')"></div>
+        <div class="nav-dot" onclick="scrollToSection('research')"></div>
+        <div class="nav-dot" onclick="scrollToSection('wsib-evidence')"></div>
+        <div class="nav-dot" onclick="scrollToSection('current')"></div>
         <div class="nav-dot" onclick="scrollToSection('solution')"></div>
         <div class="nav-dot" onclick="scrollToSection('roi')"></div>
         <div class="nav-dot" onclick="scrollToSection('choice')"></div>
@@ -2562,7 +2530,7 @@ backdrop-filter: blur(10px);
             document.getElementById('scrollProgress').style.width = scrolled + '%';
            
             // Update active nav dot
-            const sections = ['hero', 'bluf', 'ask', 'solution', 'roi', 'choice', 'next-steps'];
+            const sections = ['hero', 'bluf', 'research', 'wsib-evidence', 'current', 'solution', 'roi', 'choice', 'next-steps'];
             const dots = document.querySelectorAll('.nav-dot');
            
             sections.forEach((section, index) => {
