@@ -702,6 +702,61 @@ backdrop-filter: blur(10px);
             overflow: hidden;
         }
        
+        /* ROI SHOWCASE */
+        .roi-showcase {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 30px 0;
+        }
+       
+        .roi-pathways {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+       
+        .roi-pathway {
+            background: linear-gradient(135deg, #7c3aed, #6366f1);
+            border-radius: 16px;
+            padding: 40px 35px;
+            text-align: center;
+            position: relative;
+            overflow: visible;
+            transition: all 0.4s;
+        }
+       
+        .roi-pathway:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(124,58,237,0.4);
+        }
+       
+        .pathway-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+       
+        .pathway-value {
+            font-size: 44px;
+            font-weight: 900;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+            padding: 0 20px;
+        }
+       
+        .pathway-desc {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
         /* TOP NAVIGATION HOVER EFFECTS */
         .nav-link:hover {
             background: rgba(96,165,250,0.6) !important;
