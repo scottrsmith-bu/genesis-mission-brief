@@ -1262,8 +1262,11 @@ backdrop-filter: blur(10px);
     </section>
 
     <!-- DUAL EROSION TIMELINE -->
-    <section class="section section-dark" id="timeline" style="padding: 80px 20px;">
-        <div class="content-wrapper">
+    <section class="section section-dark" id="timeline" style="padding: 80px 20px; position: relative; overflow: hidden;">
+        <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%; max-width: 900px; height: auto; opacity: 0.12; pointer-events: none; z-index: 1;">
+            <img src="cbp-officer.jpg" alt="" style="width: 100%; height: auto; filter: grayscale(100%) brightness(1.3);">
+        </div>
+        <div class="content-wrapper" style="position: relative; z-index: 10;">
             <h2 class="section-title fade-in gradient-text" style="font-size: clamp(28px, 4vw, 44px);">The Dual Erosion Timeline</h2>
             <p class="section-subtitle fade-in" style="font-size: clamp(14px, 2vw, 18px);">Two interconnected but distinct pathways with different causes, timelines, and intervention windows</p>
                
