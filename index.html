@@ -771,6 +771,38 @@ backdrop-filter: blur(10px);
             transform: translateY(0);
         }
 
+        /* COLLAPSIBLE SUMMARY HOVER EFFECTS */
+        details summary {
+            transition: all 0.3s;
+        }
+        
+        details summary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(96,165,250,0.3) !important;
+        }
+        
+        details[open] summary {
+            margin-bottom: 40px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        /* COLLAPSIBLE SUMMARY HOVER EFFECTS */
+        details summary {
+            transition: all 0.3s;
+        }
+        
+        details summary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(96,165,250,0.3) !important;
+        }
+        
+        details[open] summary {
+            margin-bottom: 40px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .comparison-container {
@@ -921,6 +953,24 @@ backdrop-filter: blur(10px);
                 </div>
                 <div style="text-align: center; font-size: 17px; font-weight: 600; color: #fef3c7; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.2);">
                     This is the vision. BetterUp is the platform that makes it real at scale.
+                </div>
+            </div>
+
+            <!-- END OF REQUIRED READING MARKER -->
+            <div style="background: rgba(96,165,250,0.1); border: 2px solid rgba(96,165,250,0.4); border-radius: 16px; padding: 32px; margin: 60px auto; max-width: 1000px; text-align: center;">
+                <div style="font-size: 22px; font-weight: 700; color: #93c5fd; margin-bottom: 16px;">
+                    ✅ That's the 2-Minute Brief
+                </div>
+                <div style="font-size: 17px; color: #e2e8f0; line-height: 1.7; margin-bottom: 24px;">
+                    You now have the essentials. Everything below is optional deep-dive content—<br>expand only what's relevant to your decision-making.
+                </div>
+                <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                    <a href="#solution" style="display: inline-block; padding: 12px 24px; background: rgba(96,165,250,0.2); color: #93c5fd; border: 2px solid rgba(96,165,250,0.4); border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s;">
+                        Skip to Solution →
+                    </a>
+                    <a href="#next-steps" style="display: inline-block; padding: 12px 24px; background: #60a5fa; color: white; border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 12px rgba(96,165,250,0.3);">
+                        Skip to Next Steps →
+                    </a>
                 </div>
             </div>
            
