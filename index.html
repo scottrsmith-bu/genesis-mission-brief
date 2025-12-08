@@ -2107,5 +2107,36 @@ backdrop-filter: blur(10px);
             });
         });
     </script>
+<script>
+        // Auto-expand collapsibles when navigating to sections inside them
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all card buttons
+            const cardButtons = document.querySelectorAll('.card-button');
+            
+            cardButtons.forEach(button => {
+                button.closest('a').addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href').substring(1); // Remove the #
+                    
+                    // Check if target is inside a collapsed details element
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        // Find any parent details element
+                        let parentDetails = targetElement.closest('details');
+                        if (parentDetails && !parentDetails.open) {
+                            // Open the details element
+                            parentDetails.open = true;
+                            
+                            // Wait for the expansion animation, then scroll
+                            setTimeout(() => {
+                                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }, 100);
+                            
+                            e.preventDefault(); // Prevent default jump
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
