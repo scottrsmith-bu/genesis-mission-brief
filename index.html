@@ -849,11 +849,13 @@ backdrop-filter: blur(10px);
         
         <h1 style="font-size: clamp(42px, 7vw, 82px); font-weight: 900; line-height: 1.1; margin-bottom: 30px; max-width: 1100px;">CBP Mission Readiness &<br>Resilience Program</h1>
         
-        <p style="font-size: clamp(20px, 3vw, 32px); margin-bottom: 50px; opacity: 0.8; max-width: 900px;">
-            Resilient Officers & Agents Are READY Officers & Agents
-        </p>
+        <div style="display: inline-block; background: linear-gradient(135deg, rgba(59,130,246,0.25), rgba(37,99,235,0.15)); border: 2px solid rgba(96,165,250,0.5); border-radius: 50px; padding: 16px 40px; margin-bottom: 40px; backdrop-filter: blur(12px); box-shadow: 0 8px 32px rgba(59,130,246,0.3);">
+            <p style="font-size: clamp(18px, 2.5vw, 28px); font-weight: 700; margin: 0; letter-spacing: 0.5px; font-style: italic; background: linear-gradient(135deg, #93c5fd, #c084fc); -webkit-background-clip: text; background-clip: text; color: transparent;">
+                Resilient Officers & Agents Are READY Officers & Agents
+            </p>
+        </div>
         
-        <p style="font-size: clamp(16px, 2vw, 24px); margin-bottom: 60px; opacity: 0.7; max-width: 800px;">
+        <p style="font-size: clamp(18px, 2.2vw, 26px); margin-bottom: 60px; opacity: 0.9; max-width: 900px; font-weight: 500; line-height: 1.4;">
             An Evidence-Based Strategy for Workforce Sustainability Before 2028
         </p>
     </section>
@@ -940,26 +942,44 @@ backdrop-filter: blur(10px);
                 <p style="font-size: clamp(16px, 2vw, 22px); opacity: 0.7;">Our hypothesis begins here—500 universities, peer-reviewed studies, 10+ years of behavioral science</p>
             </div>
 
-            <!-- SIDE-BY-SIDE: PERFORMANCE CRISIS + 6X PARADIGM -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px;">
+            <!-- PERFORMANCE CRISIS WITH GRAPH -->
+            <div style="background: linear-gradient(135deg, rgba(147,51,234,0.12), rgba(192,38,211,0.08)); border: 2px solid rgba(192,38,211,0.3); border-radius: 20px; padding: 40px; margin-bottom: 40px;">
+                <h3 style="font-size: 32px; font-weight: 800; color: #e9d5ff; margin-bottom: 30px; text-align: center;">
+                    The $2.2 Trillion Performance Crisis
+                </h3>
                 
-                <!-- LEFT: PERFORMANCE CRISIS -->
-                <div style="background: linear-gradient(135deg, rgba(147,51,234,0.15), rgba(192,38,211,0.1)); border: 2px solid rgba(192,38,211,0.3); border-radius: 20px; padding: 36px;">
-                    <h3 style="font-size: 26px; font-weight: 800; color: #e9d5ff; margin-bottom: 20px; text-align: center;">
-                        The $2.2 Trillion Performance Crisis
-                    </h3>
-                    <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 24px; margin-bottom: 20px;">
-                        <p style="font-size: 15px; line-height: 1.6; opacity: 0.95;">
-                            BetterUp Labs analyzed <strong style="color: #e9d5ff;">410,000+ employees (2019-2025)</strong>: <strong style="color: #fbbf24;">Performance down 2-6% across all industries.</strong> Half of today's workforce would land in a lower performance tier by 2019 standards.
-                        </p>
+                <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 36px; align-items: center;">
+                    <!-- LEFT: TEXT -->
+                    <div>
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 24px; margin-bottom: 20px;">
+                            <p style="font-size: 16px; line-height: 1.7; opacity: 0.95; color: #e2e8f0;">
+                                BetterUp Labs analyzed <strong style="color: #e9d5ff;">410,000+ employees (2019-2025)</strong> and discovered: <strong style="color: #fbbf24;">Performance down 2-6% across all industries.</strong>
+                            </p>
+                            <p style="font-size: 15px; line-height: 1.7; opacity: 0.9; color: #cbd5e1; margin-top: 16px;">
+                                Half of today's workforce would land in a lower performance tier by 2019 standards.
+                            </p>
+                        </div>
+                        <div style="background: rgba(251,191,36,0.15); border-left: 4px solid #fbbf24; padding: 20px; border-radius: 10px;">
+                            <p style="font-size: 15px; line-height: 1.6; color: #fde68a;">
+                                <strong style="color: #fef3c7;">Root Cause: "Performance Fuel" depleting</strong><br>
+                                Fuel = Motivation + Optimism + Agency<br>
+                                Drives 82% of performance, declining across all industries
+                            </p>
+                            <p style="font-size: 14px; line-height: 1.6; color: #fde68a; margin-top: 12px; font-weight: 600;">
+                                <strong style="color: #e9d5ff;">CBP faces this crisis, amplified by border security stressors.</strong>
+                            </p>
+                        </div>
                     </div>
-                    <div style="background: rgba(251,191,36,0.15); border-left: 4px solid #fbbf24; padding: 20px; border-radius: 10px;">
-                        <p style="font-size: 14px; line-height: 1.6; color: #fde68a;">
-                            <strong style="color: #fef3c7;">Root Cause: "Performance Fuel" depleting.</strong><br>
-                            Fuel = Motivation + Optimism + Agency. Drives 82% of performance. <strong style="color: #e9d5ff;">CBP faces this crisis, amplified by border security stressors.</strong>
+                    
+                    <!-- RIGHT: GRAPH -->
+                    <div style="background: rgba(0,0,0,0.4); border-radius: 16px; padding: 20px; border: 1px solid rgba(192,38,211,0.3);">
+                        <img src="performance-decline-graph.png" alt="Performance Crisis Graph - Fuel decline across Basic, Collaborative, and Adaptive Performance 2019-2024" style="width: 100%; height: auto; border-radius: 8px;">
+                        <p style="font-size: 12px; color: #94a3b8; text-align: center; margin-top: 12px; font-style: italic;">
+                            Source: BetterUp Labs Performance Crisis Study (2019-2025)
                         </p>
                     </div>
                 </div>
+            </div>
 
                 <!-- RIGHT: 6X PARADIGM SHIFT -->
                 <div style="background: linear-gradient(135deg, rgba(220,38,38,0.2), rgba(249,115,22,0.15)); border: 3px solid rgba(239,68,68,0.5); border-radius: 20px; padding: 36px;">
