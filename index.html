@@ -866,41 +866,146 @@ backdrop-filter: blur(10px);
     </div>
 </section>
    
-    <!-- BLUF: EXECUTIVE SUMMARY -->
-    <section id="bluf" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 90px 20px 80px 20px; min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden;">
-        <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: 0.18; pointer-events: none; z-index: 1;">
-            <img src="usbp-agent-2.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center; filter: grayscale(100%) brightness(1.3);">
+    <!-- HERO SECTION WITH BADGE BACKGROUNDS -->
+    <section class="hero" id="hero" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 80px 20px; text-align: center; background: linear-gradient(180deg, rgba(26,10,15,0.88) 0%, rgba(45,15,26,0.92) 50%, rgba(61,21,32,0.95) 100%), url('cbp-badge-shoulder.png') left center / 400px no-repeat, url('cbp-border-patrol-badge.png') right center / 380px no-repeat; background-color: #1a0a0f; position: relative;">
+        <img src="betterup-logo.png" alt="BetterUp" style="width: 180px; height: auto; margin-bottom: 60px;">
+        
+        <h1 style="font-size: clamp(42px, 7vw, 82px); font-weight: 900; line-height: 1.1; margin-bottom: 30px; max-width: 1100px;">CBP Mission Readiness &<br>Resilience Program</h1>
+        
+        <p style="font-size: clamp(20px, 3vw, 32px); margin-bottom: 50px; opacity: 0.8; max-width: 900px;">
+            Resilient Officers & Agents Are READY Officers & Agents
+        </p>
+        
+        <p style="font-size: clamp(16px, 2vw, 24px); margin-bottom: 60px; opacity: 0.7; max-width: 800px;">
+            An Evidence-Based Strategy for Workforce Sustainability Before 2028
+        </p>
+    </section>
+
+    <!-- 4-PART FRAMEWORK -->
+    <section id="bluf" style="min-height: 100vh; padding: 100px 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(180deg, #1a0a0f 0%, #2d0f1a 50%, #3d1520 100%);">
+        <div style="text-align: center; margin-bottom: 80px; max-width: 900px;">
+            <h2 style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px;">The Path to 2028 Readiness</h2>
+            <p style="font-size: clamp(16px, 2vw, 22px); opacity: 0.7; line-height: 1.6;">Four foundational pieces to explore together</p>
         </div>
-        <div style="max-width: 1200px; margin: 0 auto; width: 100%; position: relative; z-index: 10;">
-            <div style="text-align: center; margin-bottom: 50px;">
-                <h2 style="font-size: 48px; font-weight: 800; background: linear-gradient(135deg, #ef4444, #f97316); -webkit-background-clip: text; background-clip: text; color: transparent;">
-                    The 2-Minute Brief
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1400px; width: 100%; margin: 0 auto;">
+            <!-- CARD 1: THE SCIENCE -->
+            <a href="#science" style="background: linear-gradient(135deg, #991b3a 0%, #dc2626 35%, #f87171 65%, #fca5a5 100%); border-radius: 24px; padding: 48px 40px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: white;">
+                <div style="position: absolute; bottom: -80px; right: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(252,165,165,0.35) 0%, rgba(252,165,165,0.15) 50%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+                <div style="position: relative; z-index: 2;">
+                    <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.9; margin-bottom: 20px;">FOUNDATION</div>
+                    <h3 style="font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.2; margin-bottom: 20px;">The Science</h3>
+                    <p style="font-size: clamp(15px, 2vw, 18px); line-height: 1.6; opacity: 0.95; margin-bottom: 30px;">
+                        What macro research tells us about high-stress law enforcement environments—and why CBP's timeline is 6x faster
+                    </p>
+                </div>
+                <div style="font-size: 16px; font-weight: 700; opacity: 0.9; display: inline-flex; align-items: center; gap: 8px; margin-top: auto; position: relative; z-index: 2;">
+                    Explore the research <span style="font-size: 20px;">→</span>
+                </div>
+            </a>
+
+            <!-- CARD 2: CBP CHALLENGES -->
+            <a href="#challenges" style="background: linear-gradient(135deg, #991b3a 0%, #dc2626 35%, #f87171 65%, #fca5a5 100%); border-radius: 24px; padding: 48px 40px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: white;">
+                <div style="position: absolute; bottom: -80px; right: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(252,165,165,0.35) 0%, rgba(252,165,165,0.15) 50%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+                <div style="position: relative; z-index: 2;">
+                    <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.9; margin-bottom: 20px;">YOUR REALITY</div>
+                    <h3 style="font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.2; margin-bottom: 20px;">CBP Challenges</h3>
+                    <p style="font-size: clamp(15px, 2vw, 18px); line-height: 1.6; opacity: 0.95; margin-bottom: 30px;">
+                        Retention, performance, and resilience—the three interconnected challenges before 2028
+                    </p>
+                </div>
+                <div style="font-size: 16px; font-weight: 700; opacity: 0.9; display: inline-flex; align-items: center; gap: 8px; margin-top: auto; position: relative; z-index: 2;">
+                    Validate with us <span style="font-size: 20px;">→</span>
+                </div>
+            </a>
+
+            <!-- CARD 3: BETTERUP PROGRAMS -->
+            <a href="#programs" style="background: linear-gradient(135deg, #991b3a 0%, #dc2626 35%, #f87171 65%, #fca5a5 100%); border-radius: 24px; padding: 48px 40px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: white;">
+                <div style="position: absolute; bottom: -80px; right: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(252,165,165,0.35) 0%, rgba(252,165,165,0.15) 50%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+                <div style="position: relative; z-index: 2;">
+                    <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.9; margin-bottom: 20px;">FEDERAL PROOF</div>
+                    <h3 style="font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.2; margin-bottom: 20px;">BetterUp Programs</h3>
+                    <p style="font-size: clamp(15px, 2vw, 18px); line-height: 1.6; opacity: 0.95; margin-bottom: 30px;">
+                        Air Force, NASA, FAA, WSIB—proven impact with federal peers and first responders at scale
+                    </p>
+                </div>
+                <div style="font-size: 16px; font-weight: 700; opacity: 0.9; display: inline-flex; align-items: center; gap: 8px; margin-top: auto; position: relative; z-index: 2;">
+                    See the evidence <span style="font-size: 20px;">→</span>
+                </div>
+            </a>
+
+            <!-- CARD 4: PROPOSED ENGAGEMENT -->
+            <a href="#engagement" style="background: linear-gradient(135deg, #991b3a 0%, #dc2626 35%, #f87171 65%, #fca5a5 100%); border-radius: 24px; padding: 48px 40px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: white;">
+                <div style="position: absolute; bottom: -80px; right: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(252,165,165,0.35) 0%, rgba(252,165,165,0.15) 50%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+                <div style="position: relative; z-index: 2;">
+                    <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.9; margin-bottom: 20px;">NEXT STEPS</div>
+                    <h3 style="font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.2; margin-bottom: 20px;">Proposed Engagement</h3>
+                    <p style="font-size: clamp(15px, 2vw, 18px); line-height: 1.6; opacity: 0.95; margin-bottom: 30px;">
+                        The prevention layer opportunity—conservative ROI projections and path to partnership
+                    </p>
+                </div>
+                <div style="font-size: 16px; font-weight: 700; opacity: 0.9; display: inline-flex; align-items: center; gap: 8px; margin-top: auto; position: relative; z-index: 2;">
+                    Build the case together <span style="font-size: 20px;">→</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- SECTION 1: THE SCIENCE -->
+    <section class="content-section" id="science" style="min-height: 100vh; padding: 100px 20px; background: #0a0a0a;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <a href="#bluf" style="display: inline-block; padding: 14px 32px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); border-radius: 50px; color: white; text-decoration: none; font-weight: 700; transition: all 0.3s; margin-bottom: 40px;">← Back to Framework</a>
+            
+            <div style="text-align: center; margin-bottom: 60px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <h2 style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #9333ea, #c026d3); -webkit-background-clip: text; background-clip: text; color: transparent;">
+                    The Science: What Research Tells Us
                 </h2>
+                <p style="font-size: clamp(16px, 2vw, 22px); opacity: 0.7;">Our hypothesis begins here—500 universities, peer-reviewed studies, 10+ years of behavioral science</p>
             </div>
 
-            <!-- THE PARADIGM SHIFT -->
-            <div style="background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(220,38,38,0.15)); backdrop-filter: blur(20px); border: 3px solid rgba(239,68,68,0.6); border-radius: 24px; padding: 50px 40px; margin-bottom: 50px; box-shadow: 0 20px 60px rgba(239,68,68,0.3);">
-    <div style="text-align: center; margin-bottom: 30px;">
-                    <div style="font-size: 28px; font-weight: 800; color: #fecaca; line-height: 1.3;">CBP Officers Hit Crisis <span style="color: #fca5a5; font-size: 42px;">6x Faster</span><br>Than General Law Enforcement</div>
+            <!-- THE PERFORMANCE CRISIS -->
+            <div style="background: linear-gradient(135deg, rgba(147,51,234,0.15), rgba(192,38,211,0.1)); border: 2px solid rgba(192,38,211,0.3); border-radius: 24px; padding: 50px; margin-bottom: 50px;">
+                <h3 style="font-size: 32px; font-weight: 800; color: #e9d5ff; margin-bottom: 24px; text-align: center;">
+                    The $2.2 Trillion Performance Crisis
+                </h3>
+                <div style="background: rgba(0,0,0,0.3); border-radius: 16px; padding: 32px; margin-bottom: 30px;">
+                    <p style="font-size: 18px; line-height: 1.7; opacity: 0.95; text-align: center;">
+                        BetterUp Labs analyzed <strong style="color: #e9d5ff;">410,000+ employees (2019-2025)</strong> and discovered a silent performance crisis: <strong style="color: #fbbf24;">Performance down 2-6% across all industries.</strong> Half of today's workforce would land in a lower performance tier by 2019 standards.
+                    </p>
+                </div>
+                <div style="background: rgba(251,191,36,0.15); border-left: 4px solid #fbbf24; padding: 24px; border-radius: 12px;">
+                    <p style="font-size: 17px; line-height: 1.7; color: #fde68a;">
+                        <strong style="color: #fef3c7;">The Root Cause: "Performance Fuel" is depleting.</strong><br>
+                        Fuel = Motivation + Optimism + Agency. It drives 82% of performance, and it's declining across all industries. <strong style="color: #e9d5ff;">CBP faces this same crisis, amplified by the unique stressors of border security work.</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- THE 6X PARADIGM SHIFT -->
+            <div style="background: linear-gradient(135deg, rgba(220,38,38,0.2), rgba(249,115,22,0.15)); border: 3px solid rgba(239,68,68,0.5); border-radius: 24px; padding: 50px; margin-bottom: 50px;">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h3 style="font-size: 36px; font-weight: 800; color: #fecaca; line-height: 1.3;">
+                        CBP Officers Experience Burnout <span style="color: #fca5a5; font-size: 52px;">6x Faster</span><br>Than General Law Enforcement
+                    </h3>
                 </div>
                 
                 <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 30px; align-items: center; margin-bottom: 40px;">
-                    <div style="background: rgba(239,68,68,0.3); border: 2px solid #ef4444; border-radius: 16px; padding: 28px; text-align: center;">
+                    <div style="background: rgba(239,68,68,0.25); border: 2px solid #ef4444; border-radius: 16px; padding: 32px; text-align: center;">
                         <div style="font-size: 18px; font-weight: 700; color: #fecaca; margin-bottom: 12px;">CBP Reality</div>
-                        <div style="font-size: 48px; font-weight: 900; color: #fca5a5; margin: 16px 0;">Years 1-9</div>
-                        <div style="font-size: 15px; color: #fecaca; line-height: 1.6;">
+                        <div style="font-size: 56px; font-weight: 900; color: #fca5a5; margin: 20px 0; line-height: 1;">Years 1-9</div>
+                        <div style="font-size: 16px; color: #fecaca; line-height: 1.6;">
                             Early burnout (1-3 yrs)<br>
                             Peak PTSD risk (5-9 yrs)<br>
                             <strong>Accelerated timeline</strong>
                         </div>
                     </div>
                     
-                    <div style="font-size: 40px; color: #fca5a5;">→</div>
+                    <div style="font-size: 48px; color: #fca5a5; font-weight: 900;">→</div>
                     
-                    <div style="background: rgba(59,130,246,0.2); border: 2px solid #3b82f6; border-radius: 16px; padding: 28px; text-align: center;">
+                    <div style="background: rgba(59,130,246,0.2); border: 2px solid #3b82f6; border-radius: 16px; padding: 32px; text-align: center;">
                         <div style="font-size: 18px; font-weight: 700; color: #93c5fd; margin-bottom: 12px;">General LE Baseline</div>
-                        <div style="font-size: 48px; font-weight: 900; color: #60a5fa; margin: 16px 0;">Years 7-15</div>
-                        <div style="font-size: 15px; color: #bfdbfe; line-height: 1.6;">
+                        <div style="font-size: 56px; font-weight: 900; color: #60a5fa; margin: 20px 0; line-height: 1;">Years 7-15</div>
+                        <div style="font-size: 16px; color: #bfdbfe; line-height: 1.6;">
                             Burnout onset (7-12 yrs)<br>
                             Clinical risk (10-15 yrs)<br>
                             <strong>Standard trajectory</strong>
@@ -908,28 +1013,42 @@ backdrop-filter: blur(10px);
                     </div>
                 </div>
 
-                <div style="background: rgba(0,0,0,0.3); border-left: 4px solid #fbbf24; padding: 24px; border-radius: 12px;">
-                    <p style="font-size: 20px; font-weight: 700; color: #fde68a; line-height: 1.7; text-align: center; margin: 0 0 16px 0;">
+                <div style="background: rgba(0,0,0,0.3); border-left: 4px solid #fbbf24; padding: 28px; border-radius: 12px; text-align: center;">
+                    <p style="font-size: 22px; font-weight: 700; color: #fde68a; line-height: 1.6; margin: 0 0 20px 0;">
                         💡 <strong style="color: #fef3c7;">The Insight:</strong> You're not dealing with a 10-year problem.<br>You're dealing with a 1-year problem that compounds for 10 years.
                     </p>
-                    <div style="text-align: center;">
-                        <a href="#timeline" style="display: inline-block; padding: 10px 24px; background: rgba(96,165,250,0.2); border: 2px solid #60a5fa; border-radius: 50px; color: #93c5fd; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s;">
+                    <div>
+                        <a href="#timeline" style="display: inline-block; padding: 12px 28px; background: rgba(96,165,250,0.2); border: 2px solid #60a5fa; border-radius: 50px; color: #93c5fd; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s;">
                             📊 View Research Supporting This Timeline →
                         </a>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- THE GAP YOU DIDN'T KNOW YOU HAD -->
-            <div style="background: rgba(96,165,250,0.1); border: 3px solid rgba(96,165,250,0.5); border-radius: 20px; padding: 45px 40px; margin-bottom: 50px;">
-                <h3 style="font-size: 32px; font-weight: 800; color: #60a5fa; text-align: center; margin-bottom: 30px;">
+    <!-- SECTION 2: CBP CHALLENGES (Links to existing Retention/Performance/Resilience sections) -->
+    <section id="challenges" style="min-height: 100vh; padding: 100px 20px; background: #050505;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <a href="#bluf" style="display: inline-block; padding: 14px 32px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); border-radius: 50px; color: white; text-decoration: none; font-weight: 700; transition: all 0.3s; margin-bottom: 40px;">← Back to Framework</a>
+            
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #dc2626, #f97316); -webkit-background-clip: text; background-clip: text; color: transparent;">
+                    CBP's Three Interconnected Challenges
+                </h2>
+                <p style="font-size: clamp(16px, 2vw, 22px); opacity: 0.7;">Let's validate this against your reality—does this match what you're seeing?</p>
+            </div>
+
+            <!-- WHERE CBP'S SAFETY NET ENDS -->
+            <div style="background: linear-gradient(135deg, rgba(96,165,250,0.1), rgba(59,130,246,0.08)); border: 3px solid rgba(96,165,250,0.4); border-radius: 24px; padding: 50px; margin-bottom: 60px;">
+                <h3 style="font-size: 32px; font-weight: 800; color: #60a5fa; text-align: center; margin-bottom: 40px;">
                     Where CBP's Safety Net Ends
                 </h3>
                 
                 <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 30px; align-items: center;">
-                    <div style="background: rgba(16,185,129,0.15); border: 2px solid #10b981; border-radius: 16px; padding: 32px;">
-                        <div style="font-size: 20px; font-weight: 700; color: #6ee7b7; margin-bottom: 16px; text-align: center;">✅ What CBP Has Built</div>
-                        <ul style="font-size: 15px; color: #d1fae5; line-height: 2; list-style: none; padding: 0;">
+                    <div style="background: rgba(16,185,129,0.15); border: 2px solid #10b981; border-radius: 16px; padding: 36px;">
+                        <div style="font-size: 20px; font-weight: 700; color: #6ee7b7; margin-bottom: 20px; text-align: center;">✅ What CBP Has Built</div>
+                        <ul style="font-size: 16px; color: #d1fae5; line-height: 2; list-style: none; padding: 0;">
                             <li>✓ EAP programs</li>
                             <li>✓ Critical Incident Response Teams</li>
                             <li>✓ Peer Support Networks</li>
@@ -940,11 +1059,11 @@ backdrop-filter: blur(10px);
                         </div>
                     </div>
                     
-                    <div style="font-size: 48px; color: #ef4444;">❌</div>
+                    <div style="font-size: 56px; color: #ef4444;">❌</div>
                     
-                    <div style="background: rgba(239,68,68,0.15); border: 2px solid #ef4444; border-radius: 16px; padding: 32px;">
-                        <div style="font-size: 20px; font-weight: 700; color: #fca5a5; margin-bottom: 16px; text-align: center;">❌ What's Missing</div>
-                        <ul style="font-size: 15px; color: #fecaca; line-height: 2; list-style: none; padding: 0;">
+                    <div style="background: rgba(239,68,68,0.15); border: 2px solid #ef4444; border-radius: 16px; padding: 36px;">
+                        <div style="font-size: 20px; font-weight: 700; color: #fca5a5; margin-bottom: 20px; text-align: center;">❌ What's Missing</div>
+                        <ul style="font-size: 16px; color: #fecaca; line-height: 2; list-style: none; padding: 0;">
                             <li>✗ Early organizational burnout prevention (0-3 yrs)</li>
                             <li>✗ Protective factor building before crisis (3-10 yrs)</li>
                             <li>✗ Stigma-free 24/7 support</li>
@@ -956,7 +1075,7 @@ backdrop-filter: blur(10px);
                     </div>
                 </div>
 
-                <div style="text-align: center; margin-top: 35px; padding-top: 30px; border-top: 2px solid rgba(96,165,250,0.3);">
+                <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 2px solid rgba(96,165,250,0.3);">
                     <p style="font-size: 19px; color: #e2e8f0; line-height: 1.7; font-weight: 600;">
                         "It often feels like something is missing—there are pieces of behavioral science<br>and support, but no platform to bring them together at scale."
                     </p>
@@ -964,120 +1083,197 @@ backdrop-filter: blur(10px);
                 </div>
             </div>
 
-            <!-- FEDERAL PROOF POINTS -->
-            <div style="background: rgba(16,185,129,0.15); border: 3px solid #10b981; border-radius: 20px; padding: 45px 40px; margin-bottom: 50px;">
-                <h3 style="font-size: 32px; font-weight: 800; color: #6ee7b7; text-align: center; margin-bottom: 35px;">
-                    This Isn't Theory—It's Federal Precedent
+            <!-- LINK TO DETAILED CHALLENGES -->
+            <div style="text-align: center; padding: 40px; background: rgba(96,165,250,0.05); border-radius: 16px;">
+                <p style="font-size: 18px; margin-bottom: 24px; opacity: 0.9;">Explore each challenge in detail:</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#retention" style="display: inline-block; padding: 12px 28px; background: rgba(239,68,68,0.2); border: 2px solid #ef4444; color: #fca5a5; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s;">Challenge 1: Retention →</a>
+                    <a href="#performance" style="display: inline-block; padding: 12px 28px; background: rgba(59,130,246,0.2); border: 2px solid #3b82f6; color: #93c5fd; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s;">Challenge 2: Performance →</a>
+                    <a href="#resilience" style="display: inline-block; padding: 12px 28px; background: rgba(16,185,129,0.2); border: 2px solid #10b981; color: #6ee7b7; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s;">Challenge 3: Resilience →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: BETTERUP PROGRAMS -->
+    <section id="programs" style="min-height: 100vh; padding: 100px 20px; background: #0a0a0a;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <a href="#bluf" style="display: inline-block; padding: 14px 32px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); border-radius: 50px; color: white; text-decoration: none; font-weight: 700; transition: all 0.3s; margin-bottom: 40px;">← Back to Framework</a>
+            
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #0891b2, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent;">
+                    BetterUp Programs: Federal Precedent
+                </h2>
+                <p style="font-size: clamp(16px, 2vw, 22px); opacity: 0.7;">Direct correlation to the work we're doing with your federal peers</p>
+            </div>
+
+            <!-- THE ZOOM IN/ZOOM OUT -->
+            <div style="background: linear-gradient(135deg, rgba(8,145,178,0.15), rgba(6,182,212,0.1)); border: 2px solid rgba(6,182,212,0.3); border-radius: 24px; padding: 50px; margin-bottom: 50px;">
+                <h3 style="font-size: 32px; font-weight: 800; color: #67e8f9; margin-bottom: 40px; text-align: center;">
+                    The Greatest Intervention: Democratized at Scale
                 </h3>
-                
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 35px;">
-                    <div style="background: rgba(16,185,129,0.2); border-radius: 16px; padding: 28px; text-align: center;">
-                        <div style="font-size: 56px; font-weight: 900; color: #10b981; margin-bottom: 12px;">+20%</div>
-                        <div style="font-size: 16px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">Air Force Pilots</div>
-                        <div style="font-size: 14px; color: #a7f3d0;">Commitment to military career increase</div>
-                    </div>
-                    <div style="background: rgba(16,185,129,0.2); border-radius: 16px; padding: 28px; text-align: center;">
-                        <div style="font-size: 56px; font-weight: 900; color: #10b981; margin-bottom: 12px;">6-10x</div>
-                        <div style="font-size: 16px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">ROI Multiple</div>
-                        <div style="font-size: 14px; color: #a7f3d0;">WSIB validation with 5M first responders</div>
-                    </div>
-                    <div style="background: rgba(16,185,129,0.2); border-radius: 16px; padding: 28px; text-align: center;">
-                        <div style="font-size: 56px; font-weight: 900; color: #10b981; margin-bottom: 12px;">90</div>
-                        <div style="font-size: 16px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">Days to Deploy</div>
-                        <div style="font-size: 14px; color: #a7f3d0;">From approval to pilot launch</div>
-                    </div>
+
+                <!-- ZOOM IN -->
+                <div style="background: rgba(0,0,0,0.3); border-radius: 16px; padding: 32px; margin-bottom: 24px;">
+                    <div style="font-size: 20px; font-weight: 700; color: #a5f3fc; margin-bottom: 16px;">🔍 Zoom In: The Individual Level</div>
+                    <p style="font-size: 16px; line-height: 1.7; opacity: 0.95;">
+                        The single greatest intervention CBP could provide is <strong style="color: #67e8f9;">1:1 coaching with an AI-driven platform</strong>, trained in surfacing intrinsic drivers that create reality, beliefs, mindsets—which leads to behavior habits around better performance and wellbeing. That's proven. But economically, that's typically reserved for high-potential leaders only.
+                    </p>
                 </div>
 
-                <div style="background: rgba(251,191,36,0.2); border: 2px solid #fbbf24; border-radius: 12px; padding: 24px; text-align: center;">
-                    <p style="font-size: 18px; color: #fde68a; line-height: 1.7; margin: 0;">
-                        <strong style="color: #fef3c7;">Air Force, Navy, NASA, FAA</strong> — Your federal peers are already using this approach.<br>
-                        The question isn't "does it work?" The question is "how fast can CBP deploy it?"
+                <!-- MIDDLE ALTITUDE -->
+                <div style="background: rgba(0,0,0,0.3); border-radius: 16px; padding: 32px; margin-bottom: 24px;">
+                    <div style="font-size: 20px; font-weight: 700; color: #a5f3fc; margin-bottom: 16px;">📐 Middle Altitude: The Unit Impact</div>
+                    <p style="font-size: 16px; line-height: 1.7; opacity: 0.95;">
+                        <strong style="color: #67e8f9;">BetterUp has democratized this.</strong> Now imagine 2,000 officers/agents coached. When managers develop high-agency "Pilot" mindset, their teams are <strong style="color: #fbbf24;">3x more likely to develop it</strong>. Some percentage recommit, extend high performance, prevent downstream crisis costs.
+                    </p>
+                </div>
+
+                <!-- ZOOM OUT -->
+                <div style="background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(5,150,105,0.15)); border: 2px solid #10b981; border-radius: 16px; padding: 32px;">
+                    <div style="font-size: 20px; font-weight: 700; color: #6ee7b7; margin-bottom: 16px;">🌐 Zoom Out: The Organizational Value</div>
+                    <p style="font-size: 16px; line-height: 1.7; opacity: 0.95;">
+                        At 30,000 feet: <strong style="color: #10b981;">You now have an operating system for workforce transformation</strong> that measurably impacts retention, leadership effectiveness, workers comp claims. This is what makes us invaluable: <strong style="color: #fef3c7;">the organizational unit of value at massive scale, which nobody else can deliver.</strong>
                     </p>
                 </div>
             </div>
 
+            <!-- FEDERAL PROOF POINTS -->
+            <div style="background: rgba(59,130,246,0.1); border: 2px solid rgba(59,130,246,0.3); border-radius: 24px; padding: 50px;">
+                <h3 style="font-size: 32px; font-weight: 800; color: #93c5fd; margin-bottom: 40px; text-align: center;">
+                    This Isn't Theory—It's Federal Precedent
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-bottom: 40px;">
+                    <div style="background: rgba(16,185,129,0.15); border-radius: 16px; padding: 28px; text-align: center;">
+                        <div style="font-size: 56px; font-weight: 900; color: #10b981; margin-bottom: 12px;">+20%</div>
+                        <div style="font-size: 16px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">Air Force Pilots</div>
+                        <div style="font-size: 14px; color: #a7f3d0;">Commitment to military career</div>
+                    </div>
+                    <div style="background: rgba(16,185,129,0.15); border-radius: 16px; padding: 28px; text-align: center;">
+                        <div style="font-size: 56px; font-weight: 900; color: #10b981; margin-bottom: 12px;">+33%</div>
+                        <div style="font-size: 16px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">NASA</div>
+                        <div style="font-size: 14px; color: #a7f3d0;">Innovation growth</div>
+                    </div>
+                    <div style="background: rgba(16,185,129,0.15); border-radius: 16px; padding: 28px; text-align: center;">
+                        <div style="font-size: 56px; font-weight: 900; color: #10b981; margin-bottom: 12px;">5x</div>
+                        <div style="font-size: 16px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">Twilio</div>
+                        <div style="font-size: 14px; color: #a7f3d0;">Higher retention (coached employees)</div>
+                    </div>
+                    <div style="background: rgba(16,185,129,0.15); border-radius: 16px; padding: 28px; text-align: center;">
+                        <div style="font-size: 56px; font-weight: 900; color: #10b981; margin-bottom: 12px;">3.4x</div>
+                        <div style="font-size: 16px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">Pilots Study</div>
+                        <div style="font-size: 14px; color: #a7f3d0;">More productive with high-agency mindset</div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(251,191,36,0.2); border: 2px solid #fbbf24; border-radius: 12px; padding: 28px; text-align: center;">
+                    <p style="font-size: 18px; color: #fde68a; line-height: 1.7; margin: 0;">
+                        <strong style="color: #fef3c7;">Air Force, Navy, NASA, FAA, WSIB (5M first responders)</strong><br>
+                        Your federal peers are already using this approach. The question isn't "does it work?"<br>The question is "how fast can CBP deploy it?"
+                    </p>
+                </div>
+            </div>
+
+            <!-- DETAILED CHALLENGES CONTINUE BELOW -->
+            <div style="text-align: center; margin: 60px 0 40px 0; padding: 40px; background: rgba(239,68,68,0.05); border-radius: 16px;">
+                <p style="font-size: 20px; font-weight: 700; color: #fca5a5; margin-bottom: 24px;">Deep-Dive Into Each Challenge:</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#retention" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #ef4444, #f97316); color: white; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 12px rgba(239,68,68,0.3);">
+                        Retention Crisis →
+                    </a>
+                    <a href="#performance" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #3b82f6, #60a5fa); color: white; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 12px rgba(59,130,246,0.3);">
+                        Performance & Mission Readiness →
+                    </a>
+                    <a href="#resilience" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #10b981, #34d399); color: white; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 12px rgba(16,185,129,0.3);">
+                        Resilience & Burnout →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: PROPOSED ENGAGEMENT -->
+    <section id="engagement" style="min-height: 100vh; padding: 100px 20px; background: #000000;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <a href="#bluf" style="display: inline-block; padding: 14px 32px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); border-radius: 50px; color: white; text-decoration: none; font-weight: 700; transition: all 0.3s; margin-bottom: 40px;">← Back to Framework</a>
+            
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; background-clip: text; color: transparent;">
+                    What This All Means for CBP
+                </h2>
+                <p style="font-size: clamp(16px, 2vw, 22px); opacity: 0.7;">Conservative hypothesis—let's build a bulletproof business case together</p>
+            </div>
+
             <!-- THE PREVENTION MATH -->
-            <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); border: 4px solid #f59e0b; border-radius: 20px; padding: 40px; margin-bottom: 50px;">
-                <h3 style="font-size: 32px; font-weight: 800; color: #92400e; text-align: center; margin-bottom: 35px;">
+            <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); border: 4px solid #f59e0b; border-radius: 24px; padding: 50px; margin-bottom: 50px; color: #000;">
+                <h3 style="font-size: 36px; font-weight: 900; color: #78350f; text-align: center; margin-bottom: 40px;">
                     The Prevention Math
                 </h3>
                 
                 <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 30px; align-items: center; margin-bottom: 30px;">
-                    <div style="background: rgba(16,185,129,0.25); border: 3px solid #10b981; border-radius: 16px; padding: 32px; text-align: center;">
+                    <div style="background: rgba(16,185,129,0.2); border: 3px solid #10b981; border-radius: 16px; padding: 36px; text-align: center;">
                         <div style="font-size: 20px; font-weight: 700; color: #064e3b; margin-bottom: 12px;">Early Prevention</div>
-                        <div style="font-size: 64px; font-weight: 900; color: #059669; margin: 20px 0; line-height: 1;">$3K-5K</div>
-                        <div style="font-size: 15px; color: #065f46; line-height: 1.7;">
+                        <div style="font-size: 68px; font-weight: 900; color: #059669; margin: 24px 0; line-height: 1;">$3K-5K</div>
+                        <div style="font-size: 16px; color: #065f46; line-height: 1.7; font-weight: 600;">
                             Per officer/agent annually<br>
                             <strong>Years 0-3 intervention</strong>
                         </div>
                     </div>
                     
-                    <div style="font-size: 48px; color: #92400e; font-weight: 900;">VS</div>
+                    <div style="font-size: 56px; color: #92400e; font-weight: 900;">VS</div>
                     
-                    <div style="background: rgba(239,68,68,0.25); border: 3px solid #ef4444; border-radius: 16px; padding: 32px; text-align: center;">
+                    <div style="background: rgba(239,68,68,0.2); border: 3px solid #ef4444; border-radius: 16px; padding: 36px; text-align: center;">
                         <div style="font-size: 20px; font-weight: 700; color: #7c2d12; margin-bottom: 12px;">Crisis Management</div>
-                        <div style="font-size: 64px; font-weight: 900; color: #dc2626; margin: 20px 0; line-height: 1;">$150K-450K</div>
-                        <div style="font-size: 15px; color: #991b1b; line-height: 1.7;">
+                        <div style="font-size: 68px; font-weight: 900; color: #dc2626; margin: 24px 0; line-height: 1;">$150K-450K</div>
+                        <div style="font-size: 16px; color: #991b1b; line-height: 1.7; font-weight: 600;">
                             Per officer/agent in crisis<br>
                             <strong>Years 5-10+ recovery</strong>
                         </div>
                     </div>
                 </div>
 
-                <div style="background: rgba(0,0,0,0.15); border-radius: 12px; padding: 28px; text-align: center;">
-                    <p style="font-size: 22px; font-weight: 700; color: #78350f; line-height: 1.6; margin: 0;">
-                        Prevention in Year 1 costs <strong style="color: #ef4444; font-size: 28px;">98% less</strong> than crisis management in Year 10<br>
-                        <span style="font-size: 18px; color: #92400e;">—and saves careers, families, and lives.</span>
+                <div style="background: rgba(0,0,0,0.15); border-radius: 12px; padding: 32px; text-align: center;">
+                    <p style="font-size: 24px; font-weight: 700; color: #78350f; line-height: 1.6; margin: 0;">
+                        Prevention in Year 1 costs <strong style="color: #dc2626; font-size: 32px;">98% less</strong> than crisis management in Year 10<br>
+                        <span style="font-size: 20px; color: #92400e;">—and saves careers, families, and lives.</span>
                     </p>
                 </div>
             </div>
-           
+
             <!-- VISION QUOTE -->
-            <div style="background: linear-gradient(135deg, #0f766e, #14b8a6); border-radius: 20px; padding: 40px 50px; margin: 50px auto; max-width: 1000px; box-shadow: 0 20px 60px rgba(20,184,166,0.3); border: 2px solid rgba(20,184,166,0.3);">
-                <div style="font-size: 28px; font-weight: 300; font-style: italic; line-height: 1.5; margin-bottom: 20px; text-align: center; color: #ffffff;">
-                    "Tap into people's <em>why</em> and have them<br>love what they do all over again."
-                </div>
-                <div style="text-align: center; font-size: 15px; color: #ccfbf1; opacity: 0.95; margin-bottom: 20px;">
+            <div style="background: linear-gradient(135deg, #0f766e, #14b8a6); border-radius: 24px; padding: 50px; margin-bottom: 50px; text-align: center;">
+                <p style="font-size: 32px; font-weight: 300; font-style: italic; line-height: 1.4; margin-bottom: 24px;">
+                    "Tap into people's <em style="font-weight: 600;">why</em> and have them<br>love what they do all over again."
+                </p>
+                <p style="font-size: 16px; opacity: 0.9; margin-bottom: 24px;">
                     — Vision from CBP Resiliency Program leadership
-                </div>
-                <div style="text-align: center; font-size: 19px; font-weight: 600; color: #fef3c7; padding-top: 20px; border-top: 2px solid rgba(255,255,255,0.3);">
-                    This is your vision. BetterUp is the platform that makes it real—at scale, before 2028.
-                </div>
-            </div>
-
-            <!-- THE ANCHOR REFRAME -->
-            <div style="background: rgba(239,68,68,0.1); border: 3px solid rgba(239,68,68,0.5); border-radius: 20px; padding: 45px 40px; margin: 50px auto; max-width: 950px;">
-                <div style="text-align: center;">
-                    <p style="font-size: 40px; font-weight: 900; color: #fca5a5; line-height: 1.2; font-style: italic; margin-bottom: 24px;">
-                        "CBP doesn't have a burnout problem in year 10.<br>
-                        <span style="color: #fbbf24;">It has a burnout problem in year 1."</span>
-                    </p>
-                    <p style="font-size: 20px; color: #e2e8f0; line-height: 1.6; font-weight: 600;">
-                        BetterUp intervenes in the <strong style="color: #10b981;">0-3 year window</strong> where organizational burnout<br>
-                        is still preventable—before officers reach the clinical crisis stage.
+                </p>
+                <div style="border-top: 2px solid rgba(255,255,255,0.3); padding-top: 24px; margin-top: 24px;">
+                    <p style="font-size: 22px; font-weight: 600; color: #fef3c7;">
+                        This is your vision. BetterUp is the platform that makes it real—at scale, before 2028.
                     </p>
                 </div>
             </div>
 
-            <!-- END OF REQUIRED READING -->
-            <div style="background: rgba(96,165,250,0.1); border: 2px solid rgba(96,165,250,0.4); border-radius: 16px; padding: 40px; margin: 60px auto; max-width: 1000px; text-align: center;">
-                <div style="font-size: 28px; font-weight: 800; color: #60a5fa; margin-bottom: 20px;">
-                    ✅ That's the 2-Minute Brief
-                </div>
-                <div style="font-size: 18px; color: #e2e8f0; line-height: 1.8; margin-bottom: 28px;">
-                    You now understand the paradigm shift. Everything below is optional deep-dive content—<br>
-                    expand only sections relevant to your decision-making process.
-                </div>
+            <!-- OUR PROPOSED APPROACH -->
+            <div style="background: linear-gradient(135deg, rgba(5,150,105,0.15), rgba(16,185,129,0.1)); border: 2px solid rgba(16,185,129,0.3); border-radius: 24px; padding: 50px; text-align: center;">
+                <h3 style="font-size: 32px; font-weight: 800; color: #6ee7b7; margin-bottom: 30px;">
+                    Our Proposed Approach
+                </h3>
+                <p style="font-size: 18px; line-height: 1.7; opacity: 0.9; max-width: 900px; margin: 0 auto 40px auto;">
+                    This is publicly available data. We've done our research and due diligence. But we want to dig into this <strong style="color: #10b981;">with you</strong> and help build a business case to address these challenges. Let's validate the data, validate the approach—there's something here.
+                </p>
+                
                 <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                    <a href="#retention" style="display: inline-block; padding: 14px 32px; background: rgba(16,185,129,0.2); border: 2px solid #10b981; color: #6ee7b7; border-radius: 50px; font-weight: 700; font-size: 16px; text-decoration: none; transition: all 0.3s;">
-                        See Detailed Evidence →
+                    <a href="https://cbp-roi-calculator.vercel.app/" target="_blank" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #10b981, #059669); color: white; border-radius: 50px; font-weight: 700; font-size: 18px; text-decoration: none; transition: all 0.3s; box-shadow: 0 8px 24px rgba(16,185,129,0.3);">
+                        Open ROI Calculator →
                     </a>
-                    <a href="#next-steps" style="display: inline-block; padding: 14px 32px; background: #60a5fa; color: white; border-radius: 50px; font-weight: 700; font-size: 16px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 12px rgba(96,165,250,0.3);">
-                        Skip to Next Steps →
+                    <a href="#next-steps" style="display: inline-block; padding: 16px 40px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.3); color: white; border-radius: 50px; font-weight: 700; font-size: 18px; text-decoration: none; transition: all 0.3s;">
+                        View Detailed Next Steps →
                     </a>
                 </div>
             </div>
-
         </div>
     </section>
 
