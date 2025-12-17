@@ -106,10 +106,6 @@
             padding: 40px;
             margin: 30px 0;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 40px;
-            align-items: center;
         }
         
         .equation-item {
@@ -147,7 +143,7 @@
             font-size: 2.5rem;
             color: #764ba2;
             font-weight: 800;
-            padding: 0 20px;
+            margin: 30px 0;
         }
         
         .question-mark {
@@ -373,6 +369,11 @@
             font-weight: 800;
         }
         
+        /* Specific adjustment for Genesis Mission Needs title */
+        .needs-title {
+            font-size: 2rem;
+        }
+        
         .section-intro {
             font-size: 1.2rem;
             color: #666;
@@ -383,15 +384,6 @@
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
-            }
-            
-            .equation {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            
-            .multiplier {
-                padding: 20px 0;
             }
             
             .proof-grid {
@@ -540,7 +532,7 @@
     <!-- SECTION 4: GENESIS MISSION FIT -->
     <div class="section">
         <div class="container">
-            <h2>Genesis Mission Has Three Human Infrastructure Needs</h2>
+            <h2 class="needs-title">Genesis Mission Has Three Human Infrastructure Needs</h2>
             <p class="section-intro">
                 These aren't training challenges. They're human performance challenges under unprecedented conditions.
             </p>
