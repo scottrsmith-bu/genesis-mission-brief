@@ -175,6 +175,32 @@
             font-style: italic;
         }
         
+        /* Performance Section */
+        .performance-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 30px;
+        }
+        
+        .performance-text {
+            padding-right: 20px;
+        }
+        
+        .performance-chart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        @media (max-width: 968px) {
+            .performance-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
         /* Proof Section */
         .proof-grid {
             display: grid;
@@ -473,6 +499,48 @@
                 to collaborate with industry (Anthropic, OpenAI, NVIDIA, IBM, Microsoft) and sustain innovation 
                 at <strong>"deeply uncomfortable urgency"</strong> for 10 years.
             </p>
+        </div>
+    </div>
+    
+    <!-- SECTION 2.5: PERFORMANCE CONTEXT -->
+    <div class="section">
+        <div class="container">
+            <h2>The Collaboration Performance Challenge</h2>
+            <p class="section-intro">
+                Why systematic human infrastructure matters for Genesis Mission's success.
+            </p>
+            
+            <div class="performance-grid">
+                <div class="performance-text">
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                        BetterUp Labs analyzed <strong>410,000+ employees (2019-2025)</strong> and discovered: 
+                        <strong style="color: #e74c3c;">Collaborative performance declining faster than individual performance.</strong>
+                    </p>
+                    
+                    <div style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding: 25px; border-radius: 12px; border-left: 5px solid #f39c12; margin: 25px 0;">
+                        <p style="color: white; font-size: 1.05rem; line-height: 1.7; margin-bottom: 15px;">
+                            <strong style="color: #f39c12;">Fuel = Motivation, Optimism and Agency</strong> - drives all types of performance. 
+                            It's the biggest factor, and it's declining the most.
+                        </p>
+                        <p style="color: white; font-size: 1.05rem; line-height: 1.7; margin-bottom: 15px;">
+                            Almost every employee indicator has declined since 2019. And this is critical, because these 
+                            mindsets are one of the most powerful and foundational human skills.
+                        </p>
+                        <p style="color: #f39c12; font-size: 1.05rem; line-height: 1.7; font-weight: 600;">
+                            And the best thing is we know from decades of science these mindsets are very coachable.
+                        </p>
+                    </div>
+                    
+                    <p style="font-size: 1.1rem; margin-top: 25px; font-weight: 600; color: #667eea;">
+                        Genesis Mission requires sustained collaboration across 17 National Labs for 10 years 
+                        under "deeply uncomfortable urgency" - the exact capability showing the steepest decline.
+                    </p>
+                </div>
+                
+                <div class="performance-chart">
+                    <img src="performance-decline-graph.png" alt="Performance Decline Graph" style="width: 100%; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
+                </div>
+            </div>
         </div>
     </div>
     
