@@ -106,6 +106,11 @@
             padding: 40px;
             margin: 30px 0;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 40px 60px;
+            align-items: start;
         }
         
         .equation-item {
@@ -139,11 +144,12 @@
         }
         
         .multiplier {
+            grid-column: 1 / -1;
             text-align: center;
             font-size: 2.5rem;
             color: #764ba2;
             font-weight: 800;
-            margin: 30px 0;
+            margin: 0;
         }
         
         .question-mark {
@@ -386,6 +392,11 @@
                 font-size: 2.5rem;
             }
             
+            .equation {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
             .proof-grid {
                 grid-template-columns: 1fr;
             }
@@ -432,8 +443,6 @@
                         </ul>
                     </div>
                     
-                    <div class="multiplier">× (multiplier)</div>
-                    
                     <div class="equation-item">
                         <h3>Human Infrastructure ($0)</h3>
                         <ul class="equation-list">
@@ -444,6 +453,8 @@
                             <li>Leadership for "deeply uncomfortable urgency"?</li>
                         </ul>
                     </div>
+                    
+                    <div class="multiplier">× (multiplier)</div>
                     
                     <div class="question-mark">?</div>
                 </div>
