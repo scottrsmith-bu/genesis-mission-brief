@@ -3,2284 +3,588 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBP WORKFORCE READINESS INITIATIVE - Evidence-Based Strategy</title>
+    <title>Genesis Mission Human Infrastructure</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-       
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: #0a0e27;
-            color: #fff;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            scroll-padding-top: 120px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
         }
-
-        .section-logo {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 140px;
-    opacity: 0.85;
-    z-index: 50;
-    pointer-events: none;
-}
-
-.current-state-panel {
-    background: rgba(15,23,42,0.35);
-    border: 2px solid rgba(148,163,184,0.5);
-    border-radius: 20px;
-    padding: 50px 40px;
-    margin-top: 60px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
-}
-
-.current-state-panel h3 {
-    font-size: 28px;
-    font-weight: 800;
-    margin-bottom: 30px;
-    background: linear-gradient(135deg, #f43f5e, #f97316);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.current-state-panel .column-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #facc15; /* bright yellow */
-    margin-bottom: 12px;
-}
-
-.current-state-panel p,
-.current-state-panel li {
-    color: #e2e8f0; /* soft white */
-    font-size: 15px;
-}
-
-.hero-logo {
-    position: absolute;
-    top: 80px;
-    right: 32px;
-    width: 140px;
-    height: auto;
-    z-index: 20;
-    opacity: 0.95;
-    pointer-events: none;
-}
-
-.section-banner {
-    width: 100%;
-    max-width: 1400px;
-    height: 58px;
-    border-radius: 999px;
-    margin: 0 auto 40px auto;
-    background: linear-gradient(90deg, #60a5fa,#60a5fa, #f472b6);
-    display: none; /* REMOVED - using executive titles instead */
-    align-items: center;
-    justify-content: center;
-    padding: 0 32px;
-
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    text-align: center;
-
-    color: rgba(15,23,42,0.95);   /* deep navy text */
-    text-shadow: 0 1px 2px rgba(255,255,255,0.5);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
-}
-       
-        /* SCROLL PROGRESS BAR */
-        .scroll-progress {
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 4px;
-            background: linear-gradient(90deg, #60a5fa,#60a5fa, #f472b6);
-            z-index: 9999;
-            transition: width 0.1s;
-        }
-       
-        /* HERO SECTION */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(10,14,39,0.92) 0%, rgba(30,58,138,0.92) 50%, rgba(37,99,235,0.92) 100%),
-                        url('cbp-border-patrol-badge.png') left center / 400px no-repeat,
-                        url('cbp-badge-shoulder.png') right center / 400px no-repeat;
-            position: relative;
-            overflow: hidden;
-        }
-       
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(37,99,235,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
-        }
-       
-        @keyframes gridMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-       
-        .hero-content {
-            z-index: 10;
-            text-align: center;
-            padding: 20px;
-            max-width: 1000px;
-        }
-       
-        .hero h1 {
-            font-size: clamp(36px, 6vw, 72px);
-            font-weight: 900;
-            margin-bottom: 20px;
-                background: linear-gradient(135deg, #60a5fa,#60a5fa, #f472b6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    animation: fadeInUp 1s ease-out;
-        }
-       
-        .hero-subtitle {
-            font-size: clamp(18px, 3vw, 32px);
-            margin-bottom: 40px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-       
-        .hero-cta {
-            font-size: clamp(14px, 2vw, 20px);
-            padding: 18px 40px;
-            background: rgba(255,255,255,0.1);
-            -webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.2);
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            animation: fadeInUp 1s ease-out 0.4s both;
-            display: inline-block;
-            text-decoration: none;
-            color: white;
-        }
-       
-        .hero-cta:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(96,165,250,0.3);
-        }
-       
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        /* SECTION CONTAINER */
+        
         .section {
-            min-height: auto;
-            padding: 40px 20px;
-            position: relative;
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            align-items: center;
+            padding: 80px 40px;
+            position: relative;
         }
-       
-        .section-dark {
-            background: #0a0e27;
-        }
-       
-        .section-light {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-        }
-       
-        .section-accent {
-            background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
-        }
-       
-        .section-green {
-    background: linear-gradient(135deg, #065f46 0%, #047857 100%);
-}
-
-.section-green .interactive-card {
-    background: rgba(255,255,255,0.15);
-    border: 2px solid rgba(255,255,255,0.3);
-}
-       
-        .content-wrapper {
-            max-width: 1200px;
+        
+        .container {
+            max-width: 1100px;
             width: 100%;
-            position: relative;
-            z-index: 10;
-        }
-       
-        .gradient-text {
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .section-title {
-            margin-top: 10px;
-            font-size: clamp(32px, 5vw, 56px);
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #60a5fa,#60a5fa);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            -webkit-text-fill-color: transparent;
-        }
-       
-        .section-subtitle {
-            font-size: clamp(16px, 2.5vw, 24px);
-            opacity: 0.8;
-            margin-bottom: 50px;
-        }
-       
-        /* FADE IN ANIMATIONS */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-       
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* JOURNEY VISUALIZATION */
-        .journey-container {
-    position: relative;
-    min-height: 850px;
-    margin: 50px 0 20px 0;
-    background: rgba(255,255,255,0.03);
-    border-radius: 20px;
-    padding: 60px 40px 180px;
-    overflow: visible;
-}
-
-/* base line under the stages */
-.journey-path {
-    position: absolute;
-    left: 8%;
-    right: 8%;
-    top: 50%;
-    height: 10px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #10b981, #fbbf24, #fb923c, #ef4444, #7f1d1d);
-    box-shadow: 0 0 24px rgba(0,0,0,0.5);
-}
-
-/* stage icon + label */
-.stage-icon {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    border: 4px solid rgba(255,255,255,0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    margin: 0 auto 10px auto;
-    background: rgba(15,23,42,0.9);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-}
-
-.stage-label {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #e5e7eb;
-}
-
-/* clickable area */
-.journey-stage {
-    position: absolute;
-    top: 55%;                 /* tiny tweak so path sits just beneath icons */
-    transform: translate(-50%, -50%);
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.25s ease, filter 0.25s ease;
-    z-index: 20;
-}
-
-.journey-stage:hover {
-    transform: translate(-50%, -55%) scale(1.04);
-    filter: brightness(1.15);
-}
-
-
-/* show popup on hover */
-.journey-stage:hover .stage-detail {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(-6px);
-}
-
-/* make sure the stages + tooltips sit above the retirement box */
-.journey-stage {
-    z-index: 20;
-    position: absolute;
-    top: 55%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s;
-    z-index: 20;
-}
-
-.stage-detail {
-    z-index: 30;
-    position: absolute;
-    top: -300px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.95);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    padding: 18px 20px;
-    border-radius: 16px;
-    font-size: 12px;
-    width: 290px;
-    max-width: 290px;
-    opacity: 0;
-    pointer-events: auto;
-    border: 2px solid rgba(255,255,255,0.2);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    animation: fadeInSequence 0.8s ease-out forwards;
-}
-/* Sequential reveal animation */
-@keyframes fadeInSequence {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-}
-
-/* Sequential reveal animation */
-@keyframes fadeInSequence {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-}
-
-/* Sequential reveal animation */
-@keyframes fadeInSequence {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-}
-
-/* Journey path styling */
-.journey-path {
-    position: absolute;
-    top: 55%;
-    left: 8%;
-    right: 8%;
-    height: 14px;
-    border-radius: 999px;
-    background: linear-gradient(
-        90deg,
-        #10b981 0%,
-        #10b981 25%,
-        #fbbf24 25%,
-        #fbbf24 50%,
-        #fb923c 50%,
-        #fb923c 75%,
-        #b91c1c 75%,
-        #7f1d1d 100%
-    );
-    box-shadow: 0 0 20px rgba(15,118,110,0.5);
-}
-
-.stage-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 4px solid rgba(255,255,255,0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    margin: 0 auto 8px auto;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
-}
-
-.stage-label {
-    font-size: 14px;
-    font-weight: 700;
-    color: #e5e7eb;
-    line-height: 1.4;
-}
-
-/* Retirement box sits lower and behind the hover cards */
-.crisis-overlay {
-    position: absolute;
-    bottom: 30px;
-    left: 5%;
-    right: 5%;
-    background: rgba(220,38,38,0.28);
-    border: 3px dashed rgba(220,38,38,0.55);
-    border-radius: 14px;
-    padding: 26px 32px;
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-    z-index: 5;
-}
-       
-        .overlay-title {
-    font-size: 26px;
-    font-weight: 800;
-    color: #fca5a5;
-    margin-bottom: 14px;
-    text-align: center;
-}
-
-.overlay-text {
-    font-size: 18px;
-    color: #fecaca;
-    text-align: center;
-    line-height: 1.8;
-}
-        /* RESEARCH EVIDENCE WALL */
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-       
-        .research-card {
-            background: rgba(255,255,255,0.05);
-            border: 2px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 24px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-       
-        .research-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #10b981, #14b8a6);
-            transform: scaleX(0);
-            transition: transform 0.4s;
-        }
-       
-        .research-card.verified::before {
-            background: linear-gradient(90deg, #10b981, #14b8a6);
-        }
-       
-        .research-card.estimated::before {
-            background: linear-gradient(90deg, #f59e0b, #fbbf24);
-        }
-       
-        .research-card:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(96,165,250,0.3);
-        }
-       
-        .research-card:hover::before {
-            transform: scaleX(1);
-        }
-       
-        .research-badge {
-            display: inline-block;
-            padding: 4px 12px;
+            background: white;
             border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-       
-        .badge-verified {
-            background: rgba(16,185,129,0.2);
-            color: #6ee7b7;
-            border: 1px solid rgba(16,185,129,0.3);
-        }
-       
-        .badge-estimated {
-            background: rgba(245,158,11,0.2);
-            color: #fbbf24;
-            border: 1px solid rgba(245,158,11,0.3);
-        }
-       
-        .research-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #60a5fa;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-       
-        .research-citation {
-            font-size: 12px;
-            color: #94a3b8;
-            margin-bottom: 12px;
-            line-height: 1.5;
-            font-style: italic;
-        }
-       
-        .research-finding {
-            font-size: 13px;
-            color: #cbd5e1;
-            line-height: 1.6;
-        }
-       
-        .research-stat {
-            font-size: 24px;
-            font-weight: 900;
-            color: #60a5fa;
-            margin: 12px 0 8px 0;
-        }
-       
-        .research-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 12px;
-            color: #60a5fa;
-            text-decoration: none;
-            margin-top: 12px;
-            padding: 6px 12px;
-            background: rgba(96,165,250,0.1);
-            border-radius: 8px;
-            border: 1px solid rgba(96,165,250,0.2);
-            transition: all 0.2s;
-        }
-       
-        .research-link:hover {
-            background: rgba(96,165,250,0.2);
-            transform: translateX(3px);
-        }
-        /* INTERACTIVE CARDS */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 30px 0;
-        }
-       
-        .interactive-card {
-            background: rgba(15,23,42,0.9);
-            border: 1px solid rgba(148,163,184,0.7);
-            border-radius: 16px;
-            padding: 28px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-        }
-        /* --- IMPROVED CONTRAST FOR SAFETY NET CARDS --- */
-.section-accent .interactive-card {
-    background: linear-gradient(135deg, rgba(30,41,59,0.95) 0%, rgba(15,23,42,0.98) 100%);
-    border: 2px solid rgba(148,163,184,0.4);
-    box-shadow: 0 18px 45px rgba(0,0,0,0.4);
-    backdrop-filter: blur(12px);
-}
-
-.section-accent .interactive-card .card-title {
-    color: #f1f5f9;  /* brighter white */
-    font-weight: 700;
-}
-
-.section-accent .interactive-card .card-desc {
-    color: #e2e8f0;  /* brighter slate */
-    line-height: 1.7;
-}
-
-.section-accent .card-icon {
-    font-size: 40px;
-    margin-bottom: 16px;
-    opacity: 0.9;
-}
-       
-        .interactive-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(15,23,42,0.7);
-            border-color: #60a5fa;
-        }
-       
-        .card-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-       
-        .card-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #60a5fa;
-        }
-       
-        .card-desc {
-            font-size: 15px;
-            line-height: 1.6;
-            opacity: 0.9;
-        }
-       
-        .card-stat {
-            font-size: 36px;
-            font-weight: 900;
-            color: #60a5fa;
-            margin: 15px 0;
-        }
-       
-        /* QUOTE BLOCKS */
-        .quote-block {
-            background: rgba(255,255,255,0.05);
-            border-left: 5px solid#60a5fa;
-            padding: 30px;
-            margin: 40px 0;
-            border-radius: 0 12px 12px 0;
-            font-size: clamp(16px, 2.5vw, 24px);
-            font-style: italic;
-            line-height: 1.6;
-            -webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px);
-        }
-       
-        .quote-author {
-            margin-top: 15px;
-            font-style: normal;
-            font-weight: 700;
-            color:#60a5fa;
-            font-size: 18px;
-        }
-       
-        /* BIG STAT CALLOUTS */
-        .stat-callout {
-            background: linear-gradient(135deg, #10b981, #059669);
-            border-radius: 24px;
             padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
             text-align: center;
-            margin: 60px 0;
-            box-shadow: 0 30px 80px rgba(16,185,129,0.3);
-            position: relative;
-            overflow: hidden;
         }
-       
-        /* ROI SHOWCASE */
-        .roi-showcase {
-            background: rgba(255,255,255,0.05);
-            border-radius: 20px;
-            padding: 32px;
-            margin: 24px 0;
-        }
-       
-        .roi-pathways {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 24px 0;
-        }
-       
-        .roi-pathway {
-            background: linear-gradient(135deg, #7c3aed, #6366f1);
-            border-radius: 16px;
-            padding: 28px 24px;
-            text-align: center;
-            position: relative;
-            overflow: visible;
-            transition: all 0.4s;
-        }
-       
-        .roi-pathway:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 60px rgba(124,58,237,0.4);
-        }
-       
-        .pathway-title {
-            font-size: 18px;
-            font-weight: 600;
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #0f2027;
             margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
+            line-height: 1.1;
         }
-       
-        .pathway-value {
-            font-size: 36px;
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        .hero .cta {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .hero .cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+        
+        /* The Insight Section */
+        .insight-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 50px;
+            margin-top: 30px;
+            border-left: 6px solid #667eea;
+        }
+        
+        .insight-box h2 {
+            font-size: 2rem;
+            color: #0f2027;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .equation {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .equation-item {
+            margin: 25px 0;
+        }
+        
+        .equation-item h3 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .equation-list {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .equation-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .equation-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .multiplier {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #764ba2;
+            font-weight: 800;
+            margin: 30px 0;
+        }
+        
+        .question-mark {
+            text-align: center;
+            font-size: 4rem;
+            color: #e74c3c;
+            font-weight: 900;
+            margin-top: 20px;
+        }
+        
+        .insight-question {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-top: 30px;
+            font-style: italic;
+        }
+        
+        /* Proof Section */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .proof-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .proof-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .proof-card .stat {
+            font-size: 2.8rem;
             font-weight: 900;
             margin: 20px 0;
-            position: relative;
-            z-index: 1;
-            padding: 0 10px;
-            white-space: nowrap;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
-       
-        .pathway-desc {
-            font-size: 14px;
-            line-height: 1.6;
+        
+        .proof-card p {
+            font-size: 1rem;
+            line-height: 1.5;
             opacity: 0.95;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* TOP NAVIGATION HOVER EFFECTS */
-        .nav-link:hover {
-            background: rgba(96,165,250,0.6) !important;
-            border-color: rgba(96,165,250,0.9) !important;
-            color: #ffffff !important;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(96,165,250,0.5) !important;
         }
         
-        .nav-link:active {
-            transform: translateY(0);
-        }
-
-        /* COLLAPSIBLE SUMMARY HOVER EFFECTS */
-        details summary {
-            transition: all 0.3s;
-        }
-        
-        details summary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(96,165,250,0.3) !important;
+        .quote-box {
+            background: white;
+            color: #2c3e50;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border-left: 5px solid #667eea;
+            font-style: italic;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
         
-        details[open] summary {
-            margin-bottom: 40px;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-
-        /* CARD BUTTON HOVER EFFECTS */
-        .card-button {
-            transition: all 0.3s;
+        .quote-box p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
         }
         
-        .card-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3) !important;
-            filter: brightness(1.15);
+        .quote-author {
+            font-weight: 700;
+            color: #667eea;
+            font-style: normal;
+            margin-top: 15px;
         }
         
-        .card-button:active {
-            transform: translateY(0);
+        .validation-list {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
-
-        /* RESPONSIVE */
+        
+        .validation-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .validation-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* Fit Section */
+        .needs-grid {
+            display: grid;
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .need-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 35px;
+            border-radius: 12px;
+            border-left: 6px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .need-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .need-card h3 {
+            color: #667eea;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .need-card p {
+            color: #2c3e50;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        
+        .thesis-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        .thesis-box p {
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 1.7;
+        }
+        
+        /* Question Section */
+        .questions-list {
+            margin-top: 40px;
+        }
+        
+        .question-item {
+            background: white;
+            border: 3px solid #667eea;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .question-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .question-number {
+            color: #764ba2;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-right: 15px;
+        }
+        
+        .question-item:hover .question-number {
+            color: white;
+        }
+        
+        .final-cta {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .final-cta h3 {
+            font-size: 2rem;
+            color: #0f2027;
+            margin-bottom: 30px;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .final-cta strong {
+            color: #667eea;
+        }
+        
+        /* Common Elements */
+        h2 {
+            font-size: 2.5rem;
+            color: #0f2027;
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+        
+        .section-intro {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
         @media (max-width: 768px) {
-            .comparison-container {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .proof-grid {
                 grid-template-columns: 1fr;
             }
-           
-            .path-crisis, .path-resilience {
-                min-height: 400px;
-                border-right: none;
-                border-bottom: 2px solid rgba(255,255,255,0.2);
-            }
-           
-            .nav-dots {
-                display: none;
-            }
-           
-            .factors-container {
+            
+            .validation-list {
                 grid-template-columns: 1fr;
             }
-           
-            .research-grid {
-                grid-template-columns: 1fr;
+            
+            .container {
+                padding: 30px;
+            }
+            
+            .section {
+                padding: 40px 20px;
             }
         }
     </style>
-    <!-- Scroll progress removed -->
+</head>
+<body>
+    <!-- SECTION 1: HERO -->
+    <div class="section">
+        <div class="container hero">
+            <h1>Genesis Mission's<br>Hidden Dependency</h1>
+            <p class="subtitle">Why $2B+ in technical infrastructure depends on human infrastructure</p>
+            <a href="#insight" class="cta">See the 60-second insight →</a>
+        </div>
+    </div>
     
-    <!-- STICKY TOP NAVIGATION -->
-    <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 9998; background: rgba(10,14,39,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: none; padding: 14px 20px; display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: nowrap; overflow-x: auto;">
-        <a href="#hero" class="nav-link" style="color: #fbbf24; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; transition: all 0.3s; background: rgba(96,165,250,0.25); border: 1px solid rgba(96,165,250,0.4); text-align: center;">Home</a>
-        <a href="#bluf" class="nav-link" style="color: #fbbf24; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; transition: all 0.3s; background: rgba(96,165,250,0.25); border: 1px solid rgba(96,165,250,0.4); min-width: 140px; text-align: center;">Framework</a>
-        <a href="#science" class="nav-link" style="color: #fbbf24; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; transition: all 0.3s; background: rgba(96,165,250,0.25); border: 1px solid rgba(96,165,250,0.4); min-width: 140px; text-align: center;">Science</a>
-        <a href="#challenges" class="nav-link" style="color: #fbbf24; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; transition: all 0.3s; background: rgba(96,165,250,0.25); border: 1px solid rgba(96,165,250,0.4); min-width: 140px; text-align: center;">Challenges</a>
-        <a href="#the-gap" class="nav-link" style="color: #fbbf24; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; transition: all 0.3s; background: rgba(96,165,250,0.25); border: 1px solid rgba(96,165,250,0.4); min-width: 140px; text-align: center;">The Gap</a>
-        <a href="#programs" class="nav-link" style="color: #fbbf24; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; transition: all 0.3s; background: rgba(96,165,250,0.25); border: 1px solid rgba(96,165,250,0.4); min-width: 140px; text-align: center;">Programs</a>
-        <a href="#engagement" class="nav-link" style="color: #fbbf24; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; transition: all 0.3s; background: rgba(96,165,250,0.25); border: 1px solid rgba(96,165,250,0.4); min-width: 140px; text-align: center;">Engagement</a>
-        <a href="#roi" class="nav-link" style="color: #fbbf24; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; transition: all 0.3s; background: rgba(96,165,250,0.25); border: 1px solid rgba(96,165,250,0.4); min-width: 140px; text-align: center;">ROI</a>
-        <a href="#next-steps" class="nav-link" style="color: #fbbf24; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; transition: all 0.3s; background: rgba(96,165,250,0.25); border: 1px solid rgba(96,165,250,0.4); min-width: 140px; text-align: center;">Next Steps</a>
-        <a href="#research-appendix" class="nav-link" style="color: #fbbf24; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; transition: all 0.3s; background: rgba(96,165,250,0.25); border: 1px solid rgba(96,165,250,0.4); min-width: 140px; text-align: center;">Research</a>
-    </nav>
-    
-    <main>
-   
-    <!-- HERO SECTION WITH BADGE BACKGROUNDS -->
-    <section class="hero" id="hero" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 80px 20px; text-align: center; background: linear-gradient(180deg, rgba(10,14,39,0.88) 0%, rgba(30,58,138,0.92) 50%, rgba(37,99,235,0.95) 100%), url('cbp-badge-shoulder.png') left center / 400px no-repeat, url('cbp-border-patrol-badge.png') right center / 380px no-repeat; background-color: #1a0a0f; position: relative;">
-        <img src="betterup-logo.png" alt="BetterUp" style="width: 180px; height: auto; margin-bottom: 60px;">
-        
-        <h1 style="font-size: clamp(42px, 7vw, 82px); font-weight: 900; line-height: 1.1; margin-bottom: 30px; max-width: 1100px;">CBP Mission Readiness &<br>Resilience Program</h1>
-        
-        <div style="display: inline-block; background: linear-gradient(135deg, rgba(59,130,246,0.25), rgba(37,99,235,0.15)); border: 2px solid rgba(96,165,250,0.5); border-radius: 50px; padding: 16px 40px; margin-bottom: 40px; backdrop-filter: blur(12px); box-shadow: 0 8px 32px rgba(59,130,246,0.3);">
-            <p style="font-size: clamp(18px, 2.5vw, 28px); font-weight: 700; margin: 0; letter-spacing: 0.5px; font-style: italic; background: linear-gradient(135deg, #93c5fd, #c084fc); -webkit-background-clip: text; background-clip: text; color: transparent;">
-                Resilient Officers & Agents Are READY Officers & Agents
+    <!-- SECTION 2: THE INSIGHT -->
+    <div class="section" id="insight">
+        <div class="container">
+            <div class="insight-box">
+                <h2>The Genesis Mission Paradox</h2>
+                
+                <div class="equation">
+                    <div class="equation-item">
+                        <h3>Technical Infrastructure ($2B+)</h3>
+                        <ul class="equation-list">
+                            <li>Supercomputers & AI Systems</li>
+                            <li>Quantum Platforms</li>
+                            <li>Scientific Instruments</li>
+                            <li>Data Infrastructure</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="multiplier">× (multiplier)</div>
+                    
+                    <div class="equation-item">
+                        <h3>Human Infrastructure ($0)</h3>
+                        <ul class="equation-list">
+                            <li>Cross-lab collaboration capability?</li>
+                            <li>Public-private partnership skills?</li>
+                            <li>Sustained innovation under pressure?</li>
+                            <li>Knowledge transfer frameworks?</li>
+                            <li>Leadership for "deeply uncomfortable urgency"?</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="question-mark">?</div>
+                </div>
+                
+                <p class="insight-question">"Which infrastructure determines mission success?"</p>
+            </div>
+            
+            <p class="section-intro" style="margin-top: 40px; text-align: center;">
+                The Genesis Mission must mobilize <strong>40,000 DOE personnel</strong> across <strong>17 National Labs</strong> 
+                to collaborate with industry (Anthropic, OpenAI, NVIDIA, IBM, Microsoft) and sustain innovation 
+                at <strong>"deeply uncomfortable urgency"</strong> for 10 years.
             </p>
         </div>
-        
-        <p style="font-size: clamp(18px, 2.2vw, 26px); margin-bottom: 60px; opacity: 0.9; max-width: 900px; font-weight: 500; line-height: 1.4;">
-            An Evidence-Based Strategy for Workforce Sustainability Before 2028
-        </p>
-    </section>
-
-    <!-- 4-PART FRAMEWORK -->
-    <section id="bluf" style="min-height: 100vh; padding: 60px 20px 100px 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(180deg, #0a0e27 0%, #1e3a8a 50%, #1e40af 100%);">
-        <div style="text-align: center; margin-bottom: 80px; max-width: 900px;">
-            <h2 style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px;">The Path to Improved Retention, Performance and Resilience</h2>
-            <p style="font-size: clamp(16px, 2vw, 22px); opacity: 0.7; line-height: 1.6;">Five foundational pieces to explore together</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; max-width: 1500px; width: 100%; margin: 0 auto;">
-            <!-- CARD 1: THE SCIENCE -->
-            <a href="#science" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%); border-radius: 20px; padding: 36px 30px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: white;">
-                <div style="position: absolute; bottom: -80px; right: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(252,165,165,0.35) 0%, rgba(252,165,165,0.15) 50%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-                <div style="position: relative; z-index: 2;">
-                    <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.9; margin-bottom: 20px;">FOUNDATION</div>
-                    <h3 style="font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; line-height: 1.2; margin-bottom: 20px;">The Science</h3>
-                    <p style="font-size: clamp(14px, 1.8vw, 16px); line-height: 1.6; opacity: 0.95; margin-bottom: 30px;">
-                        What macro research tells us about high-stress law enforcement environments—and why CBP's timeline is 6x faster
-                    </p>
-                </div>
-                <div style="font-size: 16px; font-weight: 700; opacity: 0.9; display: inline-flex; align-items: center; gap: 8px; margin-top: auto; position: relative; z-index: 2;">
-                    Explore the research <span style="font-size: 20px;">→</span>
-                </div>
-            </a>
-
-            <!-- CARD 2: CBP CHALLENGES -->
-            <a href="#challenges" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%); border-radius: 20px; padding: 36px 30px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: white;">
-                <div style="position: absolute; bottom: -80px; right: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(252,165,165,0.35) 0%, rgba(252,165,165,0.15) 50%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-                <div style="position: relative; z-index: 2;">
-                    <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.9; margin-bottom: 20px;">YOUR REALITY</div>
-                    <h3 style="font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; line-height: 1.2; margin-bottom: 20px;">CBP Challenges</h3>
-                    <p style="font-size: clamp(14px, 1.8vw, 16px); line-height: 1.6; opacity: 0.95; margin-bottom: 30px;">
-                        Retention, performance, and resilience—the three interconnected challenges before 2028
-                    </p>
-                </div>
-                <div style="font-size: 16px; font-weight: 700; opacity: 0.9; display: inline-flex; align-items: center; gap: 8px; margin-top: auto; position: relative; z-index: 2;">
-                    Validate with us <span style="font-size: 20px;">→</span>
-                </div>
-            </a>
-
-            <!-- CARD 3: THE GAP -->
-            <a href="#the-gap" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%); border-radius: 20px; padding: 32px 24px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: white;">
-                <div style="position: absolute; bottom: -80px; right: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(252,165,165,0.35) 0%, rgba(252,165,165,0.15) 50%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-                <div style="position: relative; z-index: 2;">
-                    <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.9; margin-bottom: 20px;">THE OPPORTUNITY</div>
-                    <h3 style="font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; line-height: 1.2; margin-bottom: 20px;">The Gap</h3>
-                    <p style="font-size: clamp(14px, 1.8vw, 16px); line-height: 1.6; opacity: 0.95; margin-bottom: 30px;">
-                        Where CBP's safety net ends and prevention begins—the missing upstream layer
-                    </p>
-                </div>
-                <div style="font-size: 16px; font-weight: 700; opacity: 0.9; display: inline-flex; align-items: center; gap: 8px; margin-top: auto; position: relative; z-index: 2;">
-                    Explore the gap <span style="font-size: 20px;">→</span>
-                </div>
-            </a>
-
-            <!-- CARD 4: BETTERUP PROGRAMS -->
-            <a href="#programs" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%); border-radius: 20px; padding: 36px 30px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: white;">
-                <div style="position: absolute; bottom: -80px; right: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(252,165,165,0.35) 0%, rgba(252,165,165,0.15) 50%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-                <div style="position: relative; z-index: 2;">
-                    <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.9; margin-bottom: 20px;">FEDERAL PROOF</div>
-                    <h3 style="font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; line-height: 1.2; margin-bottom: 20px;">BetterUp Programs</h3>
-                    <p style="font-size: clamp(14px, 1.8vw, 16px); line-height: 1.6; opacity: 0.95; margin-bottom: 30px;">
-                        Air Force, NASA, FAA, WSIB—proven impact with federal peers and first responders at scale
-                    </p>
-                </div>
-                <div style="font-size: 16px; font-weight: 700; opacity: 0.9; display: inline-flex; align-items: center; gap: 8px; margin-top: auto; position: relative; z-index: 2;">
-                    See the evidence <span style="font-size: 20px;">→</span>
-                </div>
-            </a>
-
-            <!-- CARD 5: PROPOSED ENGAGEMENT -->
-            <a href="#engagement" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%); border-radius: 20px; padding: 36px 30px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: white;">
-                <div style="position: absolute; bottom: -80px; right: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(252,165,165,0.35) 0%, rgba(252,165,165,0.15) 50%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-                <div style="position: relative; z-index: 2;">
-                    <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.9; margin-bottom: 20px;">NEXT STEPS</div>
-                    <h3 style="font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; line-height: 1.2; margin-bottom: 20px;">Proposed Engagement</h3>
-                    <p style="font-size: clamp(14px, 1.8vw, 16px); line-height: 1.6; opacity: 0.95; margin-bottom: 30px;">
-                        The prevention layer opportunity—conservative ROI projections and path to partnership
-                    </p>
-                </div>
-                <div style="font-size: 16px; font-weight: 700; opacity: 0.9; display: inline-flex; align-items: center; gap: 8px; margin-top: auto; position: relative; z-index: 2;">
-                    Build the case together <span style="font-size: 20px;">→</span>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- SECTION 1: THE SCIENCE -->
-    <section class="content-section" id="science" style="min-height: 100vh; padding: 100px 20px; background: #0a0a0a;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <a href="#bluf" style="display: inline-block; padding: 14px 32px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); border-radius: 50px; color: white; text-decoration: none; font-weight: 700; transition: all 0.3s; margin-bottom: 40px;">← Back to Framework</a>
-            
-            <div style="text-align: center; margin-bottom: 60px; max-width: 1000px; margin-left: auto; margin-right: auto;">
-                <h2 style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #9333ea, #c026d3); -webkit-background-clip: text; background-clip: text; color: transparent;">
-                    The Science: What Research Tells Us
-                </h2>
-                <p style="font-size: clamp(16px, 2vw, 22px); opacity: 0.7;">Our hypothesis begins here—500 universities, peer-reviewed studies, 10+ years of behavioral science</p>
-            </div>
-
-            <!-- PERFORMANCE CRISIS WITH GRAPH -->
-            <div style="background: linear-gradient(135deg, rgba(147,51,234,0.12), rgba(192,38,211,0.08)); border: 2px solid rgba(192,38,211,0.3); border-radius: 20px; padding: 40px; margin-bottom: 40px;">
-                <h3 style="font-size: 32px; font-weight: 800; color: #e9d5ff; margin-bottom: 30px; text-align: center;">
-                    The $2.2 Trillion Performance Crisis
-                </h3>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 36px; align-items: center;">
-                    <!-- LEFT: TEXT -->
-                    <div>
-                        <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 24px; margin-bottom: 20px;">
-                            <p style="font-size: 16px; line-height: 1.7; opacity: 0.95; color: #e2e8f0;">
-                                BetterUp Labs analyzed <strong style="color: #e9d5ff;">410,000+ employees (2019-2025)</strong> and discovered: <strong style="color: #fbbf24;">Performance down 2-6% across all industries.</strong>
-                            </p>
-                            <p style="font-size: 15px; line-height: 1.7; opacity: 0.9; color: #cbd5e1; margin-top: 16px;">
-                                Half of today's workforce would land in a lower performance tier by 2019 standards.
-                            </p>
-                        </div>
-                        <div style="background: rgba(251,191,36,0.15); border-left: 4px solid #fbbf24; padding: 22px; border-radius: 10px;">
-                            <p style="font-size: 15px; line-height: 1.7; color: #fde68a;">
-                                <strong style="color: #fef3c7;">Fuel = Motivation, Optimism and Agency</strong> - drives all types of performance. It's the biggest factor, and it's declining the most.
-                            </p>
-                            <p style="font-size: 14px; line-height: 1.7; color: #fde68a; margin-top: 14px;">
-                                Almost every employee indicator has declined since 2019. And this is critical, because these mindsets are one of the most powerful and foundational human skills.
-                            </p>
-                            <p style="font-size: 14px; line-height: 1.7; color: #fef3c7; margin-top: 14px; font-weight: 600;">
-                                And the best thing is we know from decades of science <strong style="color: #fbbf24;">these mindsets are very coachable.</strong>
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- RIGHT: GRAPH -->
-                    <div style="background: rgba(0,0,0,0.4); border-radius: 16px; padding: 20px; border: 1px solid rgba(192,38,211,0.3);">
-                        <img src="performance-decline-graph.png" alt="Performance Crisis Graph - Fuel decline across Basic, Collaborative, and Adaptive Performance 2019-2024" style="width: 100%; height: auto; border-radius: 8px;">
-                        <p style="font-size: 12px; color: #94a3b8; text-align: center; margin-top: 12px; font-style: italic;">
-                            Source: BetterUp Labs Performance Crisis Study (2019-2025)
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6X PARADIGM SHIFT - INTEGRATED WITH GRAPH -->
-            <div style="background: linear-gradient(135deg, rgba(220,38,38,0.18), rgba(249,115,22,0.12)); border: 3px solid rgba(239,68,68,0.5); border-radius: 20px; padding: 40px;">
-                <h3 style="font-size: 28px; font-weight: 800; color: #fecaca; line-height: 1.2; text-align: center; margin-bottom: 12px; letter-spacing: -0.5px;">
-                    CBP Officers & Agents Experience Burnout <span style="color: #fca5a5; font-size: 38px; display: inline-block; margin: 0 5px;">6x Faster</span> Than General LE
-                </h3>
-                <p style="text-align: center; font-size: 16px; color: #fde68a; margin-bottom: 40px; font-style: italic;">
-                    Early erosion (Years 1-9) vs. General LE baseline (Years 7-12) — early intervention window is critical
-                </p>
-
-                <!-- EMBEDDED SVG TIMELINE GRAPHIC -->
-                <svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto; display: block; margin: 0 auto 40px auto;">
-                    <!-- Background -->
-                    <rect width="1200" height="500" fill="#0f172a"/>
-                    
-                    <!-- Title -->
-                    <text x="600" y="35" text-anchor="middle" fill="#60a5fa" font-size="24" font-weight="700">Career Trajectory in High-Stress Law Enforcement</text>
-                    <text x="600" y="60" text-anchor="middle" fill="#94a3b8" font-size="14" font-weight="500">Purpose / Performance / Wellbeing Over Time</text>
-                    
-                    <!-- Axes -->
-                    <line x1="100" y1="400" x2="1100" y2="400" stroke="#475569" stroke-width="3"/>
-                    <line x1="100" y1="400" x2="100" y2="120" stroke="#475569" stroke-width="3"/>
-                    
-                    <!-- Y-axis label -->
-                    <text x="35" y="260" text-anchor="middle" fill="#94a3b8" font-size="14" font-weight="600" transform="rotate(-90 35 260)">Purpose / Performance / Wellbeing</text>
-                    
-                    <!-- X-axis labels -->
-                    <text x="150" y="425" text-anchor="middle" fill="#cbd5e1" font-size="14" font-weight="600">Entry</text>
-                    <text x="300" y="425" text-anchor="middle" fill="#cbd5e1" font-size="14" font-weight="600">Yrs 1-3</text>
-                    <text x="500" y="425" text-anchor="middle" fill="#cbd5e1" font-size="14" font-weight="600">Yrs 5-7</text>
-                    <text x="700" y="425" text-anchor="middle" fill="#cbd5e1" font-size="14" font-weight="600">Yrs 10-15</text>
-                    <text x="900" y="425" text-anchor="middle" fill="#cbd5e1" font-size="14" font-weight="600">Yrs 20+</text>
-                    <text x="1050" y="425" text-anchor="middle" fill="#cbd5e1" font-size="14" font-weight="600">Retirement</text>
-                    
-                    <!-- Starting point: HIGH PURPOSE -->
-                    <circle cx="150" cy="140" r="10" fill="#10b981"/>
-                    <text x="150" y="125" text-anchor="middle" fill="#6ee7b7" font-size="15" font-weight="700">HIGH PURPOSE</text>
-                    
-                    <!-- General Law Enforcement trajectory (blue dashed) -->
-                    <path d="M 150 140 Q 250 155, 320 180 Q 420 220, 520 270 Q 620 320, 720 360 Q 820 380, 1000 390" 
-                          fill="none" stroke="#3b82f6" stroke-width="5" stroke-dasharray="10,5" stroke-linecap="round" opacity="0.9"/>
-                    
-                    <!-- CBP trajectory (red solid) -->
-                    <path d="M 150 140 Q 210 170, 280 250 Q 350 320, 450 360 Q 580 385, 720 395 Q 850 400, 1000 405" 
-                          fill="none" stroke="#ef4444" stroke-width="6" stroke-linecap="round"/>
-                    
-                    <!-- Key points on CBP trajectory -->
-                    <circle cx="280" cy="250" r="8" fill="#ef4444"/>
-                    <text x="280" y="280" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="600">CBP Early Erosion</text>
-                    <text x="280" y="295" text-anchor="middle" fill="#fecaca" font-size="10">(Yrs 1-3)</text>
-                    
-                    <circle cx="450" cy="360" r="8" fill="#dc2626"/>
-                    <text x="450" y="340" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="600">CBP Peak Risk</text>
-                    <text x="450" y="353" text-anchor="middle" fill="#fecaca" font-size="10">(Yrs 5-9)</text>
-                    
-                    <!-- Key point on General LE trajectory -->
-                    <circle cx="520" cy="270" r="7" fill="#3b82f6" opacity="0.9"/>
-                    <text x="520" y="305" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="600">General LE Onset</text>
-                    <text x="520" y="318" text-anchor="middle" fill="#93c5fd" font-size="9">(Yrs 7-12)</text>
-                    
-                    <!-- Legend -->
-                    <g transform="translate(850, 150)">
-                        <rect width="250" height="100" fill="rgba(15,23,42,0.95)" stroke="#475569" stroke-width="2" rx="8"/>
-                        <text x="125" y="25" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">Timeline Comparison</text>
-                        
-                        <!-- CBP line -->
-                        <line x1="20" y1="45" x2="80" y2="45" stroke="#ef4444" stroke-width="6"/>
-                        <text x="90" y="50" fill="#fca5a5" font-size="12" font-weight="600">CBP Trajectory</text>
-                        
-                        <!-- General LE line -->
-                        <line x1="20" y1="70" x2="80" y2="70" stroke="#3b82f6" stroke-width="5" stroke-dasharray="10,5"/>
-                        <text x="90" y="75" fill="#93c5fd" font-size="12">General LE Baseline</text>
-                    </g>
-                </svg>
-                
-                <div style="display: grid; grid-template-columns: 5fr 1fr 5fr; gap: 20px; align-items: center; margin-bottom: 30px;">
-                    <div style="background: rgba(239,68,68,0.25); border: 2px solid #ef4444; border-radius: 12px; padding: 24px; text-align: center;">
-                        <div style="font-size: 15px; font-weight: 700; color: #fecaca; margin-bottom: 10px;">CBP Reality</div>
-                        <div style="font-size: 48px; font-weight: 900; color: #fca5a5; margin: 12px 0; line-height: 1;">Years 1-9</div>
-                        <div style="font-size: 14px; color: #fecaca; line-height: 1.5;">
-                            Early burnout (1-3 yrs) • Peak PTSD risk (5-9 yrs)
-                        </div>
-                    </div>
-                    
-                    <div style="font-size: 40px; color: #fca5a5; font-weight: 900; text-align: center;">→</div>
-                    
-                    <div style="background: rgba(59,130,246,0.2); border: 2px solid #3b82f6; border-radius: 12px; padding: 24px; text-align: center;">
-                        <div style="font-size: 15px; font-weight: 700; color: #93c5fd; margin-bottom: 10px;">General LE Baseline</div>
-                        <div style="font-size: 48px; font-weight: 900; color: #60a5fa; margin: 12px 0; line-height: 1;">Years 7-15</div>
-                        <div style="font-size: 14px; color: #bfdbfe; line-height: 1.5;">
-                            Burnout onset (7-12 yrs) • Clinical risk (10-15 yrs)
-                        </div>
-                    </div>
-                </div>
-
-                <div style="background: rgba(0,0,0,0.4); border-left: 4px solid #fbbf24; padding: 24px 28px; border-radius: 12px; text-align: center;">
-                    <p style="font-size: 18px; font-weight: 700; color: #fde68a; line-height: 1.5; margin: 0;">
-                        💡 <strong style="color: #fef3c7;">The Insight:</strong> 1-year problem that compounds for 10 years<br>
-                        <span style="font-size: 15px; color: #fde68a; opacity: 0.9; margin-top: 8px; display: block;">Early intervention during this critical window prevents progression to clinical decline</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 2: CBP CHALLENGES (Links to existing Retention/Performance/Resilience sections) -->
-    <section id="challenges" style="min-height: 100vh; padding: 100px 20px; background: #050505;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <a href="#bluf" style="display: inline-block; padding: 14px 32px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); border-radius: 50px; color: white; text-decoration: none; font-weight: 700; transition: all 0.3s; margin-bottom: 40px;">← Back to Framework</a>
-            
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2 style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #dc2626, #f97316); -webkit-background-clip: text; background-clip: text; color: transparent;">
-                    CBP's Three Interconnected Challenges
-                </h2>
-                <p style="font-size: clamp(16px, 2vw, 22px); opacity: 0.7;">Let's validate this against your reality—does this match what you're seeing?</p>
-            </div>
-
-            <!-- WHERE CBP'S SAFETY NET ENDS -->
-            <div style="background: linear-gradient(135deg, rgba(96,165,250,0.1), rgba(59,130,246,0.08)); border: 3px solid rgba(96,165,250,0.4); border-radius: 24px; padding: 50px; margin-bottom: 60px;">
-                <h3 style="font-size: 32px; font-weight: 800; color: #60a5fa; text-align: center; margin-bottom: 40px;">
-                    Where CBP's Safety Net Ends
-                </h3>
-                
-                <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 30px; align-items: center;">
-                    <div style="background: rgba(16,185,129,0.15); border: 2px solid #10b981; border-radius: 16px; padding: 36px;">
-                        <div style="font-size: 20px; font-weight: 700; color: #6ee7b7; margin-bottom: 20px; text-align: center;">✅ What CBP Has Built</div>
-                        <ul style="font-size: 16px; color: #d1fae5; line-height: 2; list-style: none; padding: 0;">
-                            <li>✓ EAP programs</li>
-                            <li>✓ Critical Incident Response Teams</li>
-                            <li>✓ Peer Support Networks</li>
-                            <li>✓ Chaplains & OP Psychologists</li>
-                        </ul>
-                        <div style="background: rgba(16,185,129,0.2); padding: 16px; border-radius: 8px; margin-top: 20px; text-align: center;">
-                            <strong style="color: #6ee7b7; font-size: 16px;">Excellent clinical support infrastructure</strong>
-                        </div>
-                    </div>
-                    
-                    <div style="font-size: 56px; color: #ef4444;">❌</div>
-                    
-                    <div style="background: rgba(239,68,68,0.15); border: 2px solid #ef4444; border-radius: 16px; padding: 36px;">
-                        <div style="font-size: 20px; font-weight: 700; color: #fca5a5; margin-bottom: 20px; text-align: center;">❌ What's Missing</div>
-                        <ul style="font-size: 16px; color: #fecaca; line-height: 2; list-style: none; padding: 0;">
-                            <li>✗ Early organizational burnout prevention (0-3 yrs)</li>
-                            <li>✗ Protective factor building before clinical decline (3-10 yrs)</li>
-                            <li>✗ Stigma-free 24/7 support</li>
-                            <li>✗ Intervention before officers & agents are "broken"</li>
-                        </ul>
-                        <div style="background: rgba(239,68,68,0.2); padding: 16px; border-radius: 8px; margin-top: 20px; text-align: center;">
-                            <strong style="color: #fca5a5; font-size: 16px;">No upstream intervention</strong>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 2px solid rgba(96,165,250,0.3);">
-                    <p style="font-size: 19px; color: #e2e8f0; line-height: 1.7; font-weight: 600;">
-                        "It often feels like something is missing—there are pieces of behavioral science<br>and support, but no platform to bring them together at scale."
-                    </p>
-                    <p style="font-size: 15px; color: #94a3b8; margin-top: 12px; font-style: italic;">— CBP Resiliency Program leadership</p>
-                </div>
-            </div>
-
-            <!-- THREE CHALLENGES IN COMPACT FORMAT -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 50px 0;">
-                
-                <!-- CHALLENGE 1: RETENTION -->
-                <div style="background: linear-gradient(135deg, rgba(239,68,68,0.15), rgba(220,38,38,0.1)); border: 3px solid rgba(239,68,68,0.5); border-radius: 20px; padding: 40px;">
-                    <div style="text-align: center; margin-bottom: 24px;">
-                        <span style="display: inline-block; background: rgba(239,68,68,0.3); border: 2px solid #ef4444; color: #fca5a5; padding: 6px 20px; border-radius: 50px; font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px;">
-                            CHALLENGE 1
-                        </span>
-                        <h3 style="font-size: 24px; font-weight: 800; color: #fca5a5; margin-bottom: 12px;">Retention Crisis</h3>
-                        <p style="font-size: 14px; color: #fecaca; opacity: 0.9;">40% retirement-eligible by 2028</p>
-                    </div>
-
-                    <div style="background: rgba(0,0,0,0.2); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
-                        <div style="font-size: 14px; font-weight: 700; color: #fef3c7; margin-bottom: 12px;">What CBP Faces</div>
-                        <div style="display: grid; gap: 12px;">
-                            <div style="text-align: center; background: rgba(239,68,68,0.2); padding: 12px; border-radius: 8px;">
-                                <div style="font-size: 32px; font-weight: 900; color: #ef4444; line-height: 1;">40%</div>
-                                <div style="font-size: 11px; color: #fecaca;">Retirement-eligible 2028</div>
-                            </div>
-                            <div style="text-align: center; background: rgba(239,68,68,0.2); padding: 12px; border-radius: 8px;">
-                                <div style="font-size: 32px; font-weight: 900; color: #ef4444; line-height: 1;">$210K</div>
-                                <div style="font-size: 11px; color: #fecaca;">Cost per separation</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="background: rgba(16,185,129,0.2); border: 2px solid #10b981; border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-                        <div style="font-size: 14px; font-weight: 700; color: #d1fae5; margin-bottom: 12px; text-align: center;">BetterUp Impact</div>
-                        <div style="text-align: center; margin-bottom: 16px;">
-                            <div style="font-size: 36px; font-weight: 900; color: #10b981; line-height: 1;">+20%</div>
-                            <div style="font-size: 12px; color: #d1fae5; font-weight: 600;">Air Force Pilots & Aircrew</div>
-                            <div style="font-size: 11px; color: #a7f3d0;">Career commitment</div>
-                        </div>
-                        <div style="font-size: 11px; color: #d1fae5; line-height: 1.5; text-align: center; margin-bottom: 8px;">
-                            <strong>+15-42% across multiple AFSCs</strong><br>
-                            Builds purpose (+9%), belonging (+13%), engagement (+10%)
-                        </div>
-                        <div style="text-align: center;">
-                            <a href="https://www.betterup.com/customers/united-states-airforce" target="_blank" style="font-size: 9px; color: #6ee7b7; text-decoration: underline;">(USAF 4-Year Study: 88 pilots, statistically significant p<.001)</a>
-                        </div>
-                    </div>
-
-                    </div>
-
-                <!-- CHALLENGE 2: PERFORMANCE -->
-                <div style="background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(37,99,235,0.1)); border: 3px solid rgba(59,130,246,0.5); border-radius: 20px; padding: 40px;">
-                    <div style="text-align: center; margin-bottom: 24px;">
-                        <span style="display: inline-block; background: rgba(59,130,246,0.3); border: 2px solid #3b82f6; color: #93c5fd; padding: 6px 20px; border-radius: 50px; font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px;">
-                            CHALLENGE 2
-                        </span>
-                        <h3 style="font-size: 24px; font-weight: 800; color: #93c5fd; margin-bottom: 12px;">Performance & Readiness</h3>
-                        <p style="font-size: 14px; color: #bfdbfe; opacity: 0.9;">Maintaining operational capacity</p>
-                    </div>
-
-                    <div style="background: rgba(0,0,0,0.2); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
-                        <div style="font-size: 14px; font-weight: 700; color: #fef3c7; margin-bottom: 12px;">What CBP Faces</div>
-                        <div style="display: grid; gap: 10px;">
-                            <div style="background: rgba(59,130,246,0.2); padding: 10px; border-radius: 8px;">
-                                <div style="font-size: 11px; font-weight: 700; color: #bfdbfe; margin-bottom: 4px;">⚠️ Coverage Gaps</div>
-                                <div style="font-size: 10px; color: #dbeafe;">Limited duty, non-deployable</div>
-                            </div>
-                            <div style="background: rgba(59,130,246,0.2); padding: 10px; border-radius: 8px;">
-                                <div style="font-size: 11px; font-weight: 700; color: #bfdbfe; margin-bottom: 4px;">⏰ Overtime Strain</div>
-                                <div style="font-size: 10px; color: #dbeafe;">Unsustainable hours</div>
-                            </div>
-                            <div style="background: rgba(59,130,246,0.2); padding: 10px; border-radius: 8px;">
-                                <div style="font-size: 11px; font-weight: 700; color: #bfdbfe; margin-bottom: 4px;">📉 Knowledge Loss</div>
-                                <div style="font-size: 10px; color: #dbeafe;">Institutional expertise departing</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="background: rgba(96,165,250,0.2); border: 2px solid #60a5fa; border-radius: 12px; padding: 16px; margin-bottom: 16px;">
-                        <div style="font-size: 14px; font-weight: 700; color: #e2e8f0; margin-bottom: 8px; text-align: center;">The Science</div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 42px; font-weight: 900; color: #3b82f6; line-height: 1;">4x</div>
-                            <div style="font-size: 11px; color: #e2e8f0; line-height: 1.4; margin-top: 6px;">
-                                More performance & honor awards<br>for high well-being employees<br>
-                                <a href="https://hdl.handle.net/10945/68893" target="_blank" style="font-size: 10px; color: #60a5fa; text-decoration: underline;">(Lester et al. 2021: 908K soldiers, 4 years)</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="background: rgba(16,185,129,0.2); border: 2px solid #10b981; border-radius: 12px; padding: 16px;">
-                        <div style="font-size: 13px; font-weight: 700; color: #d1fae5; margin-bottom: 8px; text-align: center;">BetterUp Impact</div>
-                        <div style="font-size: 11px; color: #d1fae5; line-height: 1.6; text-align: center; margin-bottom: 8px;">
-                            <strong style="color: #6ee7b7;">+20% Individual Mission Readiness</strong><br>
-                            <strong style="color: #6ee7b7;">+17% Unit Mission Readiness</strong><br>
-                            <span style="font-size: 10px;">Social Connection (+15%) • Alignment (+23%) • Self-Awareness (+21%)</span>
-                        </div>
-                        <div style="text-align: center;">
-                            <a href="https://www.betterup.com/customers/united-states-airforce" target="_blank" style="font-size: 9px; color: #6ee7b7; text-decoration: underline;">(USAF 4-Year Study: 534 Officers, 414 Enlisted, p<.001)</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CHALLENGE 3: RESILIENCE -->
-                <div style="background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(5,150,105,0.1)); border: 3px solid rgba(16,185,129,0.5); border-radius: 20px; padding: 40px;">
-                    <div style="text-align: center; margin-bottom: 24px;">
-                        <span style="display: inline-block; background: rgba(16,185,129,0.3); border: 2px solid #10b981; color: #6ee7b7; padding: 6px 20px; border-radius: 50px; font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px;">
-                            CHALLENGE 3
-                        </span>
-                        <h3 style="font-size: 24px; font-weight: 800; color: #6ee7b7; margin-bottom: 12px;">Resilience & Prevention</h3>
-                        <p style="font-size: 14px; color: #a7f3d0; opacity: 0.9;">Building protective factors that prevent clinical decline</p>
-                    </div>
-
-                    <div style="background: rgba(0,0,0,0.2); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
-                        <div style="font-size: 14px; font-weight: 700; color: #fef3c7; margin-bottom: 12px;">What CBP Faces</div>
-                        <div style="display: grid; gap: 12px;">
-                            <div style="text-align: center; background: rgba(239,68,68,0.2); padding: 12px; border-radius: 8px;">
-                                <div style="font-size: 32px; font-weight: 900; color: #ef4444; line-height: 1;">149</div>
-                                <div style="font-size: 11px; color: #fecaca;">Suicides since 2007</div>
-                            </div>
-                            <div style="text-align: center; background: rgba(239,68,68,0.2); padding: 12px; border-radius: 8px;">
-                                <div style="font-size: 32px; font-weight: 900; color: #ef4444; line-height: 1;">28%</div>
-                                <div style="font-size: 11px; color: #fecaca;">Higher rate than other LE</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="background: rgba(16,185,129,0.2); border: 2px solid #10b981; border-radius: 12px; padding: 16px; margin-bottom: 16px;">
-                        <div style="font-size: 14px; font-weight: 700; color: #d1fae5; margin-bottom: 8px; text-align: center;">BetterUp Builds CDC Protective Factors</div>
-                        <div style="font-size: 10px; color: #a7f3d0; margin-bottom: 12px; text-align: center; font-style: italic;">
-                            <a href="https://www.cdc.gov/suicide/prevention/index.html" target="_blank" style="color: #6ee7b7; text-decoration: underline;">CDC</a> identifies factors that prevent suicide—BetterUp builds them
-                        </div>
-                        <div style="font-size: 11px; color: #d1fae5; line-height: 1.6;">
-                            <strong style="color: #6ee7b7;">Individual:</strong> +56% Resilience, +90% Hope<br>
-                            <strong style="color: #6ee7b7;">Relationship:</strong> +80% Social connection<br>
-                            <strong style="color: #6ee7b7;">Community:</strong> +63% Belonging, +74% Org support
-                        </div>
-                    </div>
-
-                    <div style="background: rgba(96,165,250,0.2); border: 2px solid #60a5fa; border-radius: 12px; padding: 16px;">
-                        <div style="font-size: 13px; font-weight: 700; color: #93c5fd; margin-bottom: 8px; text-align: center;">Leadership Protects Against Suicide</div>
-                        <div style="font-size: 10px; color: #bfdbfe; margin-bottom: 8px; text-align: center; font-style: italic;">
-                            Transformational leadership identified as top protective factor across all military installations studied
-                        </div>
-                        <div style="font-size: 11px; color: #bfdbfe; line-height: 1.6; text-align: center; margin-bottom: 8px;">
-                            <strong style="color: #60a5fa;">BetterUp Impact on USAF Personnel:</strong><br>
-                            +17% Empowerment • +14% Relationship Building<br>
-                            +16% Stress Management • +14% Resilience<br>
-                            <span style="font-size: 10px;">(4-year validated study, statistically significant)</span>
-                        </div>
-                        <div style="text-align: center;">
-                            <a href="https://media.defense.gov/2023/feb/24/2003167430/-1/-1/0/sprirc-final-report.pdf" target="_blank" style="font-size: 9px; color: #60a5fa; text-decoration: underline;">(DoD SPRIRC Report 2022, p. 54)</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-<!-- SECTION 2.5: THE GAP -->
-    <section id="the-gap" style="min-height: 100vh; padding: 40px 20px 100px 20px; background: linear-gradient(135deg, #0a0a0a 0%, #1e1e1e 100%);">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <a href="#bluf" style="display: inline-block; padding: 14px 32px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); border-radius: 50px; color: white; text-decoration: none; font-weight: 700; transition: all 0.3s; margin-bottom: 30px;">← Back to Framework</a>
-            
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2 style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #f59e0b, #fbbf24); -webkit-background-clip: text; background-clip: text; color: transparent;">
-                    The Gap BetterUp Fills
-                </h2>
-                <p style="font-size: clamp(16px, 2vw, 22px); opacity: 0.7;">Where prevention meets your existing safety net</p>
-            </div>
-
-            <!-- CBP'S EXISTING INFRASTRUCTURE -->
-            <div style="background: rgba(96,165,250,0.1); border: 2px solid rgba(96,165,250,0.3); border-radius: 20px; padding: 50px; margin-bottom: 50px;">
-                <h3 style="font-size: 28px; font-weight: 800; color: #60a5fa; text-align: center; margin-bottom: 40px;">
-                    CBP's Existing Support Infrastructure
-                </h3>
-                
-                <p style="font-size: 18px; color: #e2e8f0; line-height: 1.8; margin-bottom: 24px; text-align: center;">
-                    CBP has built <strong style="color: #60a5fa;">essential resilience programs</strong>: Employee Assistance Programs, Critical Incident Response Teams, Peer Support Networks, Chaplains, and Operational Psychologists. <strong style="color: #fbbf24;">These programs are critical and must remain or evolve.</strong>
-                </p>
-                
-                <p style="font-size: 18px; color: #e2e8f0; line-height: 1.8; text-align: center; margin-bottom: 40px;">
-                    <strong style="color: #fbbf24;">The gap:</strong> There's no intervention for <strong style="color: #60a5fa;">organizational burnout</strong> (months 6-18) or <strong style="color: #60a5fa;">protective factor building</strong> (years 3-10) before officers need advanced support. All existing CBP programs engage <em style="color: #ef4444; font-style: italic;">after</em> officers reach the threshold for intensive intervention. Nothing addresses the erosion zone when officers are functional but struggling.
-                </p>
-
-                <div style="background: rgba(239,68,68,0.15); border-left: 4px solid #ef4444; padding: 24px 32px; border-radius: 0 16px 16px 0; max-width: 900px; margin: 0 auto;">
-                    <p style="font-size: 18px; font-style: italic; color: #fca5a5; line-height: 1.7; margin-bottom: 12px;">
-                        "It often feels like something is missing—there are pieces of behavioral science and support, but no platform to bring them together at scale."
-                    </p>
-                    <p style="font-size: 15px; color: #ef4444; margin-top: 12px; font-weight: 600;">
-                        — Member of the CBP Resiliency team
-                    </p>
-                </div>
-            </div>
-
-            <!-- CURRENT STATE: NO PREVENTION - STREAMLINED -->
-            <div style="background: rgba(15,23,42,0.5); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 3px solid rgba(148,163,184,0.6); border-radius: 20px; padding: 40px; margin-bottom: 40px;">
-                <h3 style="font-size: 26px; font-weight: 800; color: #fca5a5; text-align: center; margin-bottom: 32px;">
-                    Current State: No Prevention for Either Pathway
-                </h3>
-
-                <div style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 28px; max-width: 1100px; margin: 0 auto;">
-                    <div style="background: rgba(239,68,68,0.2); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 3px solid rgba(239,68,68,0.7); border-radius: 16px; padding: 28px;">
-                        <div style="color: #fca5a5; font-size: 18px; margin-bottom: 18px; text-align: center; font-weight: 800;">
-                            TWO GAPS IN PREVENTION
-                        </div>
-                        
-                        <div style="background: rgba(0,0,0,0.3); border-left: 4px solid #fbbf24; padding: 14px 16px; border-radius: 0 8px 8px 0; margin-bottom: 12px;">
-                            <div style="color: #fef3c7; font-size: 15px; font-weight: 700; margin-bottom: 6px;">GAP #1: Organizational Burnout</div>
-                            <div style="color: #fde68a; font-size: 13px; line-height: 1.5;">
-                                <strong>Timeline:</strong> Months 6-18<br>
-                                <strong>Reality:</strong> 37% burnout, no intervention<br>
-                                <strong>Missing:</strong> Work exhaustion support
-                            </div>
-                        </div>
-
-                        <div style="background: rgba(0,0,0,0.3); border-left: 4px solid #fbbf24; padding: 14px 16px; border-radius: 0 8px 8px 0; margin-bottom: 16px;">
-                            <div style="color: #fef3c7; font-size: 15px; font-weight: 700; margin-bottom: 6px;">GAP #2: Protective Factor Building</div>
-                            <div style="color: #fde68a; font-size: 13px; line-height: 1.5;">
-                                <strong>Timeline:</strong> Years 5-10<br>
-                                <strong>Reality:</strong> 54% PTSD screening+, no resilience support<br>
-                                <strong>Missing:</strong> Upstream protective factors
-                            </div>
-                        </div>
-
-                        <p style="margin-top: 16px; color: #fef2f2; background: rgba(239,68,68,0.35); padding: 12px; border-radius: 8px; text-align: center; font-size: 14px; font-weight: 700; line-height: 1.4;">
-                            ✖ NO UPSTREAM INTERVENTION<br>
-                            <span style="font-size: 12px; font-weight: 600; opacity: 0.9;">Both unaddressed until clinical support needed</span>
-                        </p>
-                    </div>
-
-                    <div style="color: #f87171; font-size: 44px; font-weight: 900;">→</div>
-
-                    <div style="background: rgba(245,158,11,0.2); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 3px solid rgba(245,158,11,0.7); border-radius: 16px; padding: 28px;">
-                        <div style="color: #fbbf24; font-size: 18px; margin-bottom: 18px; text-align: center; font-weight: 800;">
-                            SAFETY NET STAGE<br>(Clinical Support Needed)
-                        </div>
-                        <ul style="color: #fde68a; font-size: 14px; line-height: 1.8; list-style: none; padding: 0;">
-                            <li style="margin-bottom: 10px;">✅ EAP engaged</li>
-                            <li style="margin-bottom: 10px;">✅ CIRTs respond</li>
-                            <li style="margin-bottom: 10px;">✅ Peer support activated</li>
-                            <li style="margin-bottom: 10px;">✅ Chaplains involved</li>
-                            <li>✅ OP Psychs assess</li>
-                        </ul>
-                        <p style="margin-top: 18px; color: #fef3c7; background: rgba(245,158,11,0.3); padding: 10px; border-radius: 8px; text-align: center; font-size: 14px; font-weight: 700;">
-                            ⚠ ALL REACTIVE
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 4: BETTERUP PROGRAMS -->
-    <section id="programs" style="min-height: 100vh; padding: 60px 20px 100px 20px; background: #0a0a0a;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <a href="#bluf" style="display: inline-block; padding: 14px 32px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); border-radius: 50px; color: white; text-decoration: none; font-weight: 700; transition: all 0.3s; margin-bottom: 30px;">← Back to Framework</a>
-            
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2 style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #0891b2, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent;">
-                    BetterUp Programs: Federal Precedent
-                </h2>
-                <p style="font-size: clamp(16px, 2vw, 22px); opacity: 0.7;">Direct correlation to the work we're doing with your federal peers</p>
-            </div>
-
-            <!-- THE ZOOM IN/ZOOM OUT - HORIZONTAL CARDS -->
-            <div style="background: linear-gradient(135deg, rgba(8,145,178,0.15), rgba(6,182,212,0.1)); border: 2px solid rgba(6,182,212,0.3); border-radius: 24px; padding: 44px; margin-bottom: 50px;">
-                <h3 style="font-size: 32px; font-weight: 800; color: #67e8f9; margin-bottom: 36px; text-align: center;">
-                    The Greatest Intervention: Democratized at Scale
-                </h3>
-
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-                    <!-- ZOOM IN -->
-                    <div style="background: rgba(0,0,0,0.35); border: 2px solid rgba(96,165,250,0.3); border-radius: 16px; padding: 28px;">
-                        <div style="font-size: 36px; text-align: center; margin-bottom: 16px;">🔍</div>
-                        <div style="font-size: 18px; font-weight: 700; color: #a5f3fc; margin-bottom: 16px; text-align: center;">Zoom In: Individual</div>
-                        <p style="font-size: 14px; line-height: 1.6; opacity: 0.95; color: #e2e8f0;">
-                            The single greatest intervention: <strong style="color: #67e8f9;">1:1 coaching with AI-driven platform</strong>—surfacing intrinsic drivers, beliefs, mindsets that create better performance and wellbeing. Typically reserved for high-potential leaders only.
-                        </p>
-                    </div>
-
-                    <!-- MIDDLE ALTITUDE -->
-                    <div style="background: rgba(0,0,0,0.35); border: 2px solid rgba(251,191,36,0.4); border-radius: 16px; padding: 28px;">
-                        <div style="font-size: 36px; text-align: center; margin-bottom: 16px;">📐</div>
-                        <div style="font-size: 18px; font-weight: 700; color: #a5f3fc; margin-bottom: 16px; text-align: center;">Middle: Unit Impact</div>
-                        <p style="font-size: 14px; line-height: 1.6; opacity: 0.95; color: #e2e8f0;">
-                            <strong style="color: #67e8f9;">BetterUp democratized coaching.</strong> When supervisors (PAIC & SBPA) develop high-agency "Pilot" mindset, their teams are <strong style="color: #fbbf24;">3x more likely to develop it</strong>. Officers & Agents recommit, extend performance, prevent downstream costs.
-                        </p>
-                    </div>
-
-                    <!-- ZOOM OUT -->
-                    <div style="background: linear-gradient(135deg, rgba(16,185,129,0.25), rgba(5,150,105,0.2)); border: 2px solid #10b981; border-radius: 16px; padding: 28px;">
-                        <div style="font-size: 36px; text-align: center; margin-bottom: 16px;">🌐</div>
-                        <div style="font-size: 18px; font-weight: 700; color: #6ee7b7; margin-bottom: 16px; text-align: center;">Zoom Out: Organizational</div>
-                        <p style="font-size: 14px; line-height: 1.6; opacity: 0.95; color: #e2e8f0;">
-                            At 30,000 feet: <strong style="color: #fbbf24;">An operating system for workforce transformation</strong> that measurably impacts readiness, resilience and retention. <strong style="color: #fbbf24;">The organizational unit of value at massive scale—which nobody else can deliver.</strong>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FEDERAL PROOF POINTS -->
-            <div style="background: rgba(59,130,246,0.1); border: 2px solid rgba(59,130,246,0.3); border-radius: 24px; padding: 50px;">
-                <h3 style="font-size: 32px; font-weight: 800; color: #93c5fd; margin-bottom: 40px; text-align: center;">
-                    This Isn't Theory—It's Federal Precedent
-                </h3>
-                
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 40px; max-width: 1000px; margin-left: auto; margin-right: auto;">
-                    <div style="background: rgba(16,185,129,0.15); border-radius: 16px; padding: 32px; text-align: center;">
-                        <div style="font-size: 60px; font-weight: 900; color: #10b981; margin-bottom: 14px;">+20%</div>
-                        <div style="font-size: 17px; font-weight: 700; color: #d1fae5; margin-bottom: 10px;">Air Force Pilots</div>
-                        <div style="font-size: 14px; color: #a7f3d0; line-height: 1.5;">Commitment to military career</div>
-                    </div>
-                    <div style="background: rgba(16,185,129,0.15); border-radius: 16px; padding: 32px; text-align: center;">
-                        <div style="font-size: 60px; font-weight: 900; color: #10b981; margin-bottom: 14px;">+33%</div>
-                        <div style="font-size: 17px; font-weight: 700; color: #d1fae5; margin-bottom: 10px;">NASA</div>
-                        <div style="font-size: 14px; color: #a7f3d0; line-height: 1.5;">Innovation growth</div>
-                    </div>
-                    <div style="background: rgba(16,185,129,0.15); border-radius: 16px; padding: 32px; text-align: center;">
-                        <div style="font-size: 60px; font-weight: 900; color: #10b981; margin-bottom: 14px;">$1.25-$2.14</div>
-                        <div style="font-size: 17px; font-weight: 700; color: #d1fae5; margin-bottom: 10px;">First Responders Study</div>
-                        <div style="font-size: 14px; color: #a7f3d0; line-height: 1.5;">ROI per dollar invested</div>
-                    </div>
-                </div>
-
-                <div style="background: rgba(251,191,36,0.2); border: 2px solid #fbbf24; border-radius: 12px; padding: 28px; text-align: center;">
-                    <p style="font-size: 18px; color: #fde68a; line-height: 1.7; margin: 0;">
-                        <strong style="color: #fef3c7;">Air Force, Navy, NASA, FAA, WSIB (5M first responders)</strong><br>
-                        Your federal peers are already using this approach. The question isn't "does it work?"<br>The question is "how fast can CBP deploy it?"
-                    </p>
-                </div>
-            </div>
-
-            <!-- ZOOM OUT -->
-                <div style="background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(5,150,105,0.15)); border: 2px solid #10b981; border-radius: 16px; padding: 32px;">
-                    <div style="font-size: 20px; font-weight: 700; color: #6ee7b7; margin-bottom: 16px;">🌐 Zoom Out: The Organizational Value</div>
-                    <p style="font-size: 16px; line-height: 1.7; opacity: 0.95;">
-                        At 30,000 feet: <strong style="color: #fbbf24;">You now have an operating system for workforce transformation</strong> that measurably impacts retention, leadership effectiveness, workers comp claims. This is what makes us invaluable: <strong style="color: #fbbf24;">the organizational unit of value at massive scale, which nobody else can deliver.</strong>
-                    </p>
-                </div>
-
-    <!-- SECTION 4: PROPOSED ENGAGEMENT -->
-    <section id="engagement" style="min-height: 100vh; padding: 100px 20px; background: #000000;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <a href="#bluf" style="display: inline-block; padding: 14px 32px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); border-radius: 50px; color: white; text-decoration: none; font-weight: 700; transition: all 0.3s; margin-bottom: 40px;">← Back to Framework</a>
-            
-            <div style="text-align: center; margin-bottom: 32px;">
-                <h2 style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; background-clip: text; color: transparent;">
-                    What This All Means for CBP
-                </h2>
-                <p style="font-size: clamp(16px, 2vw, 22px); opacity: 0.7;">Conservative hypothesis—let's build a bulletproof business case together</p>
-            </div>
-
-            <!-- HOW BETTERUP ADDRESSES BOTH PATHWAYS -->
-            <div style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 40px; margin: 0 0 40px 0;" class="fade-in">
-                <h3 style="font-size: 28px; font-weight: 800; color: #60a5fa; margin-bottom: 40px; text-align: center;">
-                    How BetterUp Addresses Both Pathways Before Clinical Support Stage
-                </h3>
-               
-                <!-- PREVENTION LAYER -->
-                <div style="background: rgba(16,185,129,0.15); border: 4px solid #10b981; border-radius: 16px; padding: 32px; margin-bottom: 30px;">
-                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
-                        <div style="font-size: 48px;">🔹</div>
-                        <div>
-                            <div style="font-size: 24px; font-weight: 800; color: #6ee7b7;">
-                                BETTERUP DUAL PREVENTION LAYER
-                            </div>
-                            <div style="font-size: 16px; color: #a7f3d0; margin-top: 4px;">
-                                Organizational burnout (0-3 years) + Protective factor building (3-10 years)
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-                        <div style="background: rgba(16,185,129,0.2); border-radius: 12px; padding: 20px; text-align: center;">
-                            <div style="font-size: 28px; margin-bottom: 12px;">🎯</div>
-                            <div style="font-size: 15px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">Leadership Development</div>
-                            <div style="font-size: 13px; color: #a7f3d0; line-height: 1.5;">
-                                GS-13 to GS-15 (PAIC & SBPA) supervisors shift to performance-based management
-                            </div>
-                        </div>
-                       
-                        <div style="background: rgba(16,185,129,0.2); border-radius: 12px; padding: 20px; text-align: center;">
-                            <div style="font-size: 28px; margin-bottom: 12px;">💪</div>
-                            <div style="font-size: 15px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">Resilience Building</div>
-                            <div style="font-size: 13px; color: #a7f3d0; line-height: 1.5;">
-                                5 core mindsets during erosion phase
-                            </div>
-                        </div>
-                       
-                        <div style="background: rgba(16,185,129,0.2); border-radius: 12px; padding: 20px; text-align: center;">
-                            <div style="font-size: 28px; margin-bottom: 12px;">👨‍👩‍👧‍👦</div>
-                            <div style="font-size: 15px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">Family Support</div>
-                            <div style="font-size: 13px; color: #a7f3d0; line-height: 1.5;">
-                                "Recruit the officer, retain the family"
-                            </div>
-                        </div>
-                       
-                        <div style="background: rgba(16,185,129,0.2); border-radius: 12px; padding: 20px; text-align: center;">
-                            <div style="font-size: 28px; margin-bottom: 12px;">📈</div>
-                            <div style="font-size: 15px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">Career Coaching</div>
-                            <div style="font-size: 13px; color: #a7f3d0; line-height: 1.5;">
-                                Resume, interview skills, leadership pipeline
-                            </div>
-                        </div>
-                       
-                        <div style="background: rgba(16,185,129,0.2); border-radius: 12px; padding: 20px; text-align: center;">
-                            <div style="font-size: 28px; margin-bottom: 12px;">🤖</div>
-                            <div style="font-size: 15px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">AI + Human Coach</div>
-                            <div style="font-size: 13px; color: #a7f3d0; line-height: 1.5;">
-                                24/7 access without stigma
-                            </div>
-                        </div>
-                       
-                        <div style="background: rgba(16,185,129,0.2); border-radius: 12px; padding: 20px; text-align: center;">
-                            <div style="font-size: 28px; margin-bottom: 12px;">📊</div>
-                            <div style="font-size: 15px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">Data Analytics</div>
-                            <div style="font-size: 13px; color: #a7f3d0; line-height: 1.5;">
-                                Early warning system, DHS Evidence Act
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div style="text-align: center; margin-top: 30px; font-size: 18px; color: #d1fae5; font-weight: 600;">
-                        ⬇️ Officers and Agents who DO need clinical support (fewer reach this point + recover faster) ⬇️
-                    </div>
-                </div>
-               
-                <!-- CRISIS SAFETY NET -->
-                <div style="background: rgba(239,68,68,0.15); border: 4px solid rgba(239,68,68,0.4); border-radius: 16px; padding: 32px;">
-                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
-                        <div style="font-size: 48px;">🔹</div>
-                        <div>
-                            <div style="font-size: 24px; font-weight: 800; color: #fca5a5;">
-                                CBP SAFETY NET (Still Essential)
-                            </div>
-                            <div style="font-size: 16px; color: #fecaca; margin-top: 4px;">
-                                Clinical intervention when officers need advanced support
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
-                        <div style="background: rgba(239,68,68,0.25); padding: 12px 24px; border-radius: 50px; font-size: 14px; font-weight: 600; color: #fecaca; border: 2px solid rgba(239,68,68,0.4);">
-                            EAP
-                        </div>
-                        <div style="background: rgba(239,68,68,0.25); padding: 12px 24px; border-radius: 50px; font-size: 14px; font-weight: 600; color: #fecaca; border: 2px solid rgba(239,68,68,0.4);">
-                            CIRTs
-                        </div>
-                        <div style="background: rgba(239,68,68,0.25); padding: 12px 24px; border-radius: 50px; font-size: 14px; font-weight: 600; color: #fecaca; border: 2px solid rgba(239,68,68,0.4);">
-                            Peer Support
-                        </div>
-                        <div style="background: rgba(239,68,68,0.25); padding: 12px 24px; border-radius: 50px; font-size: 14px; font-weight: 600; color: #fecaca; border: 2px solid rgba(239,68,68,0.4);">
-                            Chaplains
-                        </div>
-                        <div style="background: rgba(239,68,68,0.25); padding: 12px 24px; border-radius: 50px; font-size: 14px; font-weight: 600; color: #fecaca; border: 2px solid rgba(239,68,68,0.4);">
-                            OP Psychologists
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CBP'S MRRP = PREVENTION + SAFETY NET - REDESIGNED -->
-            <div style="background: linear-gradient(135deg, #059669, #047857); border-radius: 24px; padding: 44px 50px; margin: 24px auto 40px auto; max-width: 1100px;">
-                <div style="font-size: 32px; font-weight: 800; margin-bottom: 36px; line-height: 1.3; letter-spacing: -0.5px; text-align: center;">
-                    CBP's NEW Mission Readiness & Resilience Program
-                </div>
-                
-                <div style="display: grid; grid-template-columns: 2fr auto 2fr; gap: 24px; align-items: center; margin-bottom: 36px;">
-                    <div style="background: rgba(16,185,129,0.25); border: 2px solid #6ee7b7; border-radius: 16px; padding: 24px; text-align: center;">
-                        <div style="font-size: 48px; margin-bottom: 12px;">🛡️</div>
-                        <div style="font-size: 22px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">Prevention Layer</div>
-                        <div style="font-size: 14px; color: #a7f3d0; line-height: 1.5;">
-                            Early intervention<br>
-                            Years 0-10<br>
-                            <strong style="color: #6ee7b7;">BetterUp</strong>
-                        </div>
-                    </div>
-                    
-                    <div style="font-size: 40px; color: #fef3c7; font-weight: 900;">+</div>
-                    
-                    <div style="background: rgba(251,191,36,0.25); border: 2px solid #fbbf24; border-radius: 16px; padding: 24px; text-align: center;">
-                        <div style="font-size: 48px; margin-bottom: 12px;">🏥</div>
-                        <div style="font-size: 22px; font-weight: 700; color: #fef3c7; margin-bottom: 8px;">Safety Net</div>
-                        <div style="font-size: 14px; color: #fde68a; line-height: 1.5;">
-                            Clinical support<br>
-                            When needed<br>
-                            <strong style="color: #fbbf24;">CBP Programs</strong>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="border-top: 2px solid rgba(255,255,255,0.3); padding-top: 28px; margin-top: 28px;">
-                    <div style="font-size: 19px; line-height: 1.7; margin-bottom: 20px; color: #e2e8f0; text-align: center;">
-                        We're not replacing your resiliency programs. We're building the preventative layer that makes your existing safety net investments more effective.
-                    </div>
-                    <div style="font-size: 21px; line-height: 1.5; color: #fef3c7; font-weight: 700; text-align: center;">
-                        Your safety net remains essential—we're just making sure fewer officers and agents fall into it.
-                    </div>
-                </div>
-            </div>
-
-            <!-- THE PREVENTION MATH - REDESIGNED COMPACT -->
-            <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); border: 4px solid #f59e0b; border-radius: 24px; padding: 40px; margin-bottom: 40px; color: #000;">
-                <h3 style="font-size: 32px; font-weight: 900; color: #78350f; text-align: center; margin-bottom: 32px;">
-                    The Prevention Math
-                </h3>
-                
-                <div style="display: grid; grid-template-columns: 2fr auto 2fr; gap: 24px; align-items: center; max-width: 900px; margin: 0 auto 28px auto;">
-                    <div style="background: rgba(16,185,129,0.25); border: 3px solid #10b981; border-radius: 16px; padding: 28px 24px; text-align: center;">
-                        <div style="font-size: 15px; font-weight: 700; color: #064e3b; margin-bottom: 8px;">Upstream Prevention</div>
-                        <div style="font-size: 56px; font-weight: 900; color: #059669; margin: 16px 0; line-height: 1;">$150-250</div>
-                        <div style="font-size: 13px; color: #065f46; line-height: 1.5; font-weight: 600;">
-                            Per officer/agent annually<br>
-                            <strong>BetterUp Ready subscription</strong>
-                        </div>
-                        <div style="font-size: 11px; color: #047857; margin-top: 12px; font-style: italic;">
-                            + Optional: LEAD license for supervisors (PAIC & SBPA) at $5,785/seat
-                        </div>
-                    </div>
-                    
-                    <div style="font-size: 48px; color: #92400e; font-weight: 900;">VS</div>
-                    
-                    <div style="background: rgba(239,68,68,0.25); border: 3px solid #ef4444; border-radius: 16px; padding: 28px 24px; text-align: center;">
-                        <div style="font-size: 15px; font-weight: 700; color: #7c2d12; margin-bottom: 8px;">Downstream Costs</div>
-                        <div style="font-size: 11px; color: #92400e; font-style: italic; margin-bottom: 8px;"></div>
-                        <div style="font-size: 56px; font-weight: 900; color: #dc2626; margin: 16px 0; line-height: 1;">$150K-450K</div>
-                        <div style="font-size: 13px; color: #991b1b; line-height: 1.5; font-weight: 600;">
-                            Total cost per officer/agent<br>
-                            <strong>Workers comp + discipline + replacement</strong>
-                        </div>
-                    </div>
-                </div>
-
-                </div>
-
-            <!-- VISION QUOTE - REDESIGNED COMPACT -->
-            <div style="background: linear-gradient(135deg, #0f766e, #14b8a6); border-radius: 24px; padding: 36px 40px; margin-bottom: 40px; text-align: center; max-width: 1000px; margin-left: auto; margin-right: auto;">
-                <p style="font-size: 26px; font-weight: 300; font-style: italic; line-height: 1.4; margin-bottom: 20px;">
-                    "Tap into people's <em style="font-weight: 600;">why</em> and have them love what they do all over again."
-                </p>
-                <p style="font-size: 14px; opacity: 0.9; margin-bottom: 20px;">
-                    — Vision from CBP Resiliency Program leadership
-                </p>
-                <div style="border-top: 2px solid rgba(255,255,255,0.3); padding-top: 20px; margin-top: 20px;">
-                    <p style="font-size: 19px; font-weight: 600; color: #fef3c7; line-height: 1.5;">
-                        This is your vision. BetterUp is the platform that makes it real—at scale, before 2028.
-                    </p>
-                </div>
-            </div>
-
-            <!-- OUR PROPOSED APPROACH -->
-            <div style="background: linear-gradient(135deg, rgba(5,150,105,0.15), rgba(16,185,129,0.1)); border: 2px solid rgba(16,185,129,0.3); border-radius: 24px; padding: 50px; text-align: center;">
-                <h3 style="font-size: 32px; font-weight: 800; color: #6ee7b7; margin-bottom: 30px;">
-                    Our Proposed Approach
-                </h3>
-                <p style="font-size: 18px; line-height: 1.7; opacity: 0.9; max-width: 900px; margin: 0 auto 40px auto;">
-                    This is publicly available data. We've done our research and due diligence. But we want to dig into this <strong style="color: #10b981;">with you</strong> and help build a business case to address these challenges. Let's validate the data, validate the approach—there's something here.
-                </p>
-                
-                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://cbp-roi-calculator.vercel.app/" target="_blank" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #10b981, #059669); color: white; border-radius: 50px; font-weight: 700; font-size: 18px; text-decoration: none; transition: all 0.3s; box-shadow: 0 8px 24px rgba(16,185,129,0.3);">
-                        Open ROI Calculator →
-                    </a>
-                    <a href="#next-steps" style="display: inline-block; padding: 16px 40px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.3); color: white; border-radius: 50px; font-weight: 700; font-size: 18px; text-decoration: none; transition: all 0.3s;">
-                        View Detailed Next Steps →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- SECTION 6: THE BUSINESS CASE -->
-    <section id="roi" style="min-height: 100vh; padding: 60px 20px 100px 20px; background: linear-gradient(135deg, #1e293b 0%, #334155 100%);">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <a href="#bluf" style="display: inline-block; padding: 14px 32px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); border-radius: 50px; color: white; text-decoration: none; font-weight: 700; transition: all 0.3s; margin-bottom: 30px;">← Back to Framework</a>
-            
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2 style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #10b981, #059669); -webkit-background-clip: text; background-clip: text; color: transparent;">
-                    The Business Case
-                </h2>
-                <p style="font-size: clamp(16px, 2vw, 22px); opacity: 0.7;">Prevention economics vs. advanced support costs</p>
-            </div>
-
-            <!-- ROI HEADLINE -->
-            <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); border: 4px solid #f59e0b; border-radius: 20px; padding: 32px; margin-bottom: 36px; text-align: center;">
-                <div style="font-size: 72px; font-weight: 900; color: #059669; line-height: 1; margin-bottom: 16px;">6-10x</div>
-                <div style="font-size: 22px; color: #065f46; font-weight: 700; margin-bottom: 12px;">Conservative ROI Multiple</div>
-                <div style="font-size: 20px; color: #92400e; font-weight: 600;">$100M-$190M Total 5-Year Value Against $12M-$18M Investment</div>
-            </div>
-
-            <!-- THREE ROI PATHWAYS -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 50px;">
-                <div style="background: linear-gradient(135deg, #7c3aed, #6366f1); border-radius: 16px; padding: 32px 28px; text-align: center; transition: all 0.4s;">
-                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 20px; color: #bfdbfe;">Pathway 1: Retention Value</div>
-                    <div style="font-size: 40px; font-weight: 900; margin: 20px 0; line-height: 1;">$75M-$150M</div>
-                    <div style="font-size: 15px; line-height: 1.6; opacity: 0.95;">
-                        <strong style="color: #fbbf24;">3-6% retention improvement</strong><br>
-                        <span style="color: #e2e8f0;">100-200 personnel retained annually</span><br><br>
-                        <span style="font-size: 13px; color: #fbbf24; font-weight: 600;">Air Force precedent: 6%</span>
-                    </div>
-                </div>
-               
-                <div style="background: linear-gradient(135deg, #7c3aed, #6366f1); border-radius: 16px; padding: 32px 28px; text-align: center; transition: all 0.4s;">
-                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 20px; color: #bfdbfe;">Pathway 2: Workers Comp Reduction</div>
-                    <div style="font-size: 40px; font-weight: 900; margin: 20px 0; line-height: 1;">$10M-$40M</div>
-                    <div style="font-size: 15px; line-height: 1.6; opacity: 0.95;">
-                        <strong style="color: #fbbf24;">10% reduction in mental health claims</strong><br>
-                        <span style="color: #e2e8f0;">$50K-$150K per claim avoided</span><br><br>
-                        <span style="font-size: 13px; color: #fbbf24; font-weight: 600;">First responders study</span>
-                    </div>
-                </div>
-               
-                <div style="background: linear-gradient(135deg, #7c3aed, #6366f1); border-radius: 16px; padding: 32px 28px; text-align: center; transition: all 0.4s;">
-                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 20px; color: #bfdbfe;">Pathway 3: Discipline Prevention</div>
-                    <div style="font-size: 40px; font-weight: 900; margin: 20px 0; line-height: 1;">$15M-$30M</div>
-                    <div style="font-size: 15px; line-height: 1.6; opacity: 0.95;">
-                        <strong style="color: #fbbf24;">20% reduction in preventable cases</strong><br>
-                        <span style="color: #e2e8f0;">$50K-$100K per case avoided</span><br><br>
-                        <span style="font-size: 13px; color: #fbbf24; font-weight: 600;">CuraLinc: 67% SUD reduction</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- OPERATIONAL IMPACT -->
-            <div style="background: rgba(16,185,129,0.1); border: 3px solid #10b981; border-radius: 20px; padding: 40px; margin-bottom: 50px; text-align: center;">
-                <h3 style="font-size: 28px; font-weight: 800; color: #6ee7b7; margin-bottom: 30px;">What This Means Operationally (Annual Impact)</h3>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
-                        <div style="font-size: 48px; font-weight: 900; color: #10b981; margin-bottom: 12px;">361</div>
-                        <div style="font-size: 16px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">Officers Retained</div>
-                        <div style="font-size: 14px; color: #a7f3d0;">Mission-ready, not separated</div>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
-                        <div style="font-size: 48px; font-weight: 900; color: #10b981; margin-bottom: 12px;">5,928</div>
-                        <div style="font-size: 16px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">Fewer on Limited Duty</div>
-                        <div style="font-size: 14px; color: #a7f3d0;">Operational capacity maintained</div>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
-                        <div style="font-size: 48px; font-weight: 900; color: #10b981; margin-bottom: 12px;">222</div>
-                        <div style="font-size: 16px; font-weight: 700; color: #d1fae5; margin-bottom: 8px;">FECA Claims Prevented</div>
-                        <div style="font-size: 14px; color: #a7f3d0;">Mental health workers' comp</div>
-                    </div>
-                </div>
-                <p style="font-size: 16px; color: #d1fae5; margin-top: 30px; line-height: 1.7;">
-                    <strong>These aren't just financial projections—they're officers staying on the line, maintaining operational readiness when CBP needs them most.</strong>
-                </p>
-            </div>
-
-            <!-- ROI CALCULATOR CTA -->
-            <div style="background: linear-gradient(135deg, rgba(96,165,250,0.15), rgba(96,165,250,0.15)); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 2px solid rgba(96,165,250,0.4); border-radius: 20px; padding: 40px 50px; text-align: center;">
-                <div style="font-size: 24px; font-weight: 800; color: #93c5fd; margin-bottom: 16px;">
-                    💡 Interactive ROI Calculator
-                </div>
-                <div style="font-size: 16px; color: #e2e8f0; margin-bottom: 28px; line-height: 1.6;">
-                    <strong style="color: #fbbf24;">Component-specific modeling:</strong> Border Patrol, OFO, AMO, Air & Marine<br>
-                    Adjust behavioral health rates, coaching effectiveness, pilot scope<br>
-                    See detailed breakdowns: retention, workers comp, discipline pathways
-                </div>
-                <a href="https://cbp-roi-calculator.vercel.app/" target="_blank" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #60a5fa, #60a5fa); color: white; border-radius: 50px; font-weight: 700; font-size: 18px; text-decoration: none; transition: all 0.3s; box-shadow: 0 8px 24px rgba(96,165,250,0.3);">
-                    Open Calculator →
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 9: NEXT STEPS -->
-    <section class="section section-accent" id="next-steps">
-    
-
-        <div class="content-wrapper">
-            <h2 class="section-title fade-in gradient-text">From Proposal to Partnership</h2>
-            <p class="section-subtitle fade-in">The path forward to 2028 readiness</p>
-           
-            <div class="cards-grid fade-in">
-                <div class="interactive-card">
-                    <div class="card-icon">🤝</div>
-                    <div class="card-title">Step 1: Strategic Alignment</div>
-                    <div class="card-desc">
-                        <strong>Discovery sessions with CBP leadership</strong><br><br>
-                        Validate strategic framing, refine organizational priorities,
-                        identify high-priority deployment locations,
-                        define success metrics aligned with CBP's mission
-                    </div>
-                </div>
-               
-                <div class="interactive-card">
-                    <div class="card-icon">💰</div>
-                    <div class="card-title">Step 2: ROI Modeling</div>
-                    <div class="card-desc">
-                        <strong>Walk through CBP-specific calculator</strong><br><br>
-                        Customize financial assumptions, validate projections with CBP data,
-                        build evidence-based business case for budget decision-makers
-                    </div>
-                </div>
-               
-                <div class="interactive-card">
-                    <div class="card-icon">🎯</div>
-                    <div class="card-title">Step 3: Strategic Initial Deployment</div>
-                    <div class="card-desc">
-                        <strong>Deploy to 10,000-15,000 personnel across high-priority field offices</strong><br><br>
-                        Establish baseline cohorts (coached vs. non-coached populations) for statistical validation,
-                        identify champion locations: Port Directors and Sector Chiefs with demonstrated buy-in<br>
-                        Timeline: 90-day onboarding, 12-month measurement period
-                    </div>
-                </div>
-               
-                <div class="interactive-card">
-                    <div class="card-icon">👥</div>
-                    <div class="card-title">Step 4: Stakeholder Engagement</div>
-                    <div class="card-desc">
-                        <strong>Enterprise leadership and component decision-makers</strong><br><br>
-                        Build champion network across field offices and headquarters,
-                        present evidence-based business case to budget authorities
-                    </div>
-                </div>
-               
-                <div class="interactive-card">
-                    <div class="card-icon">🚀</div>
-                    <div class="card-title">Step 5: Pilot Launch</div>
-                    <div class="card-desc">
-                        <strong>Q1 2025 — within 90 days of approval</strong><br><br>
-                        Discovery, baseline assessment, measurement,
-                        Go/No-Go decision at 6 months
-                    </div>
-                </div>
-            </div>
-           
-            <div class="stat-callout fade-in" style="background: linear-gradient(135deg, #0a0e27, #1e3a8a);">
-                <div style="font-size: clamp(56px, 10vw, 96px); font-weight: 900; line-height: 1; margin-bottom: 24px;">90 Days</div>
-                <div class="callout-text" style="line-height: 1.6;">
-                    From Approval to Pilot Launch<br><br>
-                    Measurable Results Before Budget Cycles Intensify
-                </div>
-            </div>
-        </div>
-    </section>
-   
-    <!-- RESEARCH APPENDIX (COLLAPSIBLE) -->
-    <section class="section section-dark" id="research-appendix" style="padding: 40px 20px;">
-        
-       
-        <div class="content-wrapper">
-            <details style="max-width: 1200px; margin: 0 auto;">
-                <summary style="cursor: pointer; font-weight: 700; color: #60a5fa; font-size: 28px; text-align: center; padding: 20px; background: rgba(96,165,250,0.1); border-radius: 12px; border: 2px solid rgba(96,165,250,0.3); margin-bottom: 40px;">
-                    📚 Research Appendix: Full Evidence Base (Click to Expand)
-                </summary>
-                <div>
-
-            <div class="research-grid fade-in">
-               
-                <!-- Buffalo BCOPS Longitudinal Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ 12-Year Longitudinal Study</span>
-                    <div class="research-title">Buffalo BCOPS Study</div>
-                    <div class="research-citation">Violanti et al. (2004-2019) • NIOSH-funded • 464 officers tracked over 12 years</div>
-                    <div class="research-stat">+3.4 pts</div>
-                    <div class="research-finding">Occupational stress increased significantly over 12 years</div>
-                    <div class="research-stat">-17.3%</div>
-                    <div class="research-finding">Officers reporting excellent/very good health decreased</div>
-                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12238166/" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-               
-                <!-- McCarty 2019 Burnout Study Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ Largest US Police Burnout Study</span>
-                    <div class="research-title">Burnout in Blue: National Analysis</div>
-                    <div class="research-citation">McCarty, Aldirawi, Dewald & Palacios (2019) • Police Quarterly • n=13,146 officers, 89 agencies</div>
-                    <div class="research-stat">19%</div>
-                    <div class="research-finding">Severe emotional exhaustion prevalence</div>
-                    <div class="research-stat">13%</div>
-                    <div class="research-finding">Extreme depersonalization prevalence</div>
-                    <div class="research-finding" style="margin-top: 12px;">Combined rates establish 30-40% burnout prevalence baseline for US law enforcement. Largest empirical dataset validating organizational stressors as primary burnout driver.</div>
-                    <a href="https://journals.sagepub.com/doi/abs/10.1177/1098611119828038" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-                
-                <!-- Oligny 1994 Burnout Timeline Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ Police Burnout Research</span>
-                    <div class="research-title">Police Burnout Onset Timeline</div>
-                    <div class="research-citation">Oligny (1994) • International Criminal Police Review • OJP-indexed research</div>
-                    <div class="research-stat">7-12 years</div>
-                    <div class="research-finding">Typical burnout onset timeline in law enforcement</div>
-                    <div class="research-finding" style="margin-top: 12px;">Defined police burnout as "emotional exhaustion and lassitude that set in insidiously after 7 to 12 years of policing." Validated by Burke (1989) finding officers with more years of service reported greater stress and burnout than those with fewer years.</div>
-                    <a href="https://www.ojp.gov/ncjrs/virtual-library/abstracts/burnout-police-environment" target="_blank" class="research-link">
-                        View Citation →
-                    </a>
-                </div>
-
-                <!-- Hansen Prospective Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ Prospective Cohort Study</span>
-                    <div class="research-title">Danish Police Exposure-Response Study</div>
-                    <div class="research-citation">Hansen et al. (2025) • European J. Work & Org. Psychology • 2,823 officers, 2-year follow-up</div>
-                    <div class="research-stat">3.8-4.7x</div>
-                    <div class="research-finding">PTSD risk with high exposure (>10 incidents/quarter)</div>
-                    <div class="research-stat">4.9%</div>
-                    <div class="research-finding">Developed critical PTSD at 24-month follow-up</div>
-                    <a href="https://www.tandfonline.com/doi/full/10.1080/1359432X.2025.2509679" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-               
-                <!-- Montreal Suicide Prevention Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ 22-Year Prevention Program</span>
-                    <div class="research-title">Montreal Police "Together for Life"</div>
-                    <div class="research-citation">Mishara & Martin (2012), Mishara & Fortin (2022) • Crisis Journal • 4,178 officers</div>
-                    <div class="research-stat">79%</div>
-                    <div class="research-finding">Suicide rate reduction (30.5 → 6.4 per 100K)</div>
-                    <div class="research-stat">22 years</div>
-                    <div class="research-finding">Sustained effect validated in follow-up study</div>
-                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3380405/" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-               
-                <!-- Years 5-10 Vulnerability Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ Peer-Reviewed Research</span>
-                    <div class="research-title">Peak Vulnerability Window Identified</div>
-                    <div class="research-citation">Lilly & Curry (2020) • Police1/University Study • 1,355 active officers</div>
-                    <div class="research-stat">54%</div>
-                    <div class="research-finding">PTSD screening positive in officers with 5-10 years service</div>
-                    <div class="research-stat">3x</div>
-                    <div class="research-finding">Risk multiplication vs. 0-5 year baseline</div>
-                    <a href="https://www.police1.com/patrol-issues/articles/too-far-in-to-quit-not-far-enough-to-retire-S0xfnz4XH4k4knXv/" target="_blank" class="research-link">
-                        View Article →
-                    </a>
-                </div>
-               
-                <!-- Border Security Scoping Review Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ Scoping Review</span>
-                    <div class="research-title">Border Security Personnel Mental Health</div>
-                    <div class="research-citation">Brooks & Greenberg (2022) • Occupational Medicine • Global scoping review</div>
-                    <div class="research-stat">13</div>
-                    <div class="research-finding">Total studies globally on border security mental health (massive research gap)</div>
-                    <div class="research-finding" style="margin-top: 12px;">Unique stressors: moral injury, politicization, remote conditions, human suffering</div>
-                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9805299/" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-               
-                <!-- Wagner Systematic Review Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ Systematic Review</span>
-                    <div class="research-title">PTSD Following Routine Exposure</div>
-                    <div class="research-citation">Wagner et al. (2020) • American J. Industrial Medicine • Comprehensive review</div>
-                    <div class="research-finding">PTSD prevalence: 0-44% range (mean 14.87%, median 9.2%)</div>
-                    <div class="research-finding" style="margin-top: 12px;"><strong>Workplace exposure is strongest predictor</strong> - not individual weakness</div>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/32419181/" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-                <!-- Bakker & Demerouti JD-R Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ Foundational IO Theory</span>
-                    <div class="research-title">Job Demands-Resources Model</div>
-                    <div class="research-citation">Bakker & Demerouti (2007, 2014) • Journal of Managerial Psychology • Foundational burnout theory</div>
-                    <div class="research-finding">When job demands chronically exceed job resources, burnout occurs within months—not years. CBP's chronic overtime and understaffing create the exact conditions this model predicts.</div>
-                    <a href="https://doi.org/10.1108/02683940710733115" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-
-                <!-- Crawford et al Meta-Analysis Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ Meta-Analytic Evidence</span>
-                    <div class="research-title">JD-R Model Meta-Analysis</div>
-                    <div class="research-citation">Crawford, LePine & Rich (2010) • Journal of Applied Psychology • Meta-analytic validation</div>
-                    <div class="research-finding">Demands and burnout were positively associated. Resources and burnout were negatively associated. Hindrance demands (like role conflict) negatively predict engagement.</div>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/20836586/" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-
-                <!-- Emotional Labor Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ 30-Year Meta-Analysis</span>
-                    <div class="research-title">Emotional Labor & Burnout</div>
-                    <div class="research-citation">Hülsheger & Schewe (2011) • Journal of Occupational Health Psychology • Three decades of research</div>
-                    <div class="research-finding">Surface acting (faking emotions) predicts emotional exhaustion within weeks. CBP officers managing high-stress public interactions face continuous emotional labor.</div>
-                    <a href="https://doi.org/10.1037/a0022876" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-
-                <!-- Shane Organizational Stress Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ Police-Specific Research</span>
-                    <div class="research-title">Organizational Stress in Policing</div>
-                    <div class="research-citation">Shane (2010); Violanti & Aron (1995) • Journal of Criminal Justice • Police stress research</div>
-                    <div class="research-finding">Organizational stressors (leadership, policy, bureaucracy) predict burnout MORE than operational trauma. 45% of variance in police performance attributable to organizational factors.</div>
-                    <a href="https://doi.org/10.1016/j.jcrimjus.2010.05.008" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-
-                 <!-- Lee & Ashforth 1996 Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ Meta-Analytic Evidence</span>
-                    <div class="research-title">Role Conflict & Ambiguity in Burnout</div>
-                    <div class="research-citation">Lee & Ashforth (1996) • Journal of Applied Psychology • Meta-analysis of role stressors</div>
-                    <div class="research-finding">Role conflict and role ambiguity are significant predictors of emotional exhaustion and depersonalization. When officers face unclear expectations or conflicting demands, burnout emerges within months—not years.</div>
-                    <div class="research-finding" style="margin-top: 12px;"><strong>CBP relevance:</strong> Border security officers face constant role ambiguity (enforcement vs. facilitation) and conflicting directives from multiple agencies.</div>
-                    <a href="https://doi.org/10.1037/0021-9010.81.2.123" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-
-                <!-- Kahn 1964 Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ Foundational Theory</span>
-                    <div class="research-title">Organizational Stress & Role Theory</div>
-                    <div class="research-citation">Kahn, Wolfe, Quinn, Snoek & Rosenthal (1964) • Organizational Stress: Studies in Role Conflict and Ambiguity</div>
-                    <div class="research-finding">Seminal work establishing that role conflict (incompatible demands) and role ambiguity (unclear expectations) are primary sources of organizational stress, predating individual trauma exposure as burnout drivers.</div>
-                    <div class="research-finding" style="margin-top: 12px;">Foundation for 60+ years of IO Psychology research on workplace stress mechanisms.</div>
-                    <a href="https://psycnet.apa.org/record/1965-08866-000" target="_blank" class="research-link">
-                        View Citation →
-                    </a>
-                </div>
-
-                <!-- Colquitt 2001 Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ 25-Year Meta-Analysis</span>
-                    <div class="research-title">Organizational Justice & Burnout</div>
-                    <div class="research-citation">Colquitt, Conlon, Wesson, Porter & Ng (2001) • Journal of Applied Psychology • 25 years of justice research</div>
-                    <div class="research-finding">Meta-analytic review of 183 studies. Perceived unfairness in procedures, outcomes, or treatment strongly predicts burnout and turnover intentions. When officers perceive the system as unjust, resource depletion accelerates.</div>
-                    <div class="research-finding" style="margin-top: 12px;"><strong>Key finding:</strong> Organizational justice is a critical protective factor against burnout in high-stress occupations.</div>
-                    <a href="https://doi.org/10.1037/0021-9010.86.3.425" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-
-                <!-- Halbesleben 2006 Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ COR Theory Meta-Analysis</span>
-                    <div class="research-title">Social Support & Resource Conservation</div>
-                    <div class="research-citation">Halbesleben (2006) • Journal of Applied Psychology • Meta-analysis testing COR model</div>
-                    <div class="research-finding">Social support from supervisors and coworkers acts as critical resource preventing burnout. Meta-analysis confirms Hobfoll's Conservation of Resources theory: resource loss spirals accelerate emotional exhaustion when organizational support is absent.</div>
-                    <div class="research-finding" style="margin-top: 12px;">Validates that peer support and leadership backing are protective factors—not just clinical interventions.</div>
-                    <a href="https://doi.org/10.1037/0021-9010.91.5.1134" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-
-                <!-- Meijman & Mulder 1998 Card -->
-                <div class="research-card estimated">
-                    <span class="research-badge badge-estimated">Theory Application</span>
-                    <div class="research-title">Effort-Recovery Model</div>
-                    <div class="research-citation">Meijman & Mulder (1998) • Handbook of Work and Organizational Psychology</div>
-                    <div class="research-finding">Psychological workload requires recovery time. When recovery opportunities are insufficient (chronic overtime, shift work, inadequate rest), fatigue accumulates rapidly—within weeks to months, not years.</div>
-                    <div class="research-finding" style="margin-top: 12px;"><strong>CBP relevance:</strong> 24/7 operations, mandatory overtime, and irregular schedules prevent adequate recovery, accelerating burnout onset.</div>
-                    <a href="https://psycnet.apa.org/record/1998-06505-001" target="_blank" class="research-link">
-                        View Citation →
-                    </a>
-                </div>
-
-                <!-- Akerstedt 2006 Card -->
-                <div class="research-card estimated">
-                    <span class="research-badge badge-estimated">Theory Application</span>
-                    <div class="research-title">Sleep, Recovery & Performance</div>
-                    <div class="research-citation">Åkerstedt (2006) • Sleep Medicine Reviews • Sleep disruption research</div>
-                    <div class="research-finding">Chronic sleep disruption from shift work and irregular schedules impairs recovery, accelerates fatigue accumulation, and predicts rapid performance decline. Recovery deficits compound burnout within months when work schedules prevent adequate sleep.</div>
-                    <div class="research-finding" style="margin-top: 12px;">Particularly relevant for 24/7 border operations with rotating shifts and mandatory overtime.</div>
-                    <a href="https://doi.org/10.1016/j.smrv.2005.08.001" target="_blank" class="research-link">
-                        View Study →
-                    </a>
-                </div>
-
-                <!-- Survival Bias Research Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ Research Synthesis</span>
-                    <div class="research-title">Early-Career High-Risk Period</div>
-                    <div class="research-citation">Research synthesis from peer-reviewed studies • Multiple sources</div>
-                    <div class="research-stat">Years 1-9</div>
-                    <div class="research-finding">Highest PTSD and suicide ideation risk period (survival bias finding)</div>
-                    <div class="research-finding" style="margin-top: 12px;">Officers with 10-19 years service show LOWER risk than 1-9 years—suggesting most vulnerable exit early. CBP's operational tempo (border security, 24/7 operations) creates accelerated erosion compared to general law enforcement baseline.</div>
-                </div>
-               
-                <!-- WSIB First Responders Partnership Card -->
-                <div class="research-card verified">
-                    <span class="research-badge badge-verified">✓ 5M First Responders Study</span>
-                    <div class="research-title">WSIB First Responders Partnership</div>
-                    <div class="research-citation">WSIB + BetterUp Partnership (2019-2025) • 5-year RCT • ~5 million Ontario first responders</div>
-                    <div class="research-stat">$1.25-$2.14</div>
-                    <div class="research-finding">ROI per dollar invested (validated ROI range)</div>
-                    <div class="research-finding" style="margin-top: 12px;">Largest randomized controlled trial of continuous development intervention for first responders including police, firefighters, and healthcare workers. Waitlist control design enables causal inference.</div>
-                    <div class="research-finding" style="margin-top: 12px;"><strong>Study ongoing:</strong> Results expected to provide definitive evidence on prevention effectiveness at scale.</div>
-                </div>
-            </div>
-        </div>
-        </div>
-            </details>
-    </section>
-   
-    <!-- FOOTER -->
-    <section class="section section-dark" style="min-height: auto; padding: 80px 20px;">
-    
-
-        <div class="content-wrapper" style="text-align: center;">
-            <h2 style="font-size: 36px; margin-bottom: 40px;">Contact the Team</h2>
-           
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 40px;">
-                <div>
-                    <h3 style="font-size: 20px; margin-bottom: 10px; color: #60a5fa;">Scott Robert Smith</h3>
-                    <p style="opacity: 0.8; line-height: 1.8;">
-                        Sr. Account Executive, Government<br>
-                        scott.smith@betterup.co<br>
-                        +1.919.349.5611
-                    </p>
-                </div>
-               
-                <div>
-                    <h3 style="font-size: 20px; margin-bottom: 10px; color: #60a5fa;">Eric Teasdale</h3>
-                    <p style="opacity: 0.8; line-height: 1.8;">
-                        RVP, Federal<br>
-                        eric.teasdale@betterup.co
-                    </p>
-                </div>
-               
-                <div>
-                    <h3 style="font-size: 20px; margin-bottom: 10px; color: #60a5fa;">Dr. Carol Thornson</h3>
-                    <p style="opacity: 0.8; line-height: 1.8;">
-                        Sr. People Insights Consultant<br>
-                        IO Psychology & Law Enforcement Research<br>
-                        carol.thornson@betterup.co
-                    </p>
-                </div>
-            </div>
-           
-            <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
-                <p style="font-size: 18px; opacity: 0.7;">BetterUp for Government</p>
-                <p style="font-size: 16px; opacity: 0.6; margin-top: 10px;">Building Workforce Resilience for Mission-Critical Organizations</p>
-            </div>
-        </div>
-    </section>
-   
-    </main>
-   
-    <!-- NAVIGATION DOTS -->
-    <div class="nav-dots">
-        <div class="nav-dot active" onclick="scrollToSection('hero')"></div>
-        <div class="nav-dot" onclick="scrollToSection('bluf')"></div>
-        <div class="nav-dot" onclick="scrollToSection('two-paths')"></div>
-        <div class="nav-dot" onclick="scrollToSection('research')"></div>
-        <div class="nav-dot" onclick="scrollToSection('wsib-evidence')"></div>
-        <div class="nav-dot" onclick="scrollToSection('current')"></div>
-        <div class="nav-dot" onclick="scrollToSection('solution')"></div>
-        <div class="nav-dot" onclick="scrollToSection('roi')"></div>
-        <div class="nav-dot" onclick="scrollToSection('choice')"></div>
-        <div class="nav-dot" onclick="scrollToSection('next-steps')"></div>
     </div>
-    <script>
-        // Scroll progress bar
-        window.addEventListener('scroll', () => {
-            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            document.getElementById('scrollProgress').style.width = scrolled + '%';
-           
-            // Update active nav dot
-            const sections = ['hero', 'bluf', 'wsib-evidence', 'current', 'solution', 'roi', 'choice', 'next-steps'];
-            const dots = document.querySelectorAll('.nav-dot');
-           
-            sections.forEach((section, index) => {
-                const element = document.getElementById(section);
-                if (element) {
-                    const rect = element.getBoundingClientRect();
-                    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                        dots.forEach(dot => dot.classList.remove('active'));
-                        if (dots[index]) dots[index].classList.add('active');
-                    }
-                }
-            });
-        });
-       
-        // Intersection Observer for fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-       
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-       
-        // Scroll to section function
-        function scrollToSection(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-       
-        // Smart scroll with auto-expand collapsibles
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    
-                    if (targetElement) {
-                        // Check if target is inside a collapsed details element
-                        let parentDetails = targetElement.closest('details');
-                        
-                        if (parentDetails && !parentDetails.open) {
-                            // Open the details element first
-                            parentDetails.open = true;
-                            
-                            // Wait for expansion, then scroll
-                            setTimeout(() => {
-                                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                            }, 150);
-                        } else {
-                            // No collapsible to expand, just scroll normally
-                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    }
-                });
-            });
-        });
-    </script>
+    
+    <!-- SECTION 3: PROOF OF CONCEPT -->
+    <div class="section">
+        <div class="container">
+            <h2>PNNL: Living Proof at a DOE National Lab</h2>
+            <p class="section-intro">
+                Pacific Northwest National Laboratory isn't a case study—it's a <strong>Genesis Mission lab</strong> 
+                already proving this works under real pressure.
+            </p>
+            
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <h3>Scale</h3>
+                    <div class="stat">5,670</div>
+                    <p>Scientists and staff covered at one National Lab</p>
+                </div>
+                
+                <div class="proof-card">
+                    <h3>Adoption</h3>
+                    <div class="stat">34%</div>
+                    <p>Voluntary activation rate (scientists chose to use it)</p>
+                </div>
+                
+                <div class="proof-card">
+                    <h3>Resilience</h3>
+                    <div class="stat">+32%</div>
+                    <p>Thriving improvement (scientists handling pressure better)</p>
+                </div>
+                
+                <div class="proof-card">
+                    <h3>Satisfaction</h3>
+                    <div class="stat">99%</div>
+                    <p>Scientists report it's a "valuable use of time"</p>
+                </div>
+            </div>
+            
+            <div class="quote-box">
+                <p>
+                    "I have iterated to my management that the ability to continue with some of the hard work 
+                    I have wouldn't be possible without the coaching I get. She helps me to orient my thinking 
+                    to be more productive and facilitate a larger team."
+                </p>
+                <p class="quote-author">— PNNL Scientist</p>
+            </div>
+            
+            <p class="section-intro" style="margin-top: 40px;">
+                <strong>The Parallel:</strong> PNNL scientists face complex missions, distributed teams, and innovation 
+                under constraints. If BetterUp works at one National Lab under pressure, it scales to Genesis Mission needs.
+            </p>
+            
+            <div class="validation-list">
+                <div class="validation-item">
+                    <strong>IBM Research</strong>
+                    Darío, you experienced BetterUp supporting scientists during organizational transformation
+                </div>
+                <div class="validation-item">
+                    <strong>Air Force</strong>
+                    +20% career commitment for mission-critical personnel
+                </div>
+                <div class="validation-item">
+                    <strong>NASA</strong>
+                    +33% innovation scores during high-pressure programs
+                </div>
+                <div class="validation-item">
+                    <strong>WSIB (5M First Responders)</strong>
+                    $1.25–$2.14 ROI with +2.3x flourishing, -56% missed work
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SECTION 4: GENESIS MISSION FIT -->
+    <div class="section">
+        <div class="container">
+            <h2>Genesis Mission Has Three Human Infrastructure Needs</h2>
+            <p class="section-intro">
+                These aren't training challenges. They're human performance challenges under unprecedented conditions.
+            </p>
+            
+            <div class="needs-grid">
+                <div class="need-card">
+                    <h3>1. Cross-Lab Collaboration</h3>
+                    <p>
+                        What a Los Alamos scientist needs to work effectively with Oak Ridge is fundamentally 
+                        different from working within their own lab. 17 historically independent organizations 
+                        must now operate as one platform.
+                    </p>
+                </div>
+                
+                <div class="need-card">
+                    <h3>2. Partnership Effectiveness</h3>
+                    <p>
+                        Industry partnerships (Anthropic, OpenAI, NVIDIA, IBM, Microsoft) require different 
+                        communication styles, incentive structures, and IP frameworks than academic or 
+                        government collaborations.
+                    </p>
+                </div>
+                
+                <div class="need-card">
+                    <h3>3. Sustained Innovation Under Pressure</h3>
+                    <p>
+                        Leaders who can handle "deeply uncomfortable urgency" for 10 years without burning out. 
+                        Scientists need resilience infrastructure, not just technical training, to maintain 
+                        innovation velocity across a decade-long mission.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="thesis-box">
+                <p>
+                    "These aren't training challenges. They're human performance challenges. 
+                    And we believe that's where Genesis Mission's success depends."
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SECTION 5: THE QUESTION -->
+    <div class="section">
+        <div class="container">
+            <h2>Three Questions Worth Exploring</h2>
+            <p class="section-intro">
+                Not a sales pitch—a strategic conversation about whether systematic human infrastructure 
+                matters for Genesis Mission success.
+            </p>
+            
+            <div class="questions-list">
+                <div class="question-item">
+                    <span class="question-number">1.</span>
+                    Can 17 National Labs collaborate at Genesis Mission pace without systematic human infrastructure?
+                </div>
+                
+                <div class="question-item">
+                    <span class="question-number">2.</span>
+                    Can 40,000 scientists sustain "deeply uncomfortable urgency" for 10 years without resilience support?
+                </div>
+                
+                <div class="question-item">
+                    <span class="question-number">3.</span>
+                    You experienced BetterUp at IBM Research, Darío. Does this parallel resonate for Genesis Mission?
+                </div>
+            </div>
+            
+            <div class="final-cta">
+                <h3>Let's Discuss in 30 Minutes</h3>
+                <p>Whether BetterUp's proven approach at PNNL scales to Genesis Mission needs.</p>
+                <p style="margin-top: 30px;">
+                    <strong>Contact:</strong><br>
+                    Guillermo Miranda (your IBM colleague)<br>
+                    Scott Robert Smith (PNNL account lead)
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
